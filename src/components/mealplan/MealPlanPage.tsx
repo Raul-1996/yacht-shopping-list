@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
+import { useAppStore } from '../../store/appStore'
 import { gastronomy } from '../../data/gastronomy'
-import type { MealSlot } from '../../types'
+import type { MealSlot, Recipe } from '../../types'
 import { RecipeModal } from '../recipes/RecipeModal'
+import { RecipePicker } from './RecipePicker'
 
 const mealIcons: Record<string, string> = {
   breakfast: '🌅',
@@ -18,17 +20,41 @@ const mealLabels: Record<string, string> = {
 }
 
 export function MealPlanPage() {
+  const { mealPlan, replaceRecipeInMealPlan, addRecipeToMealSlot, removeRecipeFromMealSlot, updateMealSlotNote } = useAppStore()
   const [selectedDay, setSelectedDay] = useState(0)
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null)
+  const [pickerState, setPickerState] = useState<{
+    mealType: string
+    mode: 'add' | 'replace'
+    replaceRecipeId?: string
+    currentRecipeIds: string[]
+  } | null>(null)
+
+  const currentDay = mealPlan[selectedDay]
+
+  function openPicker(mealType: string, mode: 'add' | 'replace', currentRecipeIds: string[], replaceRecipeId?: string) {
+    setPickerState({ mealType, mode, currentRecipeIds, replaceRecipeId })
+  }
+
+  function handlePickerSelect(recipeId: string) {
+    if (!pickerState || !currentDay) return
+    const dayNum = currentDay.day
+    if (pickerState.mode === 'replace' && pickerState.replaceRecipeId) {
+      replaceRecipeInMealPlan(dayNum, pickerState.mealType, pickerState.replaceRecipeId, recipeId)
+    } else {
+      addRecipeToMealSlot(dayNum, pickerState.mealType, recipeId)
+    }
+  }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4">
+    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6">
+      {/* Day selector */}
       <div className="flex gap-2 overflow-x-auto pb-1">
-        {gastronomy.meal_plan.map((day, i) => (
+        {mealPlan.map((day, i) => (
           <button
             key={i}
             onClick={() => setSelectedDay(i)}
-            className={`shrink-0 flex flex-col items-center px-4 py-2 rounded-xl transition-colors ${
+            className={`shrink-0 flex flex-col items-center px-4 py-2 rounded-xl transition-colors min-h-[44px] ${
               selectedDay === i
                 ? 'bg-ocean-500 text-white'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -39,24 +65,31 @@ export function MealPlanPage() {
         ))}
       </div>
 
-      {gastronomy.meal_plan[selectedDay] && (
+      {currentDay && (
         <div className="space-y-3">
           <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-400">
-            {gastronomy.meal_plan[selectedDay].title}
+            {currentDay.title}
           </h2>
           {(['breakfast', 'lunch', 'snack', 'dinner'] as const).map((mealType) => {
-            const slot = gastronomy.meal_plan[selectedDay].meals[mealType] as MealSlot
-            const recipes = (slot?.recipe_ids || [])
+            const slot = currentDay.meals[mealType] as MealSlot
+            const recipeIds = slot?.recipe_ids || []
+            const recipes = recipeIds
               .map((id) => gastronomy.recipes.find((r) => r.id === id))
-              .filter(Boolean)
+              .filter((r): r is Recipe => r != null)
 
             return (
               <MealCard
                 key={mealType}
+                day={currentDay.day}
                 mealType={mealType}
-                note={slot?.note}
-                recipes={recipes as typeof gastronomy.recipes}
+                note={slot?.note || ''}
+                recipes={recipes}
+                recipeIds={recipeIds}
                 onRecipeClick={setSelectedRecipeId}
+                onReplace={(recipeId) => openPicker(mealType, 'replace', recipeIds, recipeId)}
+                onDelete={(recipeId) => removeRecipeFromMealSlot(currentDay.day, mealType, recipeId)}
+                onAdd={() => openPicker(mealType, 'add', recipeIds)}
+                onNoteChange={(note) => updateMealSlotNote(currentDay.day, mealType, note)}
               />
             )
           })}
@@ -66,60 +99,170 @@ export function MealPlanPage() {
       {selectedRecipeId && (
         <RecipeModal recipeId={selectedRecipeId} onClose={() => setSelectedRecipeId(null)} />
       )}
+
+      {pickerState && (
+        <RecipePicker
+          mealType={pickerState.mealType}
+          currentRecipeIds={pickerState.currentRecipeIds}
+          onSelect={handlePickerSelect}
+          onClose={() => setPickerState(null)}
+        />
+      )}
     </div>
   )
 }
 
 function MealCard({
+  day: _day,
   mealType,
   note,
   recipes,
+  recipeIds: _recipeIds,
   onRecipeClick,
+  onReplace,
+  onDelete,
+  onAdd,
+  onNoteChange,
 }: {
+  day: number
   mealType: string
-  note?: string
-  recipes: typeof gastronomy.recipes
+  note: string
+  recipes: Recipe[]
+  recipeIds: string[]
   onRecipeClick: (id: string) => void
+  onReplace: (recipeId: string) => void
+  onDelete: (recipeId: string) => void
+  onAdd: () => void
+  onNoteChange: (note: string) => void
 }) {
+  const [editingNote, setEditingNote] = useState(false)
+  const [noteValue, setNoteValue] = useState(note)
+  const noteInputRef = useRef<HTMLInputElement>(null)
+  const { shoppingItems } = useAppStore()
+
+  const checkedNames = useMemo(
+    () => new Set(shoppingItems.filter((i) => i.checked).map((i) => i.name.toLowerCase())),
+    [shoppingItems]
+  )
+
+  // Sync note from props when it changes externally
+  useEffect(() => {
+    if (!editingNote) setNoteValue(note)
+  }, [note, editingNote])
+
+  useEffect(() => {
+    if (editingNote && noteInputRef.current) {
+      noteInputRef.current.focus()
+    }
+  }, [editingNote])
+
+  function handleNoteBlur() {
+    setEditingNote(false)
+    if (noteValue !== note) {
+      onNoteChange(noteValue)
+    }
+  }
+
+  function getReadiness(recipe: Recipe): 'green' | 'yellow' | 'red' {
+    const total = recipe.ingredients.length
+    if (total === 0) return 'green'
+    const missing = recipe.ingredients.filter((ing) => !checkedNames.has(ing.name.toLowerCase())).length
+    if (missing === 0) return 'green'
+    if (missing <= 2) return 'yellow'
+    return 'red'
+  }
+
+  const readinessColors: Record<string, string> = {
+    green: 'border-l-emerald-400',
+    yellow: 'border-l-amber-400',
+    red: 'border-l-red-400',
+  }
+
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
+      {/* Meal type header */}
       <div className="px-4 py-3 flex items-center gap-2 border-b border-slate-200/50 dark:border-slate-700/50">
         <span>{mealIcons[mealType]}</span>
         <span className="font-semibold text-sm text-slate-700 dark:text-slate-200">
           {mealLabels[mealType]}
         </span>
       </div>
+
       <div className="px-4 py-2 space-y-2">
-        {note && (
-          <p className="text-xs text-slate-500 dark:text-slate-400 italic">{note}</p>
+        {/* Editable note */}
+        {editingNote ? (
+          <input
+            ref={noteInputRef}
+            type="text"
+            value={noteValue}
+            onChange={(e) => setNoteValue(e.target.value)}
+            onBlur={handleNoteBlur}
+            onKeyDown={(e) => { if (e.key === 'Enter') handleNoteBlur() }}
+            className="w-full text-xs text-slate-600 dark:text-slate-300 italic bg-transparent border-b border-ocean-400 dark:border-ocean-500 focus:outline-none py-1"
+            placeholder="Добавить описание..."
+          />
+        ) : (
+          <button
+            onClick={() => setEditingNote(true)}
+            className="w-full text-left text-xs italic py-1 min-h-[32px] flex items-center"
+          >
+            <span className={noteValue ? 'text-slate-500 dark:text-slate-400' : 'text-slate-400 dark:text-slate-600'}>
+              {noteValue || 'Добавить описание...'}
+            </span>
+          </button>
         )}
+
+        {/* Recipe cards */}
         {recipes.length === 0 ? (
           <p className="text-sm text-slate-400 py-2">Нет рецептов</p>
         ) : (
-          recipes.map((recipe) => (
-            <div key={recipe.id} className="py-2 flex items-start gap-3">
-              <div className="flex-1">
+          recipes.map((recipe) => {
+            const readiness = getReadiness(recipe)
+            return (
+              <div
+                key={recipe.id}
+                className={`rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/50 border-l-[3px] ${readinessColors[readiness]} px-3 py-2.5`}
+              >
+                {/* Row 1: name + action buttons */}
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => onRecipeClick(recipe.id)}
-                    className="text-sm font-medium text-slate-800 dark:text-slate-100 cursor-pointer hover:underline text-left"
+                    className="flex-1 text-left text-sm font-medium text-slate-800 dark:text-slate-100 active:text-ocean-600 dark:active:text-ocean-400 truncate min-h-[44px] flex items-center"
                   >
                     {recipe.name}
                   </button>
-                  {recipe.is_fish_dish && <span className="text-xs">🐟</span>}
-                  {recipe.fresh_catch && (
-                    <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-ocean-100 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300">
-                      свежий улов
-                    </span>
-                  )}
+                  <button
+                    onClick={() => onReplace(recipe.id)}
+                    className="shrink-0 w-11 h-11 flex items-center justify-center rounded-lg text-slate-400 dark:text-slate-500 active:bg-slate-100 dark:active:bg-slate-700"
+                    aria-label="Заменить"
+                  >
+                    🔄
+                  </button>
+                  <button
+                    onClick={() => onDelete(recipe.id)}
+                    className="shrink-0 w-11 h-11 flex items-center justify-center rounded-lg text-slate-400 dark:text-slate-500 active:bg-coral-400/10"
+                    aria-label="Удалить"
+                  >
+                    ✕
+                  </button>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                  ⏱ {recipe.prep_time_minutes} мин · {recipe.ingredients.length} ингр.
-                </p>
+                {/* Row 2: meta */}
+                <div className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400 -mt-1">
+                  <span>⏱ {recipe.prep_time_minutes} мин · {recipe.ingredients.length} ингр.</span>
+                  {recipe.is_fish_dish && <span>🐟</span>}
+                </div>
               </div>
-            </div>
-          ))
+            )
+          })
         )}
+
+        {/* Add recipe button */}
+        <button
+          onClick={onAdd}
+          className="w-full py-3 min-h-[44px] rounded-xl border-2 border-dashed border-ocean-300 dark:border-ocean-700 text-ocean-500 dark:text-ocean-400 text-sm font-medium active:bg-ocean-50 dark:active:bg-ocean-950/30 transition-colors"
+        >
+          ＋ Добавить блюдо
+        </button>
       </div>
     </div>
   )

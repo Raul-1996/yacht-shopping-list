@@ -1,3 +1,5 @@
+import type { MealPlanDay } from '../types';
+
 const API_BASE = import.meta.env.VITE_API_URL || window.location.origin;
 
 export async function fetchShoppingItems() {
@@ -66,6 +68,20 @@ export async function togglePackingItem(id: string, checked: boolean) {
 
 export async function fetchCategories(): Promise<string[]> {
   const res = await fetch(`${API_BASE}/api/categories`);
+  return res.json();
+}
+
+export async function fetchMealPlan(): Promise<MealPlanDay[]> {
+  const res = await fetch(`${API_BASE}/api/mealplan`);
+  return res.json();
+}
+
+export async function updateMealSlot(day: number, mealType: string, data: { recipe_ids?: string[], note?: string }) {
+  const res = await fetch(`${API_BASE}/api/mealplan/${day}/${mealType}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
   return res.json();
 }
 

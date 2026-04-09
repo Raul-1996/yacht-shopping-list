@@ -51,6 +51,14 @@ db.exec(`
     essential INTEGER NOT NULL DEFAULT 0,
     checked INTEGER NOT NULL DEFAULT 0
   );
+
+  CREATE TABLE IF NOT EXISTS meal_plan (
+    day INTEGER NOT NULL,
+    meal_type TEXT NOT NULL,
+    recipe_ids TEXT NOT NULL DEFAULT '[]',
+    note TEXT DEFAULT '',
+    PRIMARY KEY (day, meal_type)
+  );
 `);
 
 // Seed data if tables are empty
@@ -102,6 +110,32 @@ function seedIfEmpty() {
     });
     insertP(household.packing_checklist);
     console.log(`  Seeded ${household.packing_checklist.length} packing items`);
+  }
+
+  // Seed meal plan
+  if (existsSync(gastronomyPath)) {
+    const gastronomy = JSON.parse(readFileSync(gastronomyPath, 'utf8'));
+    if (gastronomy.meal_plan) {
+      const insertMeal = db.prepare(
+        'INSERT OR IGNORE INTO meal_plan (day, meal_type, recipe_ids, note) VALUES (?, ?, ?, ?)'
+      );
+      const mealTypes = ['breakfast', 'lunch', 'snack', 'dinner'];
+      const insertMeals = db.transaction((days) => {
+        let count = 0;
+        days.forEach((dayObj) => {
+          mealTypes.forEach((mealType) => {
+            const meal = dayObj.meals[mealType];
+            if (meal) {
+              insertMeal.run(dayObj.day, mealType, JSON.stringify(meal.recipe_ids || []), meal.note || '');
+              count++;
+            }
+          });
+        });
+        return count;
+      });
+      const mealCount = insertMeals(gastronomy.meal_plan);
+      console.log(`  Seeded ${mealCount} meal plan entries`);
+    }
   }
 
   console.log('Seeding complete.');
@@ -193,6 +227,42 @@ app.patch('/api/packing/:id', (req, res) => {
   const result = { ...item, checked: !!item.checked, essential: !!item.essential };
   broadcast({ type: 'packing:update', item: result });
   res.json(result);
+});
+
+// --- Meal Plan ---
+app.get('/api/mealplan', (req, res) => {
+  const rows = db.prepare('SELECT * FROM meal_plan ORDER BY day, meal_type').all();
+  const dayMap = {};
+  rows.forEach((row) => {
+    if (!dayMap[row.day]) dayMap[row.day] = { day: row.day, meals: {} };
+    dayMap[row.day].meals[row.meal_type] = {
+      recipe_ids: JSON.parse(row.recipe_ids),
+      note: row.note || '',
+    };
+  });
+  res.json(Object.values(dayMap).sort((a, b) => a.day - b.day));
+});
+
+app.patch('/api/mealplan/:day/:mealType', (req, res) => {
+  const day = parseInt(req.params.day, 10);
+  const { mealType } = req.params;
+  const { recipe_ids, note } = req.body;
+
+  if (recipe_ids !== undefined) {
+    db.prepare('UPDATE meal_plan SET recipe_ids = ? WHERE day = ? AND meal_type = ?')
+      .run(JSON.stringify(recipe_ids), day, mealType);
+  }
+  if (note !== undefined) {
+    db.prepare('UPDATE meal_plan SET note = ? WHERE day = ? AND meal_type = ?')
+      .run(note, day, mealType);
+  }
+
+  const row = db.prepare('SELECT * FROM meal_plan WHERE day = ? AND meal_type = ?').get(day, mealType);
+  if (!row) return res.status(404).json({ error: 'Not found' });
+
+  const data = { recipe_ids: JSON.parse(row.recipe_ids), note: row.note || '' };
+  broadcast({ type: 'mealplan:update', day, mealType, data });
+  res.json(data);
 });
 
 // --- Categories list ---

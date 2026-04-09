@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { ShoppingItem, HouseholdItem, PackingItem, Page } from '../types'
+import type { ShoppingItem, HouseholdItem, PackingItem, MealPlanDay, MealSlot, Page } from '../types'
 import * as api from '../lib/api'
 import { gastronomy } from '../data/gastronomy'
 import { household } from '../data/household'
@@ -16,6 +16,7 @@ interface AppState {
   shoppingItems: ShoppingItem[];
   householdItems: HouseholdItem[];
   packingItems: PackingItem[];
+  mealPlan: MealPlanDay[];
 
   setPage: (page: Page) => void;
   toggleDarkMode: () => void;
@@ -30,6 +31,11 @@ interface AppState {
   deleteShoppingItem: (id: string) => void;
   toggleHouseholdItem: (id: string) => void;
   togglePackingItem: (id: string) => void;
+
+  replaceRecipeInMealPlan: (day: number, mealType: string, oldRecipeId: string, newRecipeId: string) => void;
+  addRecipeToMealSlot: (day: number, mealType: string, recipeId: string) => void;
+  removeRecipeFromMealSlot: (day: number, mealType: string, recipeId: string) => void;
+  updateMealSlotNote: (day: number, mealType: string, note: string) => void;
 
   loadAllData: () => void;
   handleWsMessage: (data: unknown) => void;
@@ -47,6 +53,7 @@ export const useAppStore = create<AppState>()((set, get) => ({
   shoppingItems: [],
   householdItems: [],
   packingItems: [],
+  mealPlan: [],
 
   setPage: (page) => set({ currentPage: page, searchQuery: '', selectedCategory: null }),
   toggleDarkMode: () => set((s) => {
@@ -141,15 +148,113 @@ export const useAppStore = create<AppState>()((set, get) => ({
     });
   },
 
+  replaceRecipeInMealPlan: (day, mealType, oldRecipeId, newRecipeId) => {
+    const prev = get().mealPlan;
+    set((s) => ({
+      mealPlan: s.mealPlan.map((d) =>
+        d.day === day
+          ? {
+              ...d,
+              meals: {
+                ...d.meals,
+                [mealType]: {
+                  ...d.meals[mealType as keyof typeof d.meals],
+                  recipe_ids: (d.meals[mealType as keyof typeof d.meals] as MealSlot).recipe_ids.map((id) =>
+                    id === oldRecipeId ? newRecipeId : id
+                  ),
+                },
+              },
+            }
+          : d
+      ),
+    }));
+    const slot = get().mealPlan.find((d) => d.day === day)?.meals[mealType as keyof MealPlanDay['meals']];
+    api.updateMealSlot(day, mealType, { recipe_ids: slot?.recipe_ids }).catch(() => {
+      set({ mealPlan: prev });
+    });
+  },
+
+  addRecipeToMealSlot: (day, mealType, recipeId) => {
+    const prev = get().mealPlan;
+    set((s) => ({
+      mealPlan: s.mealPlan.map((d) =>
+        d.day === day
+          ? {
+              ...d,
+              meals: {
+                ...d.meals,
+                [mealType]: {
+                  ...d.meals[mealType as keyof typeof d.meals],
+                  recipe_ids: [...(d.meals[mealType as keyof typeof d.meals] as MealSlot).recipe_ids, recipeId],
+                },
+              },
+            }
+          : d
+      ),
+    }));
+    const slot = get().mealPlan.find((d) => d.day === day)?.meals[mealType as keyof MealPlanDay['meals']];
+    api.updateMealSlot(day, mealType, { recipe_ids: slot?.recipe_ids }).catch(() => {
+      set({ mealPlan: prev });
+    });
+  },
+
+  removeRecipeFromMealSlot: (day, mealType, recipeId) => {
+    const prev = get().mealPlan;
+    set((s) => ({
+      mealPlan: s.mealPlan.map((d) =>
+        d.day === day
+          ? {
+              ...d,
+              meals: {
+                ...d.meals,
+                [mealType]: {
+                  ...d.meals[mealType as keyof typeof d.meals],
+                  recipe_ids: (d.meals[mealType as keyof typeof d.meals] as MealSlot).recipe_ids.filter((id) => id !== recipeId),
+                },
+              },
+            }
+          : d
+      ),
+    }));
+    const slot = get().mealPlan.find((d) => d.day === day)?.meals[mealType as keyof MealPlanDay['meals']];
+    api.updateMealSlot(day, mealType, { recipe_ids: slot?.recipe_ids }).catch(() => {
+      set({ mealPlan: prev });
+    });
+  },
+
+  updateMealSlotNote: (day, mealType, note) => {
+    const prev = get().mealPlan;
+    set((s) => ({
+      mealPlan: s.mealPlan.map((d) =>
+        d.day === day
+          ? {
+              ...d,
+              meals: {
+                ...d.meals,
+                [mealType]: {
+                  ...d.meals[mealType as keyof typeof d.meals],
+                  note,
+                },
+              },
+            }
+          : d
+      ),
+    }));
+    api.updateMealSlot(day, mealType, { note }).catch(() => {
+      set({ mealPlan: prev });
+    });
+  },
+
   loadAllData: async () => {
     set({ loading: true });
     try {
-      const [shopping, householdData, packing] = await Promise.all([
+      const [shopping, householdData, packing, mealPlanData] = await Promise.all([
         api.fetchShoppingItems(),
         api.fetchHouseholdItems(),
         api.fetchPackingItems(),
+        api.fetchMealPlan(),
       ]);
-      set({ shoppingItems: shopping, householdItems: householdData, packingItems: packing, loading: false });
+      set({ shoppingItems: shopping, householdItems: householdData, packingItems: packing, mealPlan: mealPlanData, loading: false });
     } catch (e) {
       console.error('API unavailable, using bundled data:', e);
       // Offline fallback: load from static JSON bundled in the app
@@ -157,6 +262,7 @@ export const useAppStore = create<AppState>()((set, get) => ({
         shoppingItems: gastronomy.shopping_list.map((item) => ({ ...item, checked: false })),
         householdItems: household.household_supplies.map((item) => ({ ...item, checked: false })),
         packingItems: household.packing_checklist.map((item) => ({ ...item, checked: false })),
+        mealPlan: gastronomy.meal_plan,
         loading: false,
       });
     }
@@ -191,6 +297,15 @@ export const useAppStore = create<AppState>()((set, get) => ({
           packingItems: s.packingItems.map((i) => i.id === (msg.item as PackingItem)?.id ? msg.item as PackingItem : i),
         }));
         break;
+      case 'mealplan:update': {
+        const { day, mealType, data } = msg as any;
+        set((s) => ({
+          mealPlan: s.mealPlan.map((d) =>
+            d.day === day ? { ...d, meals: { ...d.meals, [mealType]: data } } : d
+          ),
+        }));
+        break;
+      }
       case 'presence':
         set({ onlineUsers: msg.count || 0 });
         break;
