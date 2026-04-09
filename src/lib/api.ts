@@ -49,6 +49,15 @@ export async function fetchHouseholdItems() {
   return jsonOrThrow(res);
 }
 
+export async function adjustHouseholdQuantity(id: string, quantity: number) {
+  const res = await fetch(`${API_BASE}/api/household/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ quantity }),
+  });
+  return jsonOrThrow(res);
+}
+
 export async function toggleHouseholdItem(id: string, checked: boolean) {
   const res = await fetch(`${API_BASE}/api/household/${id}`, {
     method: 'PATCH',

@@ -199,9 +199,12 @@ app.get('/api/household', (req, res) => {
 
 app.patch('/api/household/:id', (req, res) => {
   const { id } = req.params;
-  const { checked } = req.body;
+  const { checked, quantity } = req.body;
   if (checked !== undefined) {
     db.prepare('UPDATE household_items SET checked = ? WHERE id = ?').run(checked ? 1 : 0, id);
+  }
+  if (quantity !== undefined) {
+    db.prepare('UPDATE household_items SET quantity = ? WHERE id = ?').run(quantity, id);
   }
   const item = db.prepare('SELECT * FROM household_items WHERE id = ?').get(id);
   if (!item) return res.status(404).json({ error: 'Not found' });

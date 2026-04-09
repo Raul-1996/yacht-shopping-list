@@ -8,7 +8,7 @@ import { RecipeModal } from '../recipes/RecipeModal'
 import { SwipeToDelete } from '../ui/SwipeToDelete'
 
 export function ListItem({ item }: { item: UnifiedShoppingItem }) {
-  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem } = useAppStore()
+  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem, adjustHouseholdQuantity } = useAppStore()
   const [expanded, setExpanded] = useState(false)
   const [editingQty, setEditingQty] = useState(false)
   const [qtyInput, setQtyInput] = useState('')
@@ -29,7 +29,6 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
   }
 
   const handleQtyTap = () => {
-    if (!isShopping) return
     setQtyInput(String(item.quantity))
     setEditingQty(true)
   }
@@ -38,9 +37,15 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
     const val = Math.round(parseFloat(qtyInput) * 100) / 100
     if (!isNaN(val) && val >= 0 && val !== item.quantity) {
       const delta = Math.round((val - item.quantity) * 100) / 100
-      adjustShoppingQuantity(item.id, delta)
+      if (isShopping) adjustShoppingQuantity(item.id, delta)
+      else adjustHouseholdQuantity(item.id, delta)
     }
     setEditingQty(false)
+  }
+
+  const handleAdjust = (delta: number) => {
+    if (isShopping) adjustShoppingQuantity(item.id, delta)
+    else adjustHouseholdQuantity(item.id, delta)
   }
 
   const content = (
@@ -86,46 +91,38 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
         </button>
 
         <div className="flex items-center gap-1 shrink-0">
-          {isShopping ? (
-            <>
-              <button
-                onClick={(e) => { e.stopPropagation(); adjustShoppingQuantity(item.id, -1) }}
-                className="w-9 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold active:bg-slate-200 dark:active:bg-slate-600"
-              >
-                −
-              </button>
-              {editingQty ? (
-                <input
-                  type="number"
-                  value={qtyInput}
-                  onChange={(e) => setQtyInput(e.target.value)}
-                  onBlur={handleQtySave}
-                  onKeyDown={(e) => e.key === 'Enter' && handleQtySave()}
-                  className="w-16 h-9 text-center text-base bg-white dark:bg-slate-800 border border-ocean-400 rounded-lg focus:outline-none"
-                  autoFocus
-                  step="0.1"
-                  min="0"
-                />
-              ) : (
-                <button
-                  onClick={(e) => { e.stopPropagation(); handleQtyTap() }}
-                  className="min-w-[3.5rem] h-9 px-1 text-xs font-medium text-slate-600 dark:text-slate-300 text-center tabular-nums rounded-lg active:bg-slate-100 dark:active:bg-slate-700"
-                >
-                  {Math.round(item.quantity * 100) / 100} {item.unit}
-                </button>
-              )}
-              <button
-                onClick={(e) => { e.stopPropagation(); adjustShoppingQuantity(item.id, 1) }}
-                className="w-9 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold active:bg-slate-200 dark:active:bg-slate-600"
-              >
-                +
-              </button>
-            </>
+          <button
+            onClick={(e) => { e.stopPropagation(); handleAdjust(-1) }}
+            className="w-9 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold active:bg-slate-200 dark:active:bg-slate-600"
+          >
+            −
+          </button>
+          {editingQty ? (
+            <input
+              type="number"
+              value={qtyInput}
+              onChange={(e) => setQtyInput(e.target.value)}
+              onBlur={handleQtySave}
+              onKeyDown={(e) => e.key === 'Enter' && handleQtySave()}
+              className="w-16 h-9 text-center text-base bg-white dark:bg-slate-800 border border-ocean-400 rounded-lg focus:outline-none"
+              autoFocus
+              step="0.1"
+              min="0"
+            />
           ) : (
-            <span className="text-xs text-slate-400 dark:text-slate-500 tabular-nums">
-              {item.quantity} {item.unit}
-            </span>
+            <button
+              onClick={(e) => { e.stopPropagation(); handleQtyTap() }}
+              className="min-w-[3.5rem] h-9 px-1 text-xs font-medium text-slate-600 dark:text-slate-300 text-center tabular-nums rounded-lg active:bg-slate-100 dark:active:bg-slate-700"
+            >
+              {Math.round(item.quantity * 100) / 100} {item.unit}
+            </button>
           )}
+          <button
+            onClick={(e) => { e.stopPropagation(); handleAdjust(1) }}
+            className="w-9 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold active:bg-slate-200 dark:active:bg-slate-600"
+          >
+            +
+          </button>
         </div>
       </div>
 

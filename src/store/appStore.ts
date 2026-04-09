@@ -31,6 +31,7 @@ interface AppState {
   addShoppingItem: (name: string, category: string, quantity: number, unit: string) => void;
   deleteShoppingItem: (id: string) => void;
   toggleHouseholdItem: (id: string) => void;
+  adjustHouseholdQuantity: (id: string, delta: number) => void;
   togglePackingItem: (id: string) => void;
 
   replaceRecipeInMealPlan: (day: number, mealType: string, oldRecipeId: string, newRecipeId: string) => void;
@@ -132,6 +133,20 @@ export const useAppStore = create<AppState>()((set, get) => ({
     api.toggleHouseholdItem(id, newChecked).catch(() => {
       set((s) => ({
         householdItems: s.householdItems.map((i) => i.id === id ? { ...i, checked: !newChecked } : i),
+      }));
+    });
+  },
+
+  adjustHouseholdQuantity: (id, delta) => {
+    const item = get().householdItems.find((i) => i.id === id);
+    if (!item) return;
+    const newQty = Math.round(Math.max(0, item.quantity + delta) * 100) / 100;
+    set((s) => ({
+      householdItems: s.householdItems.map((i) => i.id === id ? { ...i, quantity: newQty } : i),
+    }));
+    api.adjustHouseholdQuantity(id, newQty).catch(() => {
+      set((s) => ({
+        householdItems: s.householdItems.map((i) => i.id === id ? { ...i, quantity: item.quantity } : i),
       }));
     });
   },
