@@ -2,7 +2,9 @@ import { useEffect } from 'react'
 import { useAppStore } from './store/appStore'
 import { createWebSocket } from './lib/api'
 import { Header } from './components/layout/Header'
+import { OfflineBanner } from './components/layout/OfflineBanner'
 import { BottomNav } from './components/layout/BottomNav'
+import { InstallPrompt } from './components/layout/InstallPrompt'
 import { ShoppingList } from './components/list/ShoppingList'
 import { RecipesPage } from './components/recipes/RecipesPage'
 import { MealPlanPage } from './components/mealplan/MealPlanPage'
@@ -25,6 +27,7 @@ function App() {
   return (
     <div className="min-h-dvh flex flex-col bg-white dark:bg-slate-950">
       <Header />
+      <OfflineBanner />
       <main className="flex-1 pb-20 overflow-y-auto">
         {loading ? (
           <div className="flex items-center justify-center h-64">
@@ -42,6 +45,7 @@ function App() {
           </>
         )}
       </main>
+      <InstallPrompt />
       <BottomNav />
     </div>
   )
