@@ -21,8 +21,20 @@ function App() {
 
   useEffect(() => {
     loadAllData()
-    const ws = createWebSocket(handleWsMessage)
-    return () => ws.close()
+    const ws = createWebSocket(handleWsMessage, loadAllData)
+
+    // Reload data when app returns from background (iOS kills WS in bg)
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        loadAllData()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+
+    return () => {
+      ws.close()
+      document.removeEventListener('visibilitychange', handleVisibility)
+    }
   }, [loadAllData, handleWsMessage])
 
   return (

@@ -100,15 +100,23 @@ export async function updateMealSlot(day: number, mealType: string, data: { reci
   return jsonOrThrow(res);
 }
 
-export function createWebSocket(onMessage: (data: unknown) => void): { close: () => void } {
+export function createWebSocket(onMessage: (data: unknown) => void, onReconnect?: () => void): { close: () => void } {
   let closed = false;
   let currentWs: WebSocket | null = null;
+  let wasConnected = false;
 
   function connect() {
     if (closed) return;
     const wsUrl = API_BASE.replace(/^http/, 'ws') + '/ws';
     const ws = new WebSocket(wsUrl);
     currentWs = ws;
+    ws.onopen = () => {
+      if (wasConnected && onReconnect) {
+        // Reconnected after a drop — reload all data to sync
+        onReconnect();
+      }
+      wasConnected = true;
+    };
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
