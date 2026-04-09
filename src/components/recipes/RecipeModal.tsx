@@ -25,15 +25,15 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center animate-[fadeIn_200ms_ease-out]"
+      className="fixed inset-0 z-50 animate-[fadeIn_200ms_ease-out]"
       onClick={onClose}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 dark:bg-black/70" />
 
-      {/* Modal */}
+      {/* Full-screen on mobile, centered card on desktop */}
       <div
-        className="relative w-full sm:max-w-lg max-h-[90dvh] rounded-t-2xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl animate-[slideUp_250ms_ease-out] flex flex-col"
+        className="absolute inset-0 sm:inset-4 sm:m-auto sm:max-w-lg sm:max-h-[90vh] sm:rounded-2xl bg-white dark:bg-slate-900 sm:shadow-xl animate-[slideUp_250ms_ease-out] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
