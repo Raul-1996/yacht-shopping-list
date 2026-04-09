@@ -4,6 +4,7 @@ import { ListCategory } from './ListCategory'
 import { SearchBar } from './SearchBar'
 import { ProgressBar } from './ProgressBar'
 import { FilterBar } from './FilterBar'
+import { AddItemForm } from './AddItemForm'
 
 export function ShoppingList() {
   const { shoppingItems, searchQuery, filterMode, selectedCategory } = useAppStore()
@@ -55,6 +56,7 @@ export function ShoppingList() {
           <ListCategory key={category} category={category} items={items} />
         ))
       )}
+      <AddItemForm />
     </div>
   )
 }

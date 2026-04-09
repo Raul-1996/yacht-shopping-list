@@ -1,0 +1,12 @@
+services:
+  yacht-app:
+    build: .
+    container_name: yacht-shopping-list
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    volumes:
+      - yacht-data:/app/data
+
+volumes:
+  yacht-data:

@@ -4,10 +4,11 @@ import type { ShoppingItem } from '../../types'
 import { gastronomy } from '../../data/gastronomy'
 
 export function ListItem({ item }: { item: ShoppingItem }) {
-  const { toggleShoppingItem, adjustShoppingQuantity } = useAppStore()
+  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem } = useAppStore()
   const [expanded, setExpanded] = useState(false)
+  const [showDelete, setShowDelete] = useState(false)
 
-  const usedRecipes = item.used_in_recipes
+  const usedRecipes = (item.used_in_recipes || [])
     .map((id) => gastronomy.recipes.find((r) => r.id === id))
     .filter(Boolean)
 
@@ -18,6 +19,10 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           ? 'bg-slate-100/50 dark:bg-slate-800/30'
           : 'bg-white dark:bg-slate-800/60'
       }`}
+      onTouchStart={() => setShowDelete(true)}
+      onTouchEnd={() => setTimeout(() => setShowDelete(false), 3000)}
+      onMouseEnter={() => setShowDelete(true)}
+      onMouseLeave={() => setShowDelete(false)}
     >
       <div className="flex items-center gap-3">
         <button
@@ -60,6 +65,15 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           >
             +
           </button>
+          {showDelete && (
+            <button
+              onClick={() => deleteShoppingItem(item.id)}
+              className="w-7 h-7 rounded-lg bg-coral-400/10 text-coral-500 flex items-center justify-center text-sm hover:bg-coral-400/20 transition-colors"
+              title="Удалить"
+            >
+              ✕
+            </button>
+          )}
         </div>
       </div>
 

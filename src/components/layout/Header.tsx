@@ -1,7 +1,7 @@
 import { useAppStore } from '../../store/appStore'
 
 export function Header() {
-  const { darkMode, toggleDarkMode, currentPage } = useAppStore()
+  const { darkMode, toggleDarkMode, currentPage, onlineUsers } = useAppStore()
 
   const pageTitle: Record<string, string> = {
     shopping: 'Список покупок',
@@ -24,13 +24,21 @@ export function Header() {
             </p>
           </div>
         </div>
-        <button
-          onClick={toggleDarkMode}
-          className="w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-          aria-label="Переключить тему"
-        >
-          {darkMode ? '☀️' : '🌙'}
-        </button>
+        <div className="flex items-center gap-2">
+          {onlineUsers > 0 && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sea-green-400/10 text-sea-green-500">
+              <span className="w-2 h-2 rounded-full bg-sea-green-500 animate-pulse" />
+              <span className="text-xs font-medium">{onlineUsers}</span>
+            </div>
+          )}
+          <button
+            onClick={toggleDarkMode}
+            className="w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            aria-label="Переключить тему"
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
       </div>
     </header>
   )
