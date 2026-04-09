@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import type { ShoppingItem, HouseholdItem, PackingItem, Page } from '../types'
 import * as api from '../lib/api'
+import { gastronomy } from '../data/gastronomy'
+import { household } from '../data/household'
 
 interface AppState {
   currentPage: Page;
@@ -142,15 +144,21 @@ export const useAppStore = create<AppState>()((set, get) => ({
   loadAllData: async () => {
     set({ loading: true });
     try {
-      const [shopping, household, packing] = await Promise.all([
+      const [shopping, householdData, packing] = await Promise.all([
         api.fetchShoppingItems(),
         api.fetchHouseholdItems(),
         api.fetchPackingItems(),
       ]);
-      set({ shoppingItems: shopping, householdItems: household, packingItems: packing, loading: false });
+      set({ shoppingItems: shopping, householdItems: householdData, packingItems: packing, loading: false });
     } catch (e) {
-      console.error('Failed to load data:', e);
-      set({ loading: false });
+      console.error('API unavailable, using bundled data:', e);
+      // Offline fallback: load from static JSON bundled in the app
+      set({
+        shoppingItems: gastronomy.shopping_list.map((item) => ({ ...item, checked: false })),
+        householdItems: household.household_supplies.map((item) => ({ ...item, checked: false })),
+        packingItems: household.packing_checklist.map((item) => ({ ...item, checked: false })),
+        loading: false,
+      });
     }
   },
 
