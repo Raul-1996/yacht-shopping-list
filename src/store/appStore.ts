@@ -255,16 +255,39 @@ export const useAppStore = create<AppState>()((set, get) => ({
         api.fetchMealPlan(),
       ]);
       set({ shoppingItems: shopping, householdItems: householdData, packingItems: packing, mealPlan: mealPlanData, loading: false });
+      // Cache data for offline use
+      try {
+        localStorage.setItem('yacht-cache-shopping', JSON.stringify(shopping));
+        localStorage.setItem('yacht-cache-household', JSON.stringify(householdData));
+        localStorage.setItem('yacht-cache-packing', JSON.stringify(packing));
+        localStorage.setItem('yacht-cache-mealplan', JSON.stringify(mealPlanData));
+      } catch { /* localStorage full — ignore */ }
     } catch (e) {
-      console.error('API unavailable, using bundled data:', e);
-      // Offline fallback: load from static JSON bundled in the app
-      set({
-        shoppingItems: gastronomy.shopping_list.map((item) => ({ ...item, checked: false })),
-        householdItems: household.household_supplies.map((item) => ({ ...item, checked: false })),
-        packingItems: household.packing_checklist.map((item) => ({ ...item, checked: false })),
-        mealPlan: gastronomy.meal_plan,
-        loading: false,
-      });
+      console.error('API unavailable, trying offline cache:', e);
+      // Try localStorage cache first (has checked states from last session)
+      const cachedShopping = localStorage.getItem('yacht-cache-shopping');
+      const cachedHousehold = localStorage.getItem('yacht-cache-household');
+      const cachedPacking = localStorage.getItem('yacht-cache-packing');
+      const cachedMealplan = localStorage.getItem('yacht-cache-mealplan');
+
+      if (cachedShopping && cachedHousehold && cachedPacking) {
+        set({
+          shoppingItems: JSON.parse(cachedShopping),
+          householdItems: JSON.parse(cachedHousehold),
+          packingItems: JSON.parse(cachedPacking),
+          mealPlan: cachedMealplan ? JSON.parse(cachedMealplan) : gastronomy.meal_plan,
+          loading: false,
+        });
+      } else {
+        // Last resort: bundled data (no checked states)
+        set({
+          shoppingItems: gastronomy.shopping_list.map((item) => ({ ...item, checked: false })),
+          householdItems: household.household_supplies.map((item) => ({ ...item, checked: false })),
+          packingItems: household.packing_checklist.map((item) => ({ ...item, checked: false })),
+          mealPlan: gastronomy.meal_plan,
+          loading: false,
+        });
+      }
     }
   },
 

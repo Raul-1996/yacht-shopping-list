@@ -1,4 +1,4 @@
-const APP_VERSION = '1.28'
+const APP_VERSION = '1.32'
 
 export function VersionFooter() {
   const clearCache = async () => {
@@ -17,10 +17,14 @@ export function VersionFooter() {
           await caches.delete(name)
         }
       }
-      // Clear localStorage except important data
+      // Clear localStorage except offline data cache and settings
       const darkMode = localStorage.getItem('yacht-dark-mode')
+      const cacheKeys = ['yacht-cache-shopping', 'yacht-cache-household', 'yacht-cache-packing', 'yacht-cache-mealplan']
+      const savedCache: Record<string, string> = {}
+      cacheKeys.forEach(k => { const v = localStorage.getItem(k); if (v) savedCache[k] = v })
       localStorage.clear()
       if (darkMode) localStorage.setItem('yacht-dark-mode', darkMode)
+      Object.entries(savedCache).forEach(([k, v]) => localStorage.setItem(k, v))
 
       alert('Кеш очищен! Страница перезагрузится.')
       window.location.reload()
