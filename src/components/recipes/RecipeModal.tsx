@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { gastronomy } from '../../data/gastronomy'
 
 interface RecipeModalProps {
@@ -8,84 +8,70 @@ interface RecipeModalProps {
 
 export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
   const recipe = gastronomy.recipes.find((r) => r.id === recipeId)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
     document.addEventListener('keydown', handleKey)
-    document.body.style.overflow = 'hidden'
+    // Scroll to top when opening
+    scrollRef.current?.scrollTo(0, 0)
     return () => {
       document.removeEventListener('keydown', handleKey)
-      document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [onClose, recipeId])
 
   if (!recipe) return null
 
   return (
-    <div
-      className="fixed inset-0 z-[100] animate-[fadeIn_200ms_ease-out]"
-      onClick={onClose}
-    >
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50 dark:bg-black/70" />
+    <div className="fixed inset-0 z-[100] bg-white dark:bg-slate-950 flex flex-col">
+      {/* Top bar with back button — always visible */}
+      <div className="shrink-0 flex items-center gap-2 px-3 pt-[max(env(safe-area-inset-top),8px)] pb-2 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+        <button
+          onClick={onClose}
+          className="flex items-center gap-1 h-11 px-3 rounded-xl bg-ocean-50 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-400 text-sm font-semibold active:bg-ocean-100 dark:active:bg-ocean-800/50"
+        >
+          ← Назад
+        </button>
+        <span className="flex-1 text-center text-sm font-medium text-slate-400 dark:text-slate-500 truncate pr-12">
+          {recipe.name}
+        </span>
+      </div>
 
-      {/* Full-screen on mobile, centered card on desktop */}
-      <div
-        className="absolute inset-0 sm:inset-4 sm:m-auto sm:max-w-lg sm:max-h-[90vh] sm:rounded-2xl bg-white dark:bg-slate-900 sm:shadow-xl animate-[slideUp_250ms_ease-out] flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header bar — non-scrollable */}
-        <div className="shrink-0 flex items-center justify-between px-2 pt-[env(safe-area-inset-top,8px)] pb-2 border-b border-slate-100 dark:border-slate-800">
-          <button
-            onClick={onClose}
-            className="flex items-center gap-1 h-11 px-3 rounded-xl text-ocean-600 dark:text-ocean-400 text-sm font-medium active:bg-slate-100 dark:active:bg-slate-800 transition-colors"
-          >
-            ← Назад
-          </button>
-          <span className="text-sm font-medium text-slate-400 dark:text-slate-500">Рецепт</span>
-          <button
-            onClick={onClose}
-            className="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center"
-          >
-            ✕
-          </button>
-        </div>
-
-        {/* Recipe title — non-scrollable */}
-        <div className="shrink-0 px-5 pt-3 pb-3">
-          <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 pr-8">
+      {/* Scrollable recipe content */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto overscroll-contain pb-24">
+        {/* Title + tags */}
+        <div className="px-5 pt-4 pb-3">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">
             {recipe.name}
           </h2>
-          <div className="flex items-center gap-2 mt-2 flex-wrap">
-            <span className="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+          <div className="flex items-center gap-2 mt-3 flex-wrap">
+            <span className="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
               ⏱ {recipe.prep_time_minutes} мин
             </span>
-            <span className="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+            <span className="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
               👥 {recipe.servings} порц.
             </span>
             {recipe.is_fish_dish && (
-              <span className="text-xs px-2 py-0.5 rounded-md bg-ocean-50 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300">
+              <span className="text-xs px-2.5 py-1 rounded-lg bg-ocean-50 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300">
                 🐟 рыбное
               </span>
             )}
             {recipe.fresh_catch && (
-              <span className="text-xs px-2 py-0.5 rounded-md bg-sea-green-400/15 dark:bg-sea-green-400/10 text-sea-green-500 dark:text-sea-green-400 font-medium">
+              <span className="text-xs px-2.5 py-1 rounded-lg bg-sea-green-400/15 dark:bg-sea-green-400/10 text-sea-green-500 dark:text-sea-green-400 font-medium">
                 🎣 свежий улов
               </span>
             )}
           </div>
         </div>
 
-        {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto overscroll-contain">
         {/* Ingredients */}
-        <div className="px-5 py-3 border-t border-slate-100 dark:border-slate-800">
-          <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+        <div className="px-5 py-4 border-t border-slate-100 dark:border-slate-800">
+          <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
             Ингредиенты
           </h3>
-          <ul className="space-y-1.5">
+          <ul className="space-y-2">
             {recipe.ingredients.map((ing, i) => (
               <li key={i} className="flex items-baseline gap-2 text-sm">
                 <span className="text-ocean-500 dark:text-ocean-400">•</span>
@@ -99,14 +85,14 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
         </div>
 
         {/* Steps */}
-        <div className="px-5 py-3 pb-10 border-t border-slate-100 dark:border-slate-800">
-          <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+        <div className="px-5 py-4 border-t border-slate-100 dark:border-slate-800">
+          <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
             Приготовление
           </h3>
-          <ol className="space-y-3">
+          <ol className="space-y-4">
             {recipe.steps.map((step, i) => (
               <li key={i} className="flex gap-3 text-sm">
-                <span className="shrink-0 w-5 h-5 rounded-full bg-ocean-100 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300 text-[11px] font-bold flex items-center justify-center mt-0.5">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-ocean-100 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300 text-xs font-bold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">{step}</span>
@@ -114,7 +100,16 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
             ))}
           </ol>
         </div>
-        </div>{/* end scrollable content */}
+
+        {/* Bottom back button for convenience */}
+        <div className="px-5 py-6">
+          <button
+            onClick={onClose}
+            className="w-full py-3 rounded-xl bg-ocean-50 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-400 text-sm font-semibold active:bg-ocean-100"
+          >
+            ← Вернуться в меню
+          </button>
+        </div>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import { Header } from './components/layout/Header'
 import { OfflineBanner } from './components/layout/OfflineBanner'
 import { BottomNav } from './components/layout/BottomNav'
 import { InstallPrompt } from './components/layout/InstallPrompt'
+import { VersionFooter } from './components/layout/VersionFooter'
 import { ShoppingList } from './components/list/ShoppingList'
 import { RecipesPage } from './components/recipes/RecipesPage'
 import { MealPlanPage } from './components/mealplan/MealPlanPage'
@@ -44,6 +45,7 @@ function App() {
             {currentPage === 'packing' && <PackingPage />}
           </>
         )}
+        <VersionFooter />
       </main>
       <InstallPrompt />
       <BottomNav />
