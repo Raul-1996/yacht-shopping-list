@@ -69,18 +69,31 @@ export async function fetchCategories(): Promise<string[]> {
   return res.json();
 }
 
-export function createWebSocket(onMessage: (data: unknown) => void): WebSocket {
-  const wsUrl = API_BASE.replace(/^http/, 'ws') + '/ws';
-  const ws = new WebSocket(wsUrl);
-  ws.onmessage = (event) => {
-    try {
-      const data = JSON.parse(event.data);
-      onMessage(data);
-    } catch { /* ignore */ }
+export function createWebSocket(onMessage: (data: unknown) => void): { close: () => void } {
+  let closed = false;
+  let currentWs: WebSocket | null = null;
+
+  function connect() {
+    if (closed) return;
+    const wsUrl = API_BASE.replace(/^http/, 'ws') + '/ws';
+    const ws = new WebSocket(wsUrl);
+    currentWs = ws;
+    ws.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        onMessage(data);
+      } catch { /* ignore */ }
+    };
+    ws.onclose = () => {
+      if (!closed) setTimeout(connect, 2000);
+    };
+  }
+
+  connect();
+  return {
+    close() {
+      closed = true;
+      currentWs?.close();
+    },
   };
-  ws.onclose = () => {
-    // Reconnect after 2 seconds
-    setTimeout(() => createWebSocket(onMessage), 2000);
-  };
-  return ws;
 }

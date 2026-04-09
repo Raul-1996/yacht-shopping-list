@@ -27,7 +27,7 @@ export function ListItem({ item }: { item: ShoppingItem }) {
       <div className="flex items-center gap-3">
         <button
           onClick={() => toggleShoppingItem(item.id)}
-          className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
+          className={`w-11 h-11 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
             item.checked
               ? 'bg-sea-green-500 border-sea-green-500 text-white'
               : 'border-slate-300 dark:border-slate-600 hover:border-ocean-400'
@@ -52,7 +52,7 @@ export function ListItem({ item }: { item: ShoppingItem }) {
         <div className="flex items-center gap-1.5 shrink-0">
           <button
             onClick={() => adjustShoppingQuantity(item.id, -1)}
-            className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+            className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
           >
             −
           </button>
@@ -61,14 +61,14 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           </span>
           <button
             onClick={() => adjustShoppingQuantity(item.id, 1)}
-            className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+            className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
           >
             +
           </button>
           {showDelete && (
             <button
               onClick={() => deleteShoppingItem(item.id)}
-              className="w-7 h-7 rounded-lg bg-coral-400/10 text-coral-500 flex items-center justify-center text-sm hover:bg-coral-400/20 transition-colors"
+              className="w-11 h-11 rounded-lg bg-coral-400/10 text-coral-500 flex items-center justify-center text-sm hover:bg-coral-400/20 transition-colors"
               title="Удалить"
             >
               ✕
