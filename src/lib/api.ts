@@ -2,9 +2,14 @@ import type { MealPlanDay } from '../types';
 
 const API_BASE = import.meta.env.VITE_API_URL || window.location.origin;
 
+async function jsonOrThrow(res: Response) {
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
 export async function fetchShoppingItems() {
   const res = await fetch(`${API_BASE}/api/shopping`);
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function toggleShoppingItem(id: string, checked: boolean) {
@@ -13,7 +18,7 @@ export async function toggleShoppingItem(id: string, checked: boolean) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ checked }),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function adjustShoppingQuantity(id: string, quantity: number) {
@@ -22,7 +27,7 @@ export async function adjustShoppingQuantity(id: string, quantity: number) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ quantity }),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function addShoppingItem(name: string, category: string, quantity: number, unit: string) {
@@ -31,16 +36,17 @@ export async function addShoppingItem(name: string, category: string, quantity: 
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, category, quantity, unit }),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function deleteShoppingItem(id: string) {
-  await fetch(`${API_BASE}/api/shopping/${id}`, { method: 'DELETE' });
+  const res = await fetch(`${API_BASE}/api/shopping/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
 }
 
 export async function fetchHouseholdItems() {
   const res = await fetch(`${API_BASE}/api/household`);
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function toggleHouseholdItem(id: string, checked: boolean) {
@@ -49,12 +55,12 @@ export async function toggleHouseholdItem(id: string, checked: boolean) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ checked }),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function fetchPackingItems() {
   const res = await fetch(`${API_BASE}/api/packing`);
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function togglePackingItem(id: string, checked: boolean) {
@@ -63,17 +69,17 @@ export async function togglePackingItem(id: string, checked: boolean) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ checked }),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function fetchCategories(): Promise<string[]> {
   const res = await fetch(`${API_BASE}/api/categories`);
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function fetchMealPlan(): Promise<MealPlanDay[]> {
   const res = await fetch(`${API_BASE}/api/mealplan`);
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export async function updateMealSlot(day: number, mealType: string, data: { recipe_ids?: string[], note?: string }) {
@@ -82,7 +88,7 @@ export async function updateMealSlot(day: number, mealType: string, data: { reci
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return jsonOrThrow(res);
 }
 
 export function createWebSocket(onMessage: (data: unknown) => void): { close: () => void } {

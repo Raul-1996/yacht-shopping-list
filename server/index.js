@@ -230,11 +230,23 @@ app.patch('/api/packing/:id', (req, res) => {
 });
 
 // --- Meal Plan ---
+// Load day titles from gastronomy data so API responses include them
+const dayTitles = (() => {
+  const gastronomyPath = join(__dirname, '..', 'src', 'data', 'gastronomy.json');
+  if (existsSync(gastronomyPath)) {
+    const g = JSON.parse(readFileSync(gastronomyPath, 'utf8'));
+    const map = {};
+    (g.meal_plan || []).forEach((d) => { map[d.day] = d.title || ''; });
+    return map;
+  }
+  return {};
+})();
+
 app.get('/api/mealplan', (req, res) => {
   const rows = db.prepare('SELECT * FROM meal_plan ORDER BY day, meal_type').all();
   const dayMap = {};
   rows.forEach((row) => {
-    if (!dayMap[row.day]) dayMap[row.day] = { day: row.day, meals: {} };
+    if (!dayMap[row.day]) dayMap[row.day] = { day: row.day, title: dayTitles[row.day] || '', meals: {} };
     dayMap[row.day].meals[row.meal_type] = {
       recipe_ids: JSON.parse(row.recipe_ids),
       note: row.note || '',
