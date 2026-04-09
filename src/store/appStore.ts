@@ -12,6 +12,7 @@ interface AppState {
   selectedCategory: string | null;
   onlineUsers: number;
   loading: boolean;
+  pageResetCounter: number;
 
   shoppingItems: ShoppingItem[];
   householdItems: HouseholdItem[];
@@ -49,13 +50,14 @@ export const useAppStore = create<AppState>()((set, get) => ({
   selectedCategory: null,
   onlineUsers: 0,
   loading: true,
+  pageResetCounter: 0,
 
   shoppingItems: [],
   householdItems: [],
   packingItems: [],
   mealPlan: [],
 
-  setPage: (page) => set({ currentPage: page, searchQuery: '', selectedCategory: null }),
+  setPage: (page) => set((s) => ({ currentPage: page, searchQuery: '', selectedCategory: null, pageResetCounter: (s.pageResetCounter || 0) + 1 })),
   toggleDarkMode: () => set((s) => {
     const next = !s.darkMode;
     localStorage.setItem('yacht-dark-mode', String(next));

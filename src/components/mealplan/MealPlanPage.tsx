@@ -34,7 +34,7 @@ function getAutoDay(): number {
 }
 
 export function MealPlanPage() {
-  const { mealPlan, replaceRecipeInMealPlan, addRecipeToMealSlot, removeRecipeFromMealSlot, updateMealSlotNote } = useAppStore()
+  const { mealPlan, replaceRecipeInMealPlan, addRecipeToMealSlot, removeRecipeFromMealSlot, updateMealSlotNote, pageResetCounter } = useAppStore()
   const [selectedDay, setSelectedDay] = useState(getAutoDay)
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null)
   const [pickerState, setPickerState] = useState<{
@@ -43,6 +43,12 @@ export function MealPlanPage() {
     replaceRecipeId?: string
     currentRecipeIds: string[]
   } | null>(null)
+
+  // Reset modals when user taps the same tab (pageResetCounter changes)
+  useEffect(() => {
+    setSelectedRecipeId(null)
+    setPickerState(null)
+  }, [pageResetCounter])
 
   const currentDay = mealPlan[selectedDay]
 
@@ -97,13 +103,13 @@ export function MealPlanPage() {
   }
 
   return (
-    <div
-      className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6"
-      onTouchStart={handleSwipeStart}
-      onTouchMove={handleSwipeMove}
-      onTouchEnd={handleSwipeEnd}
-    >
-      {/* Day selector */}
+    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6">
+      {/* Day selector — swipeable area for switching days */}
+      <div
+        onTouchStart={handleSwipeStart}
+        onTouchMove={handleSwipeMove}
+        onTouchEnd={handleSwipeEnd}
+      >
       <div className="flex gap-2 overflow-x-auto pb-1">
         {mealPlan.map((day, i) => {
           const isToday = i === getAutoDay() && getAutoDay() >= 0 && getAutoDay() < 7
@@ -127,17 +133,21 @@ export function MealPlanPage() {
       </div>
 
       {currentDay && (
-        <div
-          className="space-y-3"
+        <h2
+          className="text-sm font-semibold text-slate-600 dark:text-slate-400"
           style={{
             transform: swipeOffset ? `translateX(${swipeOffset * 0.3}px)` : '',
             transition: swipeOffset ? 'none' : 'transform 0.2s ease-out',
             opacity: Math.abs(swipeOffset) > 60 ? 0.7 : 1,
           }}
         >
-          <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-400">
-            {currentDay.title}
-          </h2>
+          {currentDay.title}
+        </h2>
+      )}
+      </div>{/* end swipeable day area */}
+
+      {currentDay && (
+        <div className="space-y-3">
           {(['breakfast', 'lunch', 'snack', 'dinner'] as const).map((mealType) => {
             const slot = currentDay.meals[mealType] as MealSlot
             const recipeIds = slot?.recipe_ids || []
