@@ -82,7 +82,7 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
 
       {/* Bottom sheet */}
       <div
-        className={`relative w-full max-h-[85vh] flex flex-col rounded-t-2xl bg-white dark:bg-slate-900 shadow-xl ${closing ? 'animate-[slideDown_200ms_ease-in_forwards]' : 'animate-[slideUp_250ms_ease-out]'}`}
+        className={`relative w-full max-h-[85dvh] flex flex-col rounded-t-2xl bg-white dark:bg-slate-900 shadow-xl ${closing ? 'animate-[slideDown_200ms_ease-in_forwards]' : 'animate-[slideUp_250ms_ease-out]'}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* === Fixed header (does NOT scroll) === */}
