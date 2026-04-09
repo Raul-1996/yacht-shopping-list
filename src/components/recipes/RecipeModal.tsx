@@ -37,8 +37,14 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar — non-scrollable */}
-        <div className="shrink-0 flex items-center justify-between px-4 pt-[env(safe-area-inset-top,12px)] pb-2 border-b border-slate-100 dark:border-slate-800">
-          <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Рецепт</span>
+        <div className="shrink-0 flex items-center justify-between px-2 pt-[env(safe-area-inset-top,8px)] pb-2 border-b border-slate-100 dark:border-slate-800">
+          <button
+            onClick={onClose}
+            className="flex items-center gap-1 h-11 px-3 rounded-xl text-ocean-600 dark:text-ocean-400 text-sm font-medium active:bg-slate-100 dark:active:bg-slate-800 transition-colors"
+          >
+            ← Назад
+          </button>
+          <span className="text-sm font-medium text-slate-400 dark:text-slate-500">Рецепт</span>
           <button
             onClick={onClose}
             className="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center"
