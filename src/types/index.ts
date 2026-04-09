@@ -74,4 +74,9 @@ export interface EsimProvider {
   url: string;
 }
 
+/** Union type for rendering both shopping and household items in a single list */
+export type UnifiedShoppingItem =
+  | (ShoppingItem & { _source: 'shopping' })
+  | (HouseholdItem & { _source: 'household' });
+
 export type Page = 'shopping' | 'recipes' | 'mealplan' | 'packing';

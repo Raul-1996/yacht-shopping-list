@@ -1,16 +1,30 @@
 import { useState } from 'react'
+import { Icon } from '@iconify/react'
 import { useAppStore } from '../../store/appStore'
-import type { ShoppingItem } from '../../types'
+import type { UnifiedShoppingItem } from '../../types'
 import { gastronomy } from '../../data/gastronomy'
+import { getProductIcon } from '../../data/productIcons'
+import { RecipeModal } from '../recipes/RecipeModal'
 
-export function ListItem({ item }: { item: ShoppingItem }) {
-  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem } = useAppStore()
+export function ListItem({ item }: { item: UnifiedShoppingItem }) {
+  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem } = useAppStore()
   const [expanded, setExpanded] = useState(false)
   const [showDelete, setShowDelete] = useState(false)
+  const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null)
 
-  const usedRecipes = (item.used_in_recipes || [])
-    .map((id) => gastronomy.recipes.find((r) => r.id === id))
-    .filter(Boolean)
+  const isHousehold = item._source === 'household'
+  const isShopping = item._source === 'shopping'
+
+  const usedRecipes = isShopping
+    ? (item.used_in_recipes || [])
+        .map((id) => gastronomy.recipes.find((r) => r.id === id))
+        .filter(Boolean)
+    : []
+
+  const handleToggle = () => {
+    if (isHousehold) toggleHouseholdItem(item.id)
+    else toggleShoppingItem(item.id)
+  }
 
   return (
     <div
@@ -19,14 +33,14 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           ? 'bg-slate-100/50 dark:bg-slate-800/30'
           : 'bg-white dark:bg-slate-800/60'
       }`}
-      onTouchStart={() => setShowDelete(true)}
-      onTouchEnd={() => setTimeout(() => setShowDelete(false), 3000)}
-      onMouseEnter={() => setShowDelete(true)}
-      onMouseLeave={() => setShowDelete(false)}
+      onTouchStart={() => isShopping && setShowDelete(true)}
+      onTouchEnd={() => isShopping && setTimeout(() => setShowDelete(false), 3000)}
+      onMouseEnter={() => isShopping && setShowDelete(true)}
+      onMouseLeave={() => isShopping && setShowDelete(false)}
     >
       <div className="flex items-center gap-3">
         <button
-          onClick={() => toggleShoppingItem(item.id)}
+          onClick={handleToggle}
           className={`w-11 h-11 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
             item.checked
               ? 'bg-sea-green-500 border-sea-green-500 text-white'
@@ -40,6 +54,8 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           )}
         </button>
 
+        <Icon icon={getProductIcon(item.id, item.category)} width={24} className="shrink-0" />
+
         <button
           onClick={() => setExpanded(!expanded)}
           className={`flex-1 text-left text-sm transition-colors ${
@@ -47,32 +63,45 @@ export function ListItem({ item }: { item: ShoppingItem }) {
           }`}
         >
           {item.name}
+          {isHousehold && item.per_cabin && (
+            <span className="ml-1.5 text-[10px] font-medium text-ocean-500 dark:text-ocean-400">
+              (x4 каюты)
+            </span>
+          )}
         </button>
 
         <div className="flex items-center gap-1.5 shrink-0">
-          <button
-            onClick={() => adjustShoppingQuantity(item.id, -1)}
-            className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-          >
-            −
-          </button>
-          <span className="text-xs font-medium text-slate-600 dark:text-slate-300 min-w-[3rem] text-center tabular-nums">
-            {item.quantity} {item.unit}
-          </span>
-          <button
-            onClick={() => adjustShoppingQuantity(item.id, 1)}
-            className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-          >
-            +
-          </button>
-          {showDelete && (
-            <button
-              onClick={() => deleteShoppingItem(item.id)}
-              className="w-11 h-11 rounded-lg bg-coral-400/10 text-coral-500 flex items-center justify-center text-sm hover:bg-coral-400/20 transition-colors"
-              title="Удалить"
-            >
-              ✕
-            </button>
+          {isShopping ? (
+            <>
+              <button
+                onClick={() => adjustShoppingQuantity(item.id, -1)}
+                className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                −
+              </button>
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-300 min-w-[3rem] text-center tabular-nums">
+                {item.quantity} {item.unit}
+              </span>
+              <button
+                onClick={() => adjustShoppingQuantity(item.id, 1)}
+                className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                +
+              </button>
+              {showDelete && (
+                <button
+                  onClick={() => deleteShoppingItem(item.id)}
+                  className="w-11 h-11 rounded-lg bg-coral-400/10 text-coral-500 flex items-center justify-center text-sm hover:bg-coral-400/20 transition-colors"
+                  title="Удалить"
+                >
+                  ✕
+                </button>
+              )}
+            </>
+          ) : (
+            <span className="text-xs text-slate-400 dark:text-slate-500 tabular-nums">
+              {item.quantity} {item.unit}
+            </span>
           )}
         </div>
       </div>
@@ -80,14 +109,19 @@ export function ListItem({ item }: { item: ShoppingItem }) {
       {expanded && usedRecipes.length > 0 && (
         <div className="mt-2 ml-9 flex flex-wrap gap-1">
           {usedRecipes.map((r) => (
-            <span
+            <button
               key={r!.id}
-              className="inline-block px-2 py-0.5 rounded-md bg-ocean-50 dark:bg-ocean-900/20 text-ocean-700 dark:text-ocean-300 text-[10px]"
+              onClick={() => setSelectedRecipeId(r!.id)}
+              className="inline-block px-2 py-0.5 rounded-md bg-ocean-50 dark:bg-ocean-900/20 text-ocean-700 dark:text-ocean-300 text-[10px] cursor-pointer hover:bg-ocean-100 dark:hover:bg-ocean-800/30 transition-colors"
             >
               {r!.name}
-            </span>
+            </button>
           ))}
         </div>
+      )}
+
+      {selectedRecipeId && (
+        <RecipeModal recipeId={selectedRecipeId} onClose={() => setSelectedRecipeId(null)} />
       )}
     </div>
   )

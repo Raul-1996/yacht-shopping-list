@@ -5,12 +5,20 @@ import { SearchBar } from './SearchBar'
 import { ProgressBar } from './ProgressBar'
 import { FilterBar } from './FilterBar'
 import { AddItemForm } from './AddItemForm'
+import type { UnifiedShoppingItem } from '../../types'
 
 export function ShoppingList() {
-  const { shoppingItems, searchQuery, filterMode, selectedCategory } = useAppStore()
+  const { shoppingItems, householdItems, searchQuery, filterMode, selectedCategory } = useAppStore()
+
+  // Tag items with their source for unified rendering
+  const allItems = useMemo(() => {
+    const shopping: UnifiedShoppingItem[] = shoppingItems.map((i) => ({ ...i, _source: 'shopping' as const }))
+    const household: UnifiedShoppingItem[] = householdItems.map((i) => ({ ...i, _source: 'household' as const }))
+    return [...shopping, ...household]
+  }, [shoppingItems, householdItems])
 
   const filtered = useMemo(() => {
-    let items = shoppingItems
+    let items = allItems
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       items = items.filter((i) => i.name.toLowerCase().includes(q))
@@ -18,43 +26,78 @@ export function ShoppingList() {
     if (filterMode === 'unchecked') items = items.filter((i) => !i.checked)
     if (filterMode === 'checked') items = items.filter((i) => i.checked)
     return items
-  }, [shoppingItems, searchQuery, filterMode])
+  }, [allItems, searchQuery, filterMode])
 
+  // Separate food (shopping) and household categories
   const categories = useMemo(() => {
-    const map = new Map<string, typeof filtered>()
-    for (const item of filtered) {
-      const cat = item.category
-      if (!map.has(cat)) map.set(cat, [])
-      map.get(cat)!.push(item)
+    const foodItems = filtered.filter((i) => i._source === 'shopping')
+    const hhItems = filtered.filter((i) => i._source === 'household')
+
+    const foodMap = new Map<string, UnifiedShoppingItem[]>()
+    for (const item of foodItems) {
+      if (!foodMap.has(item.category)) foodMap.set(item.category, [])
+      foodMap.get(item.category)!.push(item)
     }
-    return Array.from(map.entries())
+
+    const hhMap = new Map<string, UnifiedShoppingItem[]>()
+    for (const item of hhItems) {
+      if (!hhMap.has(item.category)) hhMap.set(item.category, [])
+      hhMap.get(item.category)!.push(item)
+    }
+
+    const foodCats = Array.from(foodMap.entries())
       .filter(([cat]) => !selectedCategory || cat === selectedCategory)
       .sort(([a], [b]) => a.localeCompare(b, 'ru'))
+
+    const hhCats = Array.from(hhMap.entries())
+      .filter(([cat]) => !selectedCategory || cat === selectedCategory)
+      .sort(([a], [b]) => a.localeCompare(b, 'ru'))
+
+    return { food: foodCats, household: hhCats }
   }, [filtered, selectedCategory])
 
-  const totalItems = shoppingItems.length
-  const checkedItems = shoppingItems.filter((i) => i.checked).length
+  const totalItems = allItems.length
+  const checkedItems = allItems.filter((i) => i.checked).length
 
   const allCategories = useMemo(() => {
     const cats = new Set<string>()
-    shoppingItems.forEach((i) => cats.add(i.category))
+    allItems.forEach((i) => cats.add(i.category))
     return Array.from(cats).sort((a, b) => a.localeCompare(b, 'ru'))
-  }, [shoppingItems])
+  }, [allItems])
+
+  const hasResults = categories.food.length > 0 || categories.household.length > 0
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 space-y-3">
       <ProgressBar checked={checkedItems} total={totalItems} />
       <SearchBar />
       <FilterBar categories={allCategories} />
-      {categories.length === 0 ? (
+      {!hasResults ? (
         <div className="text-center py-12 text-slate-400 dark:text-slate-600">
           <p className="text-4xl mb-2">🔍</p>
           <p>Ничего не найдено</p>
         </div>
       ) : (
-        categories.map(([category, items]) => (
-          <ListCategory key={category} category={category} items={items} />
-        ))
+        <>
+          {categories.food.map(([category, items]) => (
+            <ListCategory key={category} category={category} items={items} />
+          ))}
+
+          {categories.household.length > 0 && (
+            <>
+              <div className="flex items-center gap-3 pt-2">
+                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-700" />
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                  🧹 Хозяйственные товары
+                </span>
+                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-700" />
+              </div>
+              {categories.household.map(([category, items]) => (
+                <ListCategory key={category} category={category} items={items} />
+              ))}
+            </>
+          )}
+        </>
       )}
       <AddItemForm />
     </div>

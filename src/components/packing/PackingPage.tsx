@@ -1,35 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { useAppStore } from '../../store/appStore'
 import { household } from '../../data/household'
 
 export function PackingPage() {
-  const [activeTab, setActiveTab] = useState<'packing' | 'household' | 'esim'>('packing')
-
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-3">
-      <div className="flex gap-1.5">
-        {([
-          ['packing', 'Личные вещи', '👤'],
-          ['household', 'Хозтовары', '🧹'],
-          ['esim', 'eSIM', '📱'],
-        ] as const).map(([key, label, icon]) => (
-          <button
-            key={key}
-            onClick={() => setActiveTab(key)}
-            className={`flex-1 px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
-              activeTab === key
-                ? 'bg-ocean-500 text-white'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
-            }`}
-          >
-            {icon} {label}
-          </button>
-        ))}
-      </div>
-
-      {activeTab === 'packing' && <PackingChecklist />}
-      {activeTab === 'household' && <HouseholdChecklist />}
-      {activeTab === 'esim' && <EsimInfo />}
+    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-6">
+      <PackingChecklist />
+      <div className="h-px bg-slate-200 dark:bg-slate-700" />
+      <EsimInfo />
     </div>
   )
 }
@@ -50,6 +28,10 @@ function PackingChecklist() {
 
   return (
     <div className="space-y-3">
+      <div className="flex items-center gap-2">
+        <span className="text-base">👤</span>
+        <h2 className="font-semibold text-sm text-slate-700 dark:text-slate-200">Личные вещи</h2>
+      </div>
       <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
         <span>Собрано: {checkedCount} из {packingItems.length}</span>
         <span>{packingItems.length > 0 ? Math.round((checkedCount / packingItems.length) * 100) : 0}%</span>
@@ -88,68 +70,8 @@ function PackingChecklist() {
                   </span>
                 )}
                 {item.quantity > 1 && (
-                  <span className="text-xs text-slate-400">×{item.quantity}</span>
+                  <span className="text-xs text-slate-400">x{item.quantity}</span>
                 )}
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function HouseholdChecklist() {
-  const { householdItems, toggleHouseholdItem } = useAppStore()
-
-  const categories = useMemo(() => {
-    const map = new Map<string, typeof householdItems>()
-    for (const item of householdItems) {
-      if (!map.has(item.category)) map.set(item.category, [])
-      map.get(item.category)!.push(item)
-    }
-    return Array.from(map.entries())
-  }, [householdItems])
-
-  const checkedCount = householdItems.filter((i) => i.checked).length
-
-  return (
-    <div className="space-y-3">
-      <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
-        <span>Собрано: {checkedCount} из {householdItems.length}</span>
-        <span>{householdItems.length > 0 ? Math.round((checkedCount / householdItems.length) * 100) : 0}%</span>
-      </div>
-      {categories.map(([category, items]) => (
-        <div key={category} className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
-          <div className="px-4 py-2.5">
-            <span className="font-semibold text-sm text-slate-700 dark:text-slate-200">{category}</span>
-          </div>
-          <div className="px-2 pb-2 space-y-0.5">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center gap-3 px-3 py-2 rounded-xl bg-white dark:bg-slate-800/60"
-              >
-                <button
-                  onClick={() => toggleHouseholdItem(item.id)}
-                  className={`w-11 h-11 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${
-                    item.checked
-                      ? 'bg-sea-green-500 border-sea-green-500 text-white'
-                      : 'border-slate-300 dark:border-slate-600'
-                  }`}
-                >
-                  {item.checked && (
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  )}
-                </button>
-                <span className={`flex-1 text-sm ${item.checked ? 'line-through text-slate-400' : 'text-slate-700 dark:text-slate-200'}`}>
-                  {item.name}
-                </span>
-                <span className="text-xs text-slate-400 tabular-nums">
-                  {item.quantity} {item.unit}
-                </span>
               </div>
             ))}
           </div>
@@ -162,6 +84,10 @@ function HouseholdChecklist() {
 function EsimInfo() {
   return (
     <div className="space-y-3">
+      <div className="flex items-center gap-2">
+        <span className="text-base">📱</span>
+        <h2 className="font-semibold text-sm text-slate-700 dark:text-slate-200">eSIM</h2>
+      </div>
       <div className="rounded-xl bg-ocean-50 dark:bg-ocean-900/20 p-3 text-xs text-ocean-700 dark:text-ocean-300">
         <strong>Рекомендация:</strong> Holafly (безлимит, $39.90/7 дней) или Maya Mobile (10 ГБ, $41.99/10 дней).
         Airalo, Nomad и aloSIM для Сейшел предлагают слишком маленькие планы.

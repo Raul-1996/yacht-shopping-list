@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { gastronomy } from '../../data/gastronomy'
 import type { MealSlot } from '../../types'
+import { RecipeModal } from '../recipes/RecipeModal'
 
 const mealIcons: Record<string, string> = {
   breakfast: '🌅',
@@ -18,6 +19,7 @@ const mealLabels: Record<string, string> = {
 
 export function MealPlanPage() {
   const [selectedDay, setSelectedDay] = useState(0)
+  const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null)
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4">
@@ -54,10 +56,15 @@ export function MealPlanPage() {
                 mealType={mealType}
                 note={slot?.note}
                 recipes={recipes as typeof gastronomy.recipes}
+                onRecipeClick={setSelectedRecipeId}
               />
             )
           })}
         </div>
+      )}
+
+      {selectedRecipeId && (
+        <RecipeModal recipeId={selectedRecipeId} onClose={() => setSelectedRecipeId(null)} />
       )}
     </div>
   )
@@ -67,10 +74,12 @@ function MealCard({
   mealType,
   note,
   recipes,
+  onRecipeClick,
 }: {
   mealType: string
   note?: string
   recipes: typeof gastronomy.recipes
+  onRecipeClick: (id: string) => void
 }) {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
@@ -91,9 +100,12 @@ function MealCard({
             <div key={recipe.id} className="py-2 flex items-start gap-3">
               <div className="flex-1">
                 <div className="flex items-center gap-2">
-                  <h4 className="text-sm font-medium text-slate-800 dark:text-slate-100">
+                  <button
+                    onClick={() => onRecipeClick(recipe.id)}
+                    className="text-sm font-medium text-slate-800 dark:text-slate-100 cursor-pointer hover:underline text-left"
+                  >
                     {recipe.name}
-                  </h4>
+                  </button>
                   {recipe.is_fish_dish && <span className="text-xs">🐟</span>}
                   {recipe.fresh_catch && (
                     <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-ocean-100 dark:bg-ocean-900/30 text-ocean-600 dark:text-ocean-300">

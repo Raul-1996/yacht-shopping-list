@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import type { ShoppingItem } from '../../types'
+import { Icon } from '@iconify/react'
+import type { UnifiedShoppingItem } from '../../types'
 import { ListItem } from './ListItem'
+import { categoryIcons } from '../../data/productIcons'
 
-export function ListCategory({ category, items }: { category: string; items: ShoppingItem[] }) {
+export function ListCategory({ category, items }: { category: string; items: UnifiedShoppingItem[] }) {
   const [collapsed, setCollapsed] = useState(false)
   const checkedCount = items.filter((i) => i.checked).length
   const unchecked = items.filter((i) => !i.checked)
@@ -17,6 +19,7 @@ export function ListCategory({ category, items }: { category: string; items: Sho
       >
         <div className="flex items-center gap-2">
           <span className={`text-xs transition-transform ${collapsed ? '' : 'rotate-90'}`}>▶</span>
+          <Icon icon={categoryIcons[category] || "noto:shopping-cart"} width={20} className="shrink-0" />
           <span className="font-semibold text-sm text-slate-700 dark:text-slate-200">{category}</span>
         </div>
         <span className="text-xs text-slate-400 dark:text-slate-500 tabular-nums">
