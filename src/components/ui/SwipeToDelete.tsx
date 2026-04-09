@@ -26,29 +26,48 @@ export function SwipeToDelete({ children, onDelete, disabled }: SwipeToDeletePro
     // Cancel if vertical
     if (dy > 30 && Math.abs(dx) < 20) {
       touchRef.current.active = false
-      setOffsetX(0)
+      setOffsetX(showButton ? -80 : 0)
       return
     }
 
-    // Only allow swipe left (negative dx)
-    if (dx < -10) {
-      setOffsetX(Math.max(dx, -100))
+    if (showButton) {
+      // When delete button is shown, allow swiping right to close
+      // offsetX starts at -80, dx positive = swiping right
+      const newOffset = Math.min(0, Math.max(-100, -80 + dx))
+      setOffsetX(newOffset)
+    } else {
+      // Normal: only allow swipe left
+      if (dx < -10) {
+        setOffsetX(Math.max(dx, -100))
+      }
     }
-  }, [])
+  }, [showButton])
 
   const handleTouchEnd = useCallback(() => {
-    if (!touchRef.current.active) { setOffsetX(0); return }
+    if (!touchRef.current.active) {
+      setOffsetX(showButton ? -80 : 0)
+      return
+    }
     touchRef.current.active = false
 
-    if (offsetX < -60) {
-      // Show delete button
-      setOffsetX(-80)
-      setShowButton(true)
+    if (showButton) {
+      // If swiped back past halfway, close
+      if (offsetX > -40) {
+        setOffsetX(0)
+        setShowButton(false)
+      } else {
+        setOffsetX(-80)
+      }
     } else {
-      setOffsetX(0)
-      setShowButton(false)
+      if (offsetX < -60) {
+        setOffsetX(-80)
+        setShowButton(true)
+      } else {
+        setOffsetX(0)
+        setShowButton(false)
+      }
     }
-  }, [offsetX])
+  }, [offsetX, showButton])
 
   const handleClose = useCallback(() => {
     setOffsetX(0)
