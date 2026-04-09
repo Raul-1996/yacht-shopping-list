@@ -52,7 +52,7 @@ export function AddItemForm() {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Название..."
-        className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
+        className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
         autoFocus
         onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
       />
@@ -60,7 +60,7 @@ export function AddItemForm() {
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
+        className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
       >
         <option value="">Выберите категорию...</option>
         {categories.map((cat) => (
@@ -75,7 +75,7 @@ export function AddItemForm() {
           value={customCategory}
           onChange={(e) => setCustomCategory(e.target.value)}
           placeholder="Название категории..."
-          className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
+          className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
         />
       )}
 
@@ -86,12 +86,12 @@ export function AddItemForm() {
           onChange={(e) => setQuantity(e.target.value)}
           min="0"
           step="0.1"
-          className="w-20 px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm text-center focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
+          className="w-20 px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base text-center focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
         />
         <select
           value={unit}
           onChange={(e) => setUnit(e.target.value)}
-          className="flex-1 px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
+          className="flex-1 px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base focus:outline-none focus:ring-2 focus:ring-ocean-500/50"
         >
           {UNITS.map((u) => (
             <option key={u} value={u}>{u}</option>

@@ -10,6 +10,8 @@ interface RecipePickerProps {
   onClose: () => void
 }
 
+type ReadinessFilter = 'all' | 'green' | 'yellow'
+
 function getRecipeReadiness(recipe: Recipe, checkedItems: Set<string>): 'green' | 'yellow' | 'red' {
   const total = recipe.ingredients.length
   if (total === 0) return 'green'
@@ -24,6 +26,7 @@ const readinessIcon = { green: '🟢', yellow: '🟡', red: '🔴' }
 export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: RecipePickerProps) {
   const { shoppingItems } = useAppStore()
   const [searchQuery, setSearchQuery] = useState('')
+  const [readinessFilter, setReadinessFilter] = useState<ReadinessFilter>('all')
   const [closing, setClosing] = useState(false)
 
   const checkedNames = useMemo(
@@ -37,8 +40,11 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
       const q = searchQuery.toLowerCase()
       recipes = recipes.filter((r) => r.name.toLowerCase().includes(q))
     }
+    if (readinessFilter !== 'all') {
+      recipes = recipes.filter((r) => getRecipeReadiness(r, checkedNames) === readinessFilter)
+    }
     return recipes
-  }, [mealType, searchQuery])
+  }, [mealType, searchQuery, readinessFilter, checkedNames])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -77,41 +83,65 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
         className={`relative w-full max-h-[85vh] flex flex-col rounded-t-2xl bg-white dark:bg-slate-900 shadow-xl ${closing ? 'animate-[slideDown_200ms_ease-in_forwards]' : 'animate-[slideUp_250ms_ease-out]'}`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Drag handle */}
-        <div className="flex justify-center pt-3 pb-1">
-          <div className="w-10 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
-        </div>
+        {/* === Fixed header (does NOT scroll) === */}
+        <div className="shrink-0">
+          {/* Drag handle */}
+          <div className="flex justify-center pt-3 pb-1">
+            <div className="w-10 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
+          </div>
 
-        {/* Header with close */}
-        <div className="flex items-center justify-between px-4 pb-2">
-          <h3 className="text-base font-bold text-slate-800 dark:text-slate-100">
-            Выбрать блюдо
-          </h3>
-          <button
-            onClick={handleClose}
-            className="w-9 h-9 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
-          >
-            ✕
-          </button>
-        </div>
+          {/* Header with close */}
+          <div className="flex items-center justify-between px-4 pb-2">
+            <h3 className="text-base font-bold text-slate-800 dark:text-slate-100">
+              Выбрать блюдо
+            </h3>
+            <button
+              onClick={handleClose}
+              className="w-9 h-9 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+            >
+              ✕
+            </button>
+          </div>
 
-        {/* Sticky search */}
-        <div className="px-4 pb-3">
-          <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">🔍</span>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Поиск рецептов..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-ocean-500/50 focus:border-ocean-500 transition-all"
-              autoFocus
-            />
+          {/* Search */}
+          <div className="px-4 pb-2">
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">🔍</span>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Поиск рецептов..."
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-ocean-500/50 focus:border-ocean-500 transition-all"
+                autoFocus
+              />
+            </div>
+          </div>
+
+          {/* Readiness filter buttons */}
+          <div className="flex gap-1.5 px-4 pb-3">
+            {([
+              ['all', 'Все'],
+              ['green', 'Готовые 🟢'],
+              ['yellow', 'Почти 🟡'],
+            ] as [ReadinessFilter, string][]).map(([key, label]) => (
+              <button
+                key={key}
+                onClick={() => setReadinessFilter(key)}
+                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                  readinessFilter === key
+                    ? 'bg-ocean-100 dark:bg-ocean-900/30 text-ocean-700 dark:text-ocean-300'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Recipe list */}
-        <div className="flex-1 overflow-y-auto px-4 pb-6 space-y-2">
+        {/* === Scrollable recipe list === */}
+        <div className="flex-1 overflow-y-auto overscroll-contain px-4 pb-6 space-y-2">
           {filtered.length === 0 ? (
             <p className="text-sm text-slate-400 text-center py-8">Нет подходящих рецептов</p>
           ) : (
