@@ -34,8 +34,10 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
     [shoppingItems]
   )
 
+  const [mealTypeFilter, setMealTypeFilter] = useState<string>(mealType)
+
   const filtered = useMemo(() => {
-    let recipes = gastronomy.recipes.filter((r) => r.meal_type === mealType)
+    let recipes = gastronomy.recipes.filter((r) => r.meal_type === mealTypeFilter)
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       recipes = recipes.filter((r) => r.name.toLowerCase().includes(q))
@@ -44,7 +46,7 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
       recipes = recipes.filter((r) => getRecipeReadiness(r, checkedNames) === readinessFilter)
     }
     return recipes
-  }, [mealType, searchQuery, readinessFilter, checkedNames])
+  }, [mealTypeFilter, searchQuery, readinessFilter, checkedNames])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -113,9 +115,31 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Поиск рецептов..."
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-base placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-ocean-500/50 focus:border-ocean-500 transition-all"
-                autoFocus
+                enterKeyHint="search"
               />
             </div>
+          </div>
+
+          {/* Meal type filter */}
+          <div className="flex gap-1.5 px-4 pb-2 overflow-x-auto">
+            {([
+              ['breakfast', '🌅 Завтрак'],
+              ['lunch', '☀️ Обед'],
+              ['snack', '🍌 Перекус'],
+              ['dinner', '🌙 Ужин'],
+            ] as const).map(([key, label]) => (
+              <button
+                key={key}
+                onClick={() => setMealTypeFilter(key)}
+                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                  mealTypeFilter === key
+                    ? 'bg-ocean-500 text-white'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
 
           {/* Readiness filter buttons */}

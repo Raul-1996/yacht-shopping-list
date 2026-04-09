@@ -33,7 +33,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
 
       {/* Modal */}
       <div
-        className="relative w-full sm:max-w-lg max-h-[85vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl animate-[slideUp_250ms_ease-out]"
+        className="relative w-full sm:max-w-lg max-h-[90dvh] rounded-t-2xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl animate-[slideUp_250ms_ease-out] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -44,8 +44,8 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
           ✕
         </button>
 
-        {/* Header */}
-        <div className="px-5 pt-5 pb-3">
+        {/* Header — non-scrollable */}
+        <div className="shrink-0 px-5 pt-5 pb-3">
           <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 pr-8">
             {recipe.name}
           </h2>
@@ -69,6 +69,8 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
           </div>
         </div>
 
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto overscroll-contain">
         {/* Ingredients */}
         <div className="px-5 py-3 border-t border-slate-100 dark:border-slate-800">
           <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
@@ -88,7 +90,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
         </div>
 
         {/* Steps */}
-        <div className="px-5 py-3 pb-6 border-t border-slate-100 dark:border-slate-800">
+        <div className="px-5 py-3 pb-10 border-t border-slate-100 dark:border-slate-800">
           <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
             Приготовление
           </h3>
@@ -103,6 +105,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
             ))}
           </ol>
         </div>
+        </div>{/* end scrollable content */}
       </div>
     </div>
   )
