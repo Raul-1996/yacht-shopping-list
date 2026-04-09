@@ -4895,15 +4895,6 @@
       ]
     },
     {
-      "id": "s103",
-      "name": "Вода питьевая",
-      "category": "Напитки",
-      "quantity": 112,
-      "unit": "л",
-      "used_in_recipes": [],
-      "note": "Минимум 2л/человек/день x 8 человек x 7 дней"
-    },
-    {
       "id": "s104",
       "name": "Лёд (для напитков)",
       "category": "Напитки",
@@ -4952,14 +4943,6 @@
       "used_in_recipes": []
     },
     {
-      "id": "s110",
-      "name": "Газированные напитки (ассорти)",
-      "category": "Напитки",
-      "quantity": 24,
-      "unit": "шт",
-      "used_in_recipes": []
-    },
-    {
       "id": "s111",
       "name": "Угли для BBQ",
       "category": "Прочее",
@@ -4973,6 +4956,62 @@
       "category": "Прочее",
       "quantity": 2,
       "unit": "рул",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s113",
+      "name": "Вода в канистрах 5л",
+      "category": "Напитки",
+      "quantity": 20,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s114",
+      "name": "Вода в бутылках 0.5л",
+      "category": "Напитки",
+      "quantity": 80,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s115",
+      "name": "Вино",
+      "category": "Напитки",
+      "quantity": 7,
+      "unit": "л",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s116",
+      "name": "Пиво",
+      "category": "Напитки",
+      "quantity": 5,
+      "unit": "л",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s117",
+      "name": "Газировки (Кола/Спрайт)",
+      "category": "Напитки",
+      "quantity": 3,
+      "unit": "л",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s118",
+      "name": "Перье (газ. вода)",
+      "category": "Напитки",
+      "quantity": 4,
+      "unit": "л",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s119",
+      "name": "Ром (от укачивания)",
+      "category": "Напитки",
+      "quantity": 0.5,
+      "unit": "л",
       "used_in_recipes": []
     }
   ]
