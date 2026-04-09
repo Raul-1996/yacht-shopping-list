@@ -68,9 +68,9 @@ export function ShoppingList() {
   const hasResults = categories.food.length > 0 || categories.household.length > 0
 
   const buildListText = useCallback(() => {
+    // All items as "- " lines so Apple Notes converts entire list to checklist
     const lines: string[] = []
-    lines.push('Список покупок — Яхта Сейшелы')
-    lines.push('')
+    lines.push('Список покупок — Яхта Сейшелы\n')
 
     const foodMap = new Map<string, typeof shoppingItems>()
     for (const item of shoppingItems) {
@@ -80,39 +80,21 @@ export function ShoppingList() {
     const foodCats = Array.from(foodMap.entries()).sort(([a], [b]) => a.localeCompare(b, 'ru'))
 
     for (const [cat, items] of foodCats) {
-      lines.push(`${cat}:`)
       for (const item of items) {
-        // Format as "- item — qty unit" so Notes can convert to checklist
-        const prefix = item.checked ? '☑ ' : '☐ '
-        lines.push(`${prefix}${item.name} — ${Math.round(item.quantity * 100) / 100} ${item.unit}`)
+        lines.push(`- ${item.name} — ${Math.round(item.quantity * 100) / 100} ${item.unit}  [${cat}]`)
       }
-      lines.push('')
     }
 
     if (householdItems.length > 0) {
-      lines.push('🧹 Хозяйственные товары')
-      lines.push('')
-      const hhMap = new Map<string, typeof householdItems>()
       for (const item of householdItems) {
-        if (!hhMap.has(item.category)) hhMap.set(item.category, [])
-        hhMap.get(item.category)!.push(item)
-      }
-      const hhCats = Array.from(hhMap.entries()).sort(([a], [b]) => a.localeCompare(b, 'ru'))
-
-      for (const [cat, items] of hhCats) {
-        lines.push(`${cat}:`)
-        for (const item of items) {
-          const prefix = item.checked ? '☑ ' : '☐ '
-          lines.push(`${prefix}${item.name} — ${item.quantity} ${item.unit}`)
-        }
-        lines.push('')
+        lines.push(`- ${item.name} — ${item.quantity} ${item.unit}  [${item.category}]`)
       }
     }
 
     const allTotal = shoppingItems.length + householdItems.length
     const allChecked = shoppingItems.filter((i) => i.checked).length + householdItems.filter((i) => i.checked).length
     const pct = allTotal > 0 ? Math.round((allChecked / allTotal) * 100) : 0
-    lines.push(`Куплено: ${allChecked} из ${allTotal} (${pct}%)`)
+    lines.push(`\nКуплено: ${allChecked} из ${allTotal} (${pct}%)`)
 
     return lines.join('\n')
   }, [shoppingItems, householdItems])
