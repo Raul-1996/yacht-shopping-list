@@ -74,15 +74,15 @@ export function RecipePicker({ mealType, currentRecipeIds, onSelect, onClose }: 
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-end ${closing ? 'animate-[fadeOut_200ms_ease-in_forwards]' : 'animate-[fadeIn_200ms_ease-out]'}`}
+      className={`fixed inset-0 z-50 ${closing ? 'animate-[fadeOut_200ms_ease-in_forwards]' : 'animate-[fadeIn_200ms_ease-out]'}`}
       onClick={handleClose}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 dark:bg-black/70" />
 
-      {/* Bottom sheet */}
+      {/* Full-screen panel on mobile, centered card on desktop */}
       <div
-        className={`relative w-full max-h-[85dvh] flex flex-col rounded-t-2xl bg-white dark:bg-slate-900 shadow-xl ${closing ? 'animate-[slideDown_200ms_ease-in_forwards]' : 'animate-[slideUp_250ms_ease-out]'}`}
+        className={`absolute inset-0 sm:inset-4 sm:m-auto sm:max-w-lg sm:max-h-[90vh] sm:rounded-2xl flex flex-col bg-white dark:bg-slate-900 sm:shadow-xl ${closing ? 'animate-[slideDown_200ms_ease-in_forwards]' : 'animate-[slideUp_250ms_ease-out]'}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* === Fixed header (does NOT scroll) === */}
