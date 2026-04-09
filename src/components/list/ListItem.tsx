@@ -34,10 +34,10 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
   }
 
   const handleQtySave = () => {
-    const val = parseFloat(qtyInput)
-    if (!isNaN(val) && val >= 0) {
-      const delta = val - item.quantity
-      if (delta !== 0) adjustShoppingQuantity(item.id, delta)
+    const val = Math.round(parseFloat(qtyInput) * 100) / 100
+    if (!isNaN(val) && val >= 0 && val !== item.quantity) {
+      const delta = Math.round((val - item.quantity) * 100) / 100
+      adjustShoppingQuantity(item.id, delta)
     }
     setEditingQty(false)
   }
@@ -114,7 +114,7 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
                   onClick={(e) => { e.stopPropagation(); handleQtyTap() }}
                   className="min-w-[3.5rem] h-9 px-1 text-xs font-medium text-slate-600 dark:text-slate-300 text-center tabular-nums rounded-lg active:bg-slate-100 dark:active:bg-slate-700"
                 >
-                  {item.quantity} {item.unit}
+                  {Math.round(item.quantity * 100) / 100} {item.unit}
                 </button>
               )}
               <button

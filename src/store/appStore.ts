@@ -86,7 +86,7 @@ export const useAppStore = create<AppState>()((set, get) => ({
   adjustShoppingQuantity: (id, delta) => {
     const item = get().shoppingItems.find((i) => i.id === id);
     if (!item) return;
-    const newQty = Math.max(0, item.quantity + delta);
+    const newQty = Math.round(Math.max(0, item.quantity + delta) * 100) / 100;
     set((s) => ({
       shoppingItems: s.shoppingItems.map((i) => i.id === id ? { ...i, quantity: newQty } : i),
     }));
