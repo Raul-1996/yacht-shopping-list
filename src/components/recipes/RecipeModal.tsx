@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { gastronomy } from '../../data/gastronomy'
 
 interface RecipeModalProps {
@@ -72,7 +73,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
     ? { transform: `translateX(${swipeX}px)`, transition: swiping ? 'none' : 'transform 0.2s ease-out' }
     : {}
 
-  return (
+  return createPortal(
     <div
       ref={containerRef}
       className="fixed inset-0 z-[100] bg-white dark:bg-slate-950 flex flex-col"
@@ -169,6 +170,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
