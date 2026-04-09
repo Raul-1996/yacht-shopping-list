@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import { useAppStore } from '../../store/appStore'
 import { gastronomy } from '../../data/gastronomy'
 import type { MealSlot, Recipe } from '../../types'
@@ -45,6 +45,42 @@ export function MealPlanPage() {
 
   const currentDay = mealPlan[selectedDay]
 
+  // Swipe between days
+  const swipeRef = useRef<{ startX: number; startY: number; active: boolean }>({ startX: 0, startY: 0, active: false })
+  const [swipeOffset, setSwipeOffset] = useState(0)
+
+  const handleSwipeStart = useCallback((e: React.TouchEvent) => {
+    const touch = e.touches[0]
+    swipeRef.current = { startX: touch.clientX, startY: touch.clientY, active: true }
+  }, [])
+
+  const handleSwipeMove = useCallback((e: React.TouchEvent) => {
+    if (!swipeRef.current.active) return
+    const touch = e.touches[0]
+    const dx = touch.clientX - swipeRef.current.startX
+    const dy = Math.abs(touch.clientY - swipeRef.current.startY)
+    // Cancel if scrolling vertically
+    if (dy > 30 && Math.abs(dx) < 30) {
+      swipeRef.current.active = false
+      setSwipeOffset(0)
+      return
+    }
+    if (Math.abs(dx) > 20) {
+      setSwipeOffset(dx)
+    }
+  }, [])
+
+  const handleSwipeEnd = useCallback(() => {
+    if (!swipeRef.current.active) { setSwipeOffset(0); return }
+    swipeRef.current.active = false
+    if (swipeOffset > 80 && selectedDay > 0) {
+      setSelectedDay(selectedDay - 1)
+    } else if (swipeOffset < -80 && selectedDay < mealPlan.length - 1) {
+      setSelectedDay(selectedDay + 1)
+    }
+    setSwipeOffset(0)
+  }, [swipeOffset, selectedDay, mealPlan.length])
+
   function openPicker(mealType: string, mode: 'add' | 'replace', currentRecipeIds: string[], replaceRecipeId?: string) {
     setPickerState({ mealType, mode, currentRecipeIds, replaceRecipeId })
   }
@@ -60,7 +96,12 @@ export function MealPlanPage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6">
+    <div
+      className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6"
+      onTouchStart={handleSwipeStart}
+      onTouchMove={handleSwipeMove}
+      onTouchEnd={handleSwipeEnd}
+    >
       {/* Day selector */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {mealPlan.map((day, i) => {
@@ -85,7 +126,14 @@ export function MealPlanPage() {
       </div>
 
       {currentDay && (
-        <div className="space-y-3">
+        <div
+          className="space-y-3"
+          style={{
+            transform: swipeOffset ? `translateX(${swipeOffset * 0.3}px)` : '',
+            transition: swipeOffset ? 'none' : 'transform 0.2s ease-out',
+            opacity: Math.abs(swipeOffset) > 60 ? 0.7 : 1,
+          }}
+        >
           <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-400">
             {currentDay.title}
           </h2>
