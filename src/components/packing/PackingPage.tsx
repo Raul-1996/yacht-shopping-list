@@ -161,9 +161,10 @@ function HouseholdChecklist() {
 function EsimInfo() {
   return (
     <div className="space-y-3">
-      <p className="text-sm text-slate-600 dark:text-slate-400">
-        Рекомендации по eSIM для Сейшельских островов (мин. 10 ГБ на 7 дней):
-      </p>
+      <div className="rounded-xl bg-ocean-50 dark:bg-ocean-900/20 p-3 text-xs text-ocean-700 dark:text-ocean-300">
+        <strong>Рекомендация:</strong> Holafly (безлимит, $39.90/7 дней) или Maya Mobile (10 ГБ, $41.99/10 дней).
+        Airalo, Nomad и aloSIM для Сейшел предлагают слишком маленькие планы.
+      </div>
       {household.esim_recommendations.map((esim, i) => (
         <div key={i} className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 p-4 space-y-2">
           <div className="flex items-center justify-between">
@@ -192,6 +193,14 @@ function EsimInfo() {
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
             <span className="font-medium">Настройка:</span> {esim.setup_instructions}
           </p>
+          <a
+            href={esim.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 mt-1 px-3 py-1.5 rounded-lg bg-ocean-500 text-white text-xs font-medium hover:bg-ocean-600 transition-colors"
+          >
+            Перейти на сайт →
+          </a>
         </div>
       ))}
     </div>

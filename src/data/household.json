@@ -812,99 +812,101 @@
   ],
   "esim_recommendations": [
     {
-      "provider": "Airalo",
-      "data_amount": "10 ГБ",
-      "validity_days": 30,
-      "price_usd": 26,
-      "price_eur": 24,
-      "coverage": "Сейшелы",
-      "setup_instructions": "Скачайте приложение Airalo, купите план 'Seychelles 10GB', установите eSIM через QR-код в настройках телефона. Активируйте по прибытии.",
-      "pros": [
-        "Широкий выбор планов",
-        "Удобное приложение",
-        "Техподдержка 24/7"
-      ],
-      "cons": [
-        "Только данные, без звонков",
-        "Скорость может падать в пиковые часы"
-      ],
-      "url": "https://www.airalo.com"
-    },
-    {
       "provider": "Holafly",
       "data_amount": "Безлимит",
       "validity_days": 7,
-      "price_usd": 29,
-      "price_eur": 27,
-      "coverage": "Сейшелы",
-      "setup_instructions": "Купите план на holafly.com, получите QR-код на email. Отсканируйте в Настройках → Сотовая связь → Добавить eSIM. Активируется автоматически.",
+      "price_usd": 39.9,
+      "price_eur": 37,
+      "coverage": "Сейшелы (Airtel Seychelles)",
+      "setup_instructions": "1) Купить на esim.holafly.com или в приложении Holafly. 2) Получить QR-код на email. 3) Настройки → Сотовая связь → Добавить тарифный план → Сканировать QR. 4) Включить роуминг данных. Активируется автоматически при подключении к Airtel.",
       "pros": [
         "Безлимитный трафик",
-        "Простая активация",
-        "Без ограничений скорости"
+        "Не надо считать гигабайты",
+        "4G LTE / 5G",
+        "Бонус: 1 ГБ/мес в 70+ странах"
       ],
       "cons": [
-        "Дороже аналогов",
-        "Нет раздачи через точку доступа"
+        "Шеринг ограничен 1 ГБ/день",
+        "Нет звонков — только данные",
+        "Дороже за конкретный объём"
       ],
-      "url": "https://www.holafly.com"
-    },
-    {
-      "provider": "Nomad",
-      "data_amount": "10 ГБ",
-      "validity_days": 30,
-      "price_usd": 23,
-      "price_eur": 21,
-      "coverage": "Сейшелы",
-      "setup_instructions": "Установите приложение Nomad eSIM, выберите план для Сейшел, оплатите и установите eSIM. Можно установить заранее, активация при подключении к сети.",
-      "pros": [
-        "Самая низкая цена",
-        "Установка заранее",
-        "30 дней действия"
-      ],
-      "cons": [
-        "Менее известный провайдер",
-        "Только данные"
-      ],
-      "url": "https://www.getnomad.app"
-    },
-    {
-      "provider": "aloSIM",
-      "data_amount": "10 ГБ",
-      "validity_days": 30,
-      "price_usd": 25,
-      "price_eur": 23,
-      "coverage": "Сейшелы",
-      "setup_instructions": "Скачайте приложение aloSIM, зарегистрируйтесь, купите план для Сейшел. Установите eSIM через QR-код или напрямую из приложения.",
-      "pros": [
-        "Хорошее соотношение цена/объём",
-        "Долгий срок действия",
-        "Раздача WiFi"
-      ],
-      "cons": [
-        "Ограниченная скорость после лимита",
-        "Нет физической SIM"
-      ],
-      "url": "https://www.alosim.com"
+      "url": "https://esim.holafly.com/esim-seychelles/"
     },
     {
       "provider": "Maya Mobile",
-      "data_amount": "15 ГБ",
-      "validity_days": 15,
-      "price_usd": 28,
-      "price_eur": 26,
-      "coverage": "Сейшелы + Восточная Африка",
-      "setup_instructions": "Зарегистрируйтесь на maya.net, выберите план Africa, установите eSIM. QR-код придёт на email. Активация автоматическая при первом подключении.",
+      "data_amount": "10 ГБ",
+      "validity_days": 10,
+      "price_usd": 41.99,
+      "price_eur": 39,
+      "coverage": "Сейшелы",
+      "setup_instructions": "1) Купить на maya.net/esim/seychelles. 2) QR-код на email. 3) Настройки → Сотовая связь → Добавить eSIM → Сканировать QR. 4) Включить роуминг данных. Можно раздавать через хотспот.",
       "pros": [
-        "Больше данных — 15 ГБ",
-        "Покрытие нескольких стран",
-        "Хорошая скорость"
+        "Хотспот включён",
+        "Гарантия возврата денег",
+        "Планы до 20 ГБ",
+        "Гибкие сроки (5-180 дней)"
       ],
       "cons": [
-        "Дороже за ГБ",
-        "Менее известный бренд"
+        "Дороже Holafly при сравнимом использовании",
+        "Лимитированный трафик"
       ],
-      "url": "https://maya.net"
+      "url": "https://maya.net/esim/seychelles"
+    },
+    {
+      "provider": "aloSIM",
+      "data_amount": "5 ГБ (макс.)",
+      "validity_days": 30,
+      "price_usd": 34,
+      "price_eur": 31,
+      "coverage": "Сейшелы (Cable & Wireless)",
+      "setup_instructions": "1) Купить на alosim.com. 2) QR-код на email. 3) Настройки → Сотовая связь → Добавить eSIM → Сканировать QR. 4) Включить роуминг данных.",
+      "pros": [
+        "Долгий срок (30 дней)",
+        "Можно докупать пакеты",
+        "LTE/5G"
+      ],
+      "cons": [
+        "Максимум 5 ГБ — мало для 7 дней",
+        "Нет плана 10+ ГБ",
+        "Дорого за ГБ"
+      ],
+      "url": "https://alosim.com/destinations/seychelles/"
+    },
+    {
+      "provider": "Airalo",
+      "data_amount": "1 ГБ (макс.)",
+      "validity_days": 3,
+      "price_usd": 8,
+      "price_eur": 7,
+      "coverage": "Сейшелы",
+      "setup_instructions": "Скачать приложение Airalo → купить eSIM для Сейшел → установить через QR. Внимание: максимальный план всего 1 ГБ.",
+      "pros": [
+        "Известный бренд",
+        "Удобное приложение"
+      ],
+      "cons": [
+        "Максимум 1 ГБ — не подходит",
+        "Нет планов 10+ ГБ",
+        "Для Сейшел практически бесполезен"
+      ],
+      "url": "https://www.airalo.com/seychelles-esim"
+    },
+    {
+      "provider": "Nomad",
+      "data_amount": "1 ГБ (макс.)",
+      "validity_days": 7,
+      "price_usd": 8,
+      "price_eur": 7,
+      "coverage": "Сейшелы",
+      "setup_instructions": "Скачать Nomad eSIM → выбрать Seychelles → купить → установить через QR-код.",
+      "pros": [
+        "Дёшево за 1 ГБ"
+      ],
+      "cons": [
+        "Только 1 ГБ — не подходит для поездки",
+        "Нет планов 10+ ГБ"
+      ],
+      "url": "https://www.nomadesim.com/esim/seychelles"
     }
   ]
 }
