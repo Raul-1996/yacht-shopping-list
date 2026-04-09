@@ -100,7 +100,11 @@ export async function updateMealSlot(day: number, mealType: string, data: { reci
   return jsonOrThrow(res);
 }
 
-export function createWebSocket(onMessage: (data: unknown) => void, onReconnect?: () => void): { close: () => void } {
+export function createWebSocket(
+  onMessage: (data: unknown) => void,
+  onReconnect?: () => void,
+  onConnectionChange?: (connected: boolean) => void,
+): { close: () => void } {
   let closed = false;
   let currentWs: WebSocket | null = null;
   let wasConnected = false;
@@ -111,8 +115,8 @@ export function createWebSocket(onMessage: (data: unknown) => void, onReconnect?
     const ws = new WebSocket(wsUrl);
     currentWs = ws;
     ws.onopen = () => {
+      onConnectionChange?.(true);
       if (wasConnected && onReconnect) {
-        // Reconnected after a drop — reload all data to sync
         onReconnect();
       }
       wasConnected = true;
@@ -124,6 +128,7 @@ export function createWebSocket(onMessage: (data: unknown) => void, onReconnect?
       } catch { /* ignore */ }
     };
     ws.onclose = () => {
+      onConnectionChange?.(false);
       if (!closed) setTimeout(connect, 2000);
     };
   }

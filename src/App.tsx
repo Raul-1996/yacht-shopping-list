@@ -13,7 +13,7 @@ import { PackingPage } from './components/packing/PackingPage'
 import './styles/globals.css'
 
 function App() {
-  const { currentPage, darkMode, loading, loadAllData, handleWsMessage } = useAppStore()
+  const { currentPage, darkMode, loading, loadAllData, handleWsMessage, setWsConnected } = useAppStore()
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode)
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     loadAllData()
-    const ws = createWebSocket(handleWsMessage, loadAllData)
+    const ws = createWebSocket(handleWsMessage, loadAllData, setWsConnected)
 
     // Reload data when app returns from background (iOS kills WS in bg)
     const handleVisibility = () => {

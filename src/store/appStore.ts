@@ -11,6 +11,7 @@ interface AppState {
   filterMode: 'all' | 'unchecked' | 'checked';
   selectedCategory: string | null;
   onlineUsers: number;
+  wsConnected: boolean;
   loading: boolean;
   pageResetCounter: number;
 
@@ -25,6 +26,7 @@ interface AppState {
   setFilterMode: (mode: 'all' | 'unchecked' | 'checked') => void;
   setSelectedCategory: (cat: string | null) => void;
   setOnlineUsers: (count: number) => void;
+  setWsConnected: (connected: boolean) => void;
 
   toggleShoppingItem: (id: string) => void;
   adjustShoppingQuantity: (id: string, delta: number) => void;
@@ -50,6 +52,7 @@ export const useAppStore = create<AppState>()((set, get) => ({
   filterMode: 'all',
   selectedCategory: null,
   onlineUsers: 0,
+  wsConnected: false,
   loading: true,
   pageResetCounter: 0,
 
@@ -69,6 +72,7 @@ export const useAppStore = create<AppState>()((set, get) => ({
   setFilterMode: (mode) => set({ filterMode: mode }),
   setSelectedCategory: (cat) => set({ selectedCategory: cat }),
   setOnlineUsers: (count) => set({ onlineUsers: count }),
+  setWsConnected: (connected) => set({ wsConnected: connected }),
 
   toggleShoppingItem: (id) => {
     const item = get().shoppingItems.find((i) => i.id === id);
