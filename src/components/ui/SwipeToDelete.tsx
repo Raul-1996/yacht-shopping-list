@@ -84,7 +84,7 @@ export function SwipeToDelete({ children, onDelete, disabled }: SwipeToDeletePro
   }, [onDelete])
 
   return (
-    <div className="relative overflow-hidden rounded-xl">
+    <div className="relative overflow-hidden rounded-xl" data-swipe-item>
       {/* Delete button behind */}
       <div
         className="absolute right-0 top-0 bottom-0 w-20 flex items-center justify-center bg-coral-500 text-white text-xs font-semibold"

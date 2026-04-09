@@ -57,6 +57,12 @@ export function MealPlanPage() {
   const [swipeOffset, setSwipeOffset] = useState(0)
 
   const handleSwipeStart = useCallback((e: React.TouchEvent) => {
+    // Don't start day-swipe if touch is inside a SwipeToDelete card
+    const target = e.target as HTMLElement
+    if (target.closest('[data-swipe-item]')) {
+      swipeRef.current = { startX: 0, startY: 0, active: false }
+      return
+    }
     const touch = e.touches[0]
     swipeRef.current = { startX: touch.clientX, startY: touch.clientY, active: true }
   }, [])
@@ -103,13 +109,12 @@ export function MealPlanPage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6">
-      {/* Day selector — swipeable area for switching days */}
-      <div
-        onTouchStart={handleSwipeStart}
-        onTouchMove={handleSwipeMove}
-        onTouchEnd={handleSwipeEnd}
-      >
+    <div
+      className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6"
+      onTouchStart={handleSwipeStart}
+      onTouchMove={handleSwipeMove}
+      onTouchEnd={handleSwipeEnd}
+    >
       <div className="flex gap-2 overflow-x-auto pb-1">
         {mealPlan.map((day, i) => {
           const isToday = i === getAutoDay() && getAutoDay() >= 0 && getAutoDay() < 7
@@ -144,7 +149,6 @@ export function MealPlanPage() {
           {currentDay.title}
         </h2>
       )}
-      </div>{/* end swipeable day area */}
 
       {currentDay && (
         <div className="space-y-3">
