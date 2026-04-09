@@ -25,7 +25,7 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 animate-[fadeIn_200ms_ease-out]"
+      className="fixed inset-0 z-[100] animate-[fadeIn_200ms_ease-out]"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -36,16 +36,19 @@ export function RecipeModal({ recipeId, onClose }: RecipeModalProps) {
         className="absolute inset-0 sm:inset-4 sm:m-auto sm:max-w-lg sm:max-h-[90vh] sm:rounded-2xl bg-white dark:bg-slate-900 sm:shadow-xl animate-[slideUp_250ms_ease-out] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-        >
-          ✕
-        </button>
+        {/* Header bar — non-scrollable */}
+        <div className="shrink-0 flex items-center justify-between px-4 pt-[env(safe-area-inset-top,12px)] pb-2 border-b border-slate-100 dark:border-slate-800">
+          <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Рецепт</span>
+          <button
+            onClick={onClose}
+            className="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center"
+          >
+            ✕
+          </button>
+        </div>
 
-        {/* Header — non-scrollable */}
-        <div className="shrink-0 px-5 pt-5 pb-3">
+        {/* Recipe title — non-scrollable */}
+        <div className="shrink-0 px-5 pt-3 pb-3">
           <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 pr-8">
             {recipe.name}
           </h2>
