@@ -83,7 +83,7 @@ export function ShoppingList() {
       lines.push(`${cat}:`)
       for (const item of items) {
         // Format as "- item — qty unit" so Notes can convert to checklist
-        const prefix = item.checked ? '- ✅ ' : '- '
+        const prefix = item.checked ? '☑ ' : '☐ '
         lines.push(`${prefix}${item.name} — ${Math.round(item.quantity * 100) / 100} ${item.unit}`)
       }
       lines.push('')
@@ -102,7 +102,7 @@ export function ShoppingList() {
       for (const [cat, items] of hhCats) {
         lines.push(`${cat}:`)
         for (const item of items) {
-          const prefix = item.checked ? '- ✅ ' : '- '
+          const prefix = item.checked ? '☑ ' : '☐ '
           lines.push(`${prefix}${item.name} — ${item.quantity} ${item.unit}`)
         }
         lines.push('')
