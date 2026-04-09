@@ -10,7 +10,7 @@ export const productIcons: Record<string, string> = {
   "s05": "noto:banana",                 // Бананы
   "s06": "noto:grapes",                 // Виноград
   "s07": "noto:mushroom",               // Грибы шампиньоны
-  "s08": "noto:herb",                   // Имбирь свежий
+  "s08": "noto:ginger-root",            // Имбирь свежий
   "s09": "noto:cucumber",               // Кабачки (цуккини)
   "s10": "noto:leafy-green",            // Капуста белокочанная
   "s11": "noto:potato",                 // Картофель
@@ -56,16 +56,16 @@ export const productIcons: Record<string, string> = {
   // Крупы и макароны
   "s42": "noto:sheaf-of-rice",          // Булгур
   "s43": "noto:ear-of-corn",            // Кукурузная крупа (полента)
-  "s44": "noto:cooked-rice",            // Кускус
+  "s44": "noto:sheaf-of-rice",          // Кускус
   "s45": "noto:spaghetti",              // Лапша (удон или яичная)
-  "s46": "noto:flatbread",              // Мука пшеничная
+  "s46": "noto:sheaf-of-rice",          // Мука пшеничная
   "s47": "noto:bowl-with-spoon",        // Овсяные хлопья
   "s48": "noto:bread",                  // Панировочные сухари
   "s49": "noto:spaghetti",              // Пенне (макароны)
   "s50": "noto:cooked-rice",            // Рис длиннозёрный
   "s51": "noto:cooked-rice",            // Рис круглозёрный
   "s52": "noto:spaghetti",              // Спагетти
-  "s53": "noto:canned-food",            // Чечевица красная
+  "s53": "noto:bowl-with-spoon",        // Чечевица красная
 
   // Хлеб и выпечка
   "s54": "noto:flatbread",              // Тортильи пшеничные
@@ -79,8 +79,8 @@ export const productIcons: Record<string, string> = {
 
   // Консервы
   "s60": "noto:olive",                  // Каперсы
-  "s61": "noto:coconut",                // Кокосовое молоко
-  "s62": "noto:olive",                  // Маслины
+  "s61": "noto:canned-food",            // Кокосовое молоко
+  "s62": "noto:canned-food",            // Маслины
   "s63": "noto:canned-food",            // Нут консервированный
   "s64": "noto:canned-food",            // Помидоры вяленые
   "s65": "noto:canned-food",            // Томатная паста
@@ -88,7 +88,7 @@ export const productIcons: Record<string, string> = {
   "s67": "noto:canned-food",            // Фасоль белая консервированная
 
   // Соусы и приправы
-  "s68": "noto:honey-pot",              // Горчица дижонская
+  "s68": "noto:hot-dog",                // Горчица дижонская
   "s69": "noto:tomato",                 // Кетчуп
   "s70": "noto:herb",                   // Корица молотая
   "s71": "noto:herb",                   // Кумин (зира)
@@ -140,7 +140,7 @@ export const productIcons: Record<string, string> = {
   "s109": "noto:salt",                  // Разрыхлитель
   "s110": "noto:bowl-with-spoon",       // Сахар
   "s111": "noto:fire",                  // Угли для BBQ
-  "s112": "noto:cucumber",              // Маринованные огурцы
+  "s112": "noto:canned-food",           // Маринованные огурцы
   "s113": "noto:ice-cream",             // Мороженое
   "s114": "noto:glass-of-milk",         // Питьевые йогурты
 
@@ -172,7 +172,6 @@ export const productIcons: Record<string, string> = {
 
   // Стирка
   "h19": "noto:soap",                   // Стиральный порошок
-  "h20": "noto:t-shirt",                // Верёвка для сушки белья
   "h21": "noto:t-shirt",                // Прищепки
 
   // Здоровье и защита
@@ -190,8 +189,8 @@ export const productIcons: Record<string, string> = {
   "h33": "noto:pill",                   // Средство от диареи
   "h34": "noto:lotion-bottle",          // Спрей от медуз
   "h35": "noto:soap",                   // Салфетки влажные антибактериальные
-  "h36": "noto:wastebasket",            // Мусорные мешки большие
-  "h37": "noto:roll-of-paper",          // Кухонные полотенца
+  "h36": "noto:wastebasket",            // Мусорные мешки большие (150-200л)
+  "h37": "noto:roll-of-paper",          // Кухонные полотенца (рулон)
   "h38": "noto:bath",                   // Полотенца большие (банные)
 };
 
