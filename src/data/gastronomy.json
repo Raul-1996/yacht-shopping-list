@@ -692,11 +692,6 @@
       "fresh_catch": false,
       "ingredients": [
         {
-          "name": "Куриное филе",
-          "quantity": 1.2,
-          "unit": "кг"
-        },
-        {
           "name": "Соевый соус",
           "quantity": 80,
           "unit": "мл"
@@ -1571,11 +1566,6 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {
-          "name": "Куриное филе",
-          "quantity": 0.8,
-          "unit": "кг"
-        },
         {
           "name": "Салат айсберг",
           "quantity": 2,
@@ -4268,6 +4258,50 @@
         "Когда почти готово — раскрошить фету сверху.",
         "Посыпать базиликом. Средиземноморское утро."
       ]
+    },
+    {
+      "id": "r81",
+      "name": "Гречка с маслом и зеленью",
+      "meal_type": "lunch",
+      "prep_time_minutes": 20,
+      "servings": 8,
+      "ingredients": [
+        {
+          "name": "Гречка",
+          "quantity": 500,
+          "unit": "г"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 50,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 1,
+          "unit": "шт"
+        }
+      ],
+      "steps": [
+        "Промой гречку холодной водой.",
+        "Лук мелко нарежь и обжарь на сливочном масле пару минут.",
+        "Засыпь гречку, залей водой (1:2), посоли.",
+        "Доведи до кипения, убавь огонь, закрой крышкой на 15 минут.",
+        "Выключи, добавь ещё кусочек масла, перемешай.",
+        "Посыпь нарезанным укропом."
+      ],
+      "is_fish_dish": false,
+      "fresh_catch": false
     }
   ],
   "meal_plan": [
@@ -4547,7 +4581,7 @@
       "id": "s03",
       "name": "Апельсины",
       "category": "Овощи и фрукты",
-      "quantity": 5.0,
+      "quantity": 5,
       "unit": "кг",
       "used_in_recipes": [
         "r55"
@@ -4626,7 +4660,7 @@
       "id": "s10",
       "name": "Капуста белокочанная",
       "category": "Овощи и фрукты",
-      "quantity": 1.0,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r16",
@@ -4666,7 +4700,7 @@
       "id": "s13",
       "name": "Лайм",
       "category": "Овощи и фрукты",
-      "quantity": 3.0,
+      "quantity": 3,
       "unit": "кг",
       "used_in_recipes": [
         "r10",
@@ -4785,7 +4819,7 @@
       "id": "s21",
       "name": "Огурцы",
       "category": "Овощи и фрукты",
-      "quantity": 3.0,
+      "quantity": 3,
       "unit": "кг",
       "used_in_recipes": [
         "r08",
@@ -4799,7 +4833,7 @@
       "id": "s22",
       "name": "Перец болгарский",
       "category": "Овощи и фрукты",
-      "quantity": 4.0,
+      "quantity": 4,
       "unit": "кг",
       "used_in_recipes": [
         "r08",
@@ -4847,7 +4881,7 @@
       "id": "s25",
       "name": "Помидоры",
       "category": "Овощи и фрукты",
-      "quantity": 6.0,
+      "quantity": 6,
       "unit": "кг",
       "used_in_recipes": [
         "r02",
@@ -4925,7 +4959,7 @@
       "id": "s30",
       "name": "Йогурт натуральный",
       "category": "Молочные продукты",
-      "quantity": 1.0,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r50",
@@ -5038,14 +5072,6 @@
       ]
     },
     {
-      "name": "Куриное филе",
-      "category": "Мясо и птица",
-      "quantity": 1.5,
-      "unit": "кг",
-      "used_in_recipes": [],
-      "id": "s39"
-    },
-    {
       "name": "Горошек замороженный",
       "category": "Замороженные продукты",
       "quantity": 0.5,
@@ -5109,7 +5135,7 @@
       "id": "s46",
       "name": "Мука пшеничная",
       "category": "Крупы и макароны",
-      "quantity": 2.0,
+      "quantity": 2,
       "unit": "кг",
       "used_in_recipes": [
         "r03",
@@ -5140,7 +5166,7 @@
       "id": "s49",
       "name": "Пенне (макароны)",
       "category": "Крупы и макароны",
-      "quantity": 1.0,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r69"
@@ -5150,7 +5176,7 @@
       "id": "s50",
       "name": "Рис длиннозёрный",
       "category": "Крупы и макароны",
-      "quantity": 3.0,
+      "quantity": 3,
       "unit": "кг",
       "used_in_recipes": [
         "r22",
@@ -5174,7 +5200,7 @@
       "id": "s52",
       "name": "Спагетти",
       "category": "Крупы и макароны",
-      "quantity": 1.0,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r61"
@@ -5774,7 +5800,9 @@
       "category": "Еда из России",
       "quantity": 1,
       "unit": "кг",
-      "used_in_recipes": [],
+      "used_in_recipes": [
+        "r81"
+      ],
       "id": "s105"
     },
     {
@@ -5819,7 +5847,7 @@
       "id": "s110",
       "name": "Сахар",
       "category": "Прочее",
-      "quantity": 1.0,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r03",
@@ -5838,12 +5866,28 @@
       "id": "s111"
     },
     {
-      "name": "Фольга алюминиевая",
-      "category": "Прочее",
+      "id": "s112",
+      "name": "Маринованные огурцы",
+      "category": "Консервы",
       "quantity": 2,
-      "unit": "рул",
-      "used_in_recipes": [],
-      "id": "s112"
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s113",
+      "name": "Мороженое",
+      "category": "Замороженные продукты",
+      "quantity": 4,
+      "unit": "упак",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s114",
+      "name": "Питьевые йогурты",
+      "category": "Молочные продукты",
+      "quantity": 16,
+      "unit": "шт",
+      "used_in_recipes": []
     }
   ]
 }

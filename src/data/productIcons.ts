@@ -140,7 +140,9 @@ export const productIcons: Record<string, string> = {
   "s109": "noto:salt",                  // Разрыхлитель
   "s110": "noto:bowl-with-spoon",       // Сахар
   "s111": "noto:fire",                  // Угли для BBQ
-  "s112": "noto:roll-of-paper",         // Фольга алюминиевая
+  "s112": "noto:cucumber",              // Маринованные огурцы
+  "s113": "noto:ice-cream",             // Мороженое
+  "s114": "noto:glass-of-milk",         // Питьевые йогурты
 
   // === HOUSEHOLD: household_supplies ===
 
@@ -188,6 +190,9 @@ export const productIcons: Record<string, string> = {
   "h33": "noto:pill",                   // Средство от диареи
   "h34": "noto:lotion-bottle",          // Спрей от медуз
   "h35": "noto:soap",                   // Салфетки влажные антибактериальные
+  "h36": "noto:wastebasket",            // Мусорные мешки большие
+  "h37": "noto:roll-of-paper",          // Кухонные полотенца
+  "h38": "noto:bath",                   // Полотенца большие (банные)
 };
 
 export const categoryIcons: Record<string, string> = {
