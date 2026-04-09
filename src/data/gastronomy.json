@@ -4520,7 +4520,7 @@
       "id": "s01",
       "name": "Овсяные хлопья",
       "category": "Крупы и макароны",
-      "quantity": 0.69,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r01"
@@ -4530,7 +4530,7 @@
       "id": "s02",
       "name": "Молоко",
       "category": "Молочные продукты",
-      "quantity": 3.91,
+      "quantity": 4,
       "unit": "л",
       "used_in_recipes": [
         "r01",
@@ -4546,7 +4546,7 @@
       "id": "s03",
       "name": "Бананы",
       "category": "Овощи и фрукты",
-      "quantity": 21,
+      "quantity": 20,
       "unit": "шт",
       "used_in_recipes": [
         "r01",
@@ -4559,7 +4559,7 @@
       "id": "s04",
       "name": "Мёд",
       "category": "Соусы и приправы",
-      "quantity": 402.79,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r01",
@@ -4582,7 +4582,7 @@
       "id": "s05",
       "name": "Корица молотая",
       "category": "Соусы и приправы",
-      "quantity": 18,
+      "quantity": 30,
       "unit": "г",
       "used_in_recipes": [
         "r01",
@@ -4595,7 +4595,7 @@
       "id": "s06",
       "name": "Яйца",
       "category": "Яйца",
-      "quantity": 144,
+      "quantity": 60,
       "unit": "шт",
       "used_in_recipes": [
         "r02",
@@ -4621,7 +4621,7 @@
       "id": "s07",
       "name": "Помидоры",
       "category": "Овощи и фрукты",
-      "quantity": 96,
+      "quantity": 30,
       "unit": "шт",
       "used_in_recipes": [
         "r02",
@@ -4649,7 +4649,7 @@
       "id": "s08",
       "name": "Масло сливочное",
       "category": "Молочные продукты",
-      "quantity": 690.0,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r02",
@@ -4670,7 +4670,7 @@
       "id": "s09",
       "name": "Укроп",
       "category": "Овощи и фрукты",
-      "quantity": 6,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r02",
@@ -4684,7 +4684,7 @@
       "id": "s10",
       "name": "Соль",
       "category": "Соусы и приправы",
-      "quantity": 362.25,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r02",
@@ -4751,7 +4751,7 @@
       "id": "s11",
       "name": "Перец чёрный молотый",
       "category": "Соусы и приправы",
-      "quantity": 63,
+      "quantity": 50,
       "unit": "г",
       "used_in_recipes": [
         "r02",
@@ -4780,7 +4780,7 @@
       "id": "s12",
       "name": "Мука пшеничная",
       "category": "Крупы и макароны",
-      "quantity": 1.61,
+      "quantity": 1.5,
       "unit": "кг",
       "used_in_recipes": [
         "r03",
@@ -4795,7 +4795,7 @@
       "id": "s13",
       "name": "Сахар",
       "category": "Прочее",
-      "quantity": 276.11,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r03",
@@ -4811,7 +4811,7 @@
       "id": "s14",
       "name": "Разрыхлитель",
       "category": "Прочее",
-      "quantity": 17,
+      "quantity": 50,
       "unit": "г",
       "used_in_recipes": [
         "r03",
@@ -4822,7 +4822,7 @@
       "id": "s15",
       "name": "Масло растительное",
       "category": "Масла",
-      "quantity": 828.0,
+      "quantity": 1,
       "unit": "л",
       "used_in_recipes": [
         "r03",
@@ -4849,7 +4849,7 @@
       "id": "s16",
       "name": "Хлеб белый (батон)",
       "category": "Хлеб и выпечка",
-      "quantity": 9,
+      "quantity": 7,
       "unit": "шт",
       "used_in_recipes": [
         "r04",
@@ -4867,7 +4867,7 @@
       "id": "s17",
       "name": "Гранола",
       "category": "Крупы и макароны",
-      "quantity": 0.57,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r05"
@@ -4877,7 +4877,7 @@
       "id": "s18",
       "name": "Йогурт натуральный",
       "category": "Молочные продукты",
-      "quantity": 1.72,
+      "quantity": 2,
       "unit": "кг",
       "used_in_recipes": [
         "r05",
@@ -4889,7 +4889,7 @@
       "id": "s19",
       "name": "Манго",
       "category": "Овощи и фрукты",
-      "quantity": 18,
+      "quantity": 10,
       "unit": "шт",
       "used_in_recipes": [
         "r05",
@@ -4905,7 +4905,7 @@
       "id": "s20",
       "name": "Хлеб для тостов",
       "category": "Хлеб и выпечка",
-      "quantity": 2,
+      "quantity": 3,
       "unit": "упак",
       "used_in_recipes": [
         "r06"
@@ -4915,7 +4915,7 @@
       "id": "s21",
       "name": "Авокадо",
       "category": "Овощи и фрукты",
-      "quantity": 26,
+      "quantity": 10,
       "unit": "шт",
       "used_in_recipes": [
         "r06",
@@ -4932,7 +4932,7 @@
       "id": "s22",
       "name": "Лимон",
       "category": "Овощи и фрукты",
-      "quantity": 35,
+      "quantity": 15,
       "unit": "шт",
       "used_in_recipes": [
         "r06",
@@ -4958,7 +4958,7 @@
       "id": "s23",
       "name": "Уксус столовый",
       "category": "Соусы и приправы",
-      "quantity": 23,
+      "quantity": 200,
       "unit": "мл",
       "used_in_recipes": [
         "r06"
@@ -4968,7 +4968,7 @@
       "id": "s24",
       "name": "Рис круглозёрный",
       "category": "Крупы и макароны",
-      "quantity": 0.46,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r07"
@@ -4978,7 +4978,7 @@
       "id": "s25",
       "name": "Кокосовое молоко",
       "category": "Консервы",
-      "quantity": 3.22,
+      "quantity": 3,
       "unit": "л",
       "used_in_recipes": [
         "r07",
@@ -4992,7 +4992,7 @@
       "id": "s26",
       "name": "Огурцы",
       "category": "Овощи и фрукты",
-      "quantity": 25,
+      "quantity": 10,
       "unit": "шт",
       "used_in_recipes": [
         "r08",
@@ -5008,7 +5008,7 @@
       "id": "s27",
       "name": "Перец болгарский",
       "category": "Овощи и фрукты",
-      "quantity": 26,
+      "quantity": 10,
       "unit": "шт",
       "used_in_recipes": [
         "r08",
@@ -5027,7 +5027,7 @@
       "id": "s28",
       "name": "Лук красный",
       "category": "Овощи и фрукты",
-      "quantity": 10,
+      "quantity": 5,
       "unit": "шт",
       "used_in_recipes": [
         "r08",
@@ -5042,7 +5042,7 @@
       "id": "s29",
       "name": "Маслины",
       "category": "Консервы",
-      "quantity": 6,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r08",
@@ -5056,7 +5056,7 @@
       "id": "s30",
       "name": "Сыр фета",
       "category": "Молочные продукты",
-      "quantity": 0.69,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r08",
@@ -5068,7 +5068,7 @@
       "id": "s31",
       "name": "Масло оливковое",
       "category": "Масла",
-      "quantity": 1805.5,
+      "quantity": 1.5,
       "unit": "л",
       "used_in_recipes": [
         "r08",
@@ -5111,7 +5111,7 @@
       "id": "s32",
       "name": "Орегано сушёный",
       "category": "Соусы и приправы",
-      "quantity": 6,
+      "quantity": 10,
       "unit": "г",
       "used_in_recipes": [
         "r08"
@@ -5121,7 +5121,7 @@
       "id": "s33",
       "name": "Чеснок",
       "category": "Овощи и фрукты",
-      "quantity": 119,
+      "quantity": 4,
       "unit": "шт",
       "used_in_recipes": [
         "r09",
@@ -5154,7 +5154,7 @@
       "id": "s34",
       "name": "Петрушка",
       "category": "Овощи и фрукты",
-      "quantity": 12,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r09",
@@ -5172,7 +5172,7 @@
       "id": "s35",
       "name": "Тимьян сушёный",
       "category": "Соусы и приправы",
-      "quantity": 23,
+      "quantity": 10,
       "unit": "г",
       "used_in_recipes": [
         "r09",
@@ -5185,7 +5185,7 @@
       "id": "s36",
       "name": "Лайм",
       "category": "Овощи и фрукты",
-      "quantity": 53,
+      "quantity": 15,
       "unit": "шт",
       "used_in_recipes": [
         "r10",
@@ -5212,7 +5212,7 @@
       "id": "s37",
       "name": "Перец чили свежий",
       "category": "Овощи и фрукты",
-      "quantity": 10,
+      "quantity": 5,
       "unit": "шт",
       "used_in_recipes": [
         "r10",
@@ -5227,7 +5227,7 @@
       "id": "s38",
       "name": "Кинза",
       "category": "Овощи и фрукты",
-      "quantity": 13,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r10",
@@ -5247,7 +5247,7 @@
       "id": "s39",
       "name": "Спагетти",
       "category": "Крупы и макароны",
-      "quantity": 3.68,
+      "quantity": 2,
       "unit": "кг",
       "used_in_recipes": [
         "r11",
@@ -5260,7 +5260,7 @@
       "id": "s40",
       "name": "Перец чили сушёный (хлопья)",
       "category": "Соусы и приправы",
-      "quantity": 13,
+      "quantity": 20,
       "unit": "г",
       "used_in_recipes": [
         "r11",
@@ -5272,7 +5272,7 @@
       "id": "s41",
       "name": "Пармезан",
       "category": "Молочные продукты",
-      "quantity": 0.57,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r11",
@@ -5286,7 +5286,7 @@
       "id": "s42",
       "name": "Картофель",
       "category": "Овощи и фрукты",
-      "quantity": 5.75,
+      "quantity": 3,
       "unit": "кг",
       "used_in_recipes": [
         "r12",
@@ -5299,7 +5299,7 @@
       "id": "s43",
       "name": "Морковь",
       "category": "Овощи и фрукты",
-      "quantity": 15,
+      "quantity": 8,
       "unit": "шт",
       "used_in_recipes": [
         "r13",
@@ -5313,7 +5313,7 @@
       "id": "s44",
       "name": "Лук репчатый",
       "category": "Овощи и фрукты",
-      "quantity": 22,
+      "quantity": 8,
       "unit": "шт",
       "used_in_recipes": [
         "r12",
@@ -5332,7 +5332,7 @@
       "id": "s45",
       "name": "Лавровый лист",
       "category": "Соусы и приправы",
-      "quantity": 4,
+      "quantity": 10,
       "unit": "шт",
       "used_in_recipes": [
         "r12"
@@ -5342,7 +5342,7 @@
       "id": "s46",
       "name": "Перец чёрный горошком",
       "category": "Соусы и приправы",
-      "quantity": 6,
+      "quantity": 20,
       "unit": "г",
       "used_in_recipes": [
         "r12"
@@ -5352,7 +5352,7 @@
       "id": "s47",
       "name": "Рис длиннозёрный",
       "category": "Крупы и макароны",
-      "quantity": 4.71,
+      "quantity": 2,
       "unit": "кг",
       "used_in_recipes": [
         "r13",
@@ -5369,7 +5369,7 @@
       "id": "s48",
       "name": "Горошек замороженный",
       "category": "Замороженные продукты",
-      "quantity": 0.23,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r13"
@@ -5379,7 +5379,7 @@
       "id": "s49",
       "name": "Соевый соус",
       "category": "Соусы и приправы",
-      "quantity": 598.0,
+      "quantity": 0.5,
       "unit": "л",
       "used_in_recipes": [
         "r13",
@@ -5398,7 +5398,7 @@
       "id": "s50",
       "name": "Лук зелёный",
       "category": "Овощи и фрукты",
-      "quantity": 7,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r13",
@@ -5413,7 +5413,7 @@
       "id": "s51",
       "name": "Куриное филе",
       "category": "Мясо и птица",
-      "quantity": 2.3,
+      "quantity": 1.5,
       "unit": "кг",
       "used_in_recipes": [
         "r14",
@@ -5424,7 +5424,7 @@
       "id": "s52",
       "name": "Имбирь свежий",
       "category": "Овощи и фрукты",
-      "quantity": 253.0,
+      "quantity": 0.2,
       "unit": "кг",
       "used_in_recipes": [
         "r14",
@@ -5441,7 +5441,7 @@
       "id": "s53",
       "name": "Кунжут",
       "category": "Соусы и приправы",
-      "quantity": 115,
+      "quantity": 100,
       "unit": "г",
       "used_in_recipes": [
         "r14",
@@ -5457,7 +5457,7 @@
       "id": "s54",
       "name": "Панировочные сухари",
       "category": "Крупы и макароны",
-      "quantity": 0.46,
+      "quantity": 0.3,
       "unit": "кг",
       "used_in_recipes": [
         "r15",
@@ -5469,7 +5469,7 @@
       "id": "s55",
       "name": "Тортильи пшеничные",
       "category": "Хлеб и выпечка",
-      "quantity": 5,
+      "quantity": 3,
       "unit": "упак",
       "used_in_recipes": [
         "r16",
@@ -5482,8 +5482,8 @@
       "id": "s56",
       "name": "Капуста белокочанная",
       "category": "Овощи и фрукты",
-      "quantity": 0.57,
-      "unit": "кг",
+      "quantity": 1,
+      "unit": "шт",
       "used_in_recipes": [
         "r16",
         "r60"
@@ -5493,7 +5493,7 @@
       "id": "s57",
       "name": "Сметана",
       "category": "Молочные продукты",
-      "quantity": 0.8,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r16",
@@ -5507,7 +5507,7 @@
       "id": "s58",
       "name": "Кумин (зира)",
       "category": "Соусы и приправы",
-      "quantity": 17,
+      "quantity": 30,
       "unit": "г",
       "used_in_recipes": [
         "r16",
@@ -5519,7 +5519,7 @@
       "id": "s60",
       "name": "Начос (чипсы кукурузные)",
       "category": "Сладости и снеки",
-      "quantity": 3,
+      "quantity": 2,
       "unit": "упак",
       "used_in_recipes": [
         "r18"
@@ -5529,7 +5529,7 @@
       "id": "s61",
       "name": "Ананас",
       "category": "Овощи и фрукты",
-      "quantity": 4,
+      "quantity": 3,
       "unit": "шт",
       "used_in_recipes": [
         "r19",
@@ -5541,7 +5541,7 @@
       "id": "s62",
       "name": "Мята свежая",
       "category": "Овощи и фрукты",
-      "quantity": 5,
+      "quantity": 3,
       "unit": "упак",
       "used_in_recipes": [
         "r19",
@@ -5554,7 +5554,7 @@
       "id": "s63",
       "name": "Креветки замороженные (крупные)",
       "category": "Замороженные продукты",
-      "quantity": 3.56,
+      "quantity": 2,
       "unit": "кг",
       "used_in_recipes": [
         "r20",
@@ -5569,7 +5569,7 @@
       "id": "s64",
       "name": "Кускус",
       "category": "Крупы и макароны",
-      "quantity": 1.15,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r21",
@@ -5580,7 +5580,7 @@
       "id": "s65",
       "name": "Помидоры черри",
       "category": "Овощи и фрукты",
-      "quantity": 1.49,
+      "quantity": 1,
       "unit": "кг",
       "used_in_recipes": [
         "r21",
@@ -5594,7 +5594,7 @@
       "id": "s66",
       "name": "Паста карри (красная или жёлтая)",
       "category": "Соусы и приправы",
-      "quantity": 69,
+      "quantity": 100,
       "unit": "г",
       "used_in_recipes": [
         "r22"
@@ -5604,7 +5604,7 @@
       "id": "s67",
       "name": "Булгур",
       "category": "Крупы и макароны",
-      "quantity": 0.46,
+      "quantity": 0.5,
       "unit": "кг",
       "used_in_recipes": [
         "r23"
@@ -5614,7 +5614,7 @@
       "id": "s68",
       "name": "Базилик свежий",
       "category": "Овощи и фрукты",
-      "quantity": 11,
+      "quantity": 4,
       "unit": "упак",
       "used_in_recipes": [
         "r24",
@@ -5632,7 +5632,7 @@
       "id": "s70",
       "name": "Паприка",
       "category": "Соусы и приправы",
-      "quantity": 38,
+      "quantity": 50,
       "unit": "г",
       "used_in_recipes": [
         "r25",
@@ -5647,7 +5647,7 @@
       "id": "s71",
       "name": "Куркума",
       "category": "Соусы и приправы",
-      "quantity": 3,
+      "quantity": 20,
       "unit": "г",
       "used_in_recipes": [
         "r28"
