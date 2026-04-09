@@ -5,6 +5,7 @@ import type { UnifiedShoppingItem } from '../../types'
 import { gastronomy } from '../../data/gastronomy'
 import { getProductIcon } from '../../data/productIcons'
 import { RecipeModal } from '../recipes/RecipeModal'
+import { SwipeToDelete } from '../ui/SwipeToDelete'
 
 export function ListItem({ item }: { item: UnifiedShoppingItem }) {
   const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem } = useAppStore()
@@ -42,7 +43,7 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
     setEditingQty(false)
   }
 
-  return (
+  const content = (
     <div
       className={`rounded-xl px-3 py-2.5 transition-all ${
         item.checked
@@ -51,7 +52,6 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
       }`}
     >
       <div className="flex items-center gap-2">
-        {/* Checkbox */}
         <button
           onClick={handleToggle}
           className={`w-11 h-11 rounded-lg border-2 flex items-center justify-center shrink-0 transition-all ${
@@ -67,10 +67,8 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
           )}
         </button>
 
-        {/* Icon */}
         <Icon icon={getProductIcon(item.id, item.category)} width={24} className="shrink-0" />
 
-        {/* Name — tap to expand (shows recipes/delete) */}
         <button
           onClick={() => setExpanded(!expanded)}
           className={`flex-1 text-left text-sm transition-colors min-h-[44px] flex items-center ${
@@ -87,7 +85,6 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
           </span>
         </button>
 
-        {/* Quantity controls */}
         <div className="flex items-center gap-1 shrink-0">
           {isShopping ? (
             <>
@@ -132,33 +129,17 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
         </div>
       </div>
 
-      {/* Expanded area: recipes + delete button */}
-      {expanded && (
-        <div className="mt-2 ml-[4.5rem] space-y-2">
-          {/* Recipe tags */}
-          {usedRecipes.length > 0 && (
-            <div className="flex flex-wrap gap-1">
-              {usedRecipes.map((r) => (
-                <button
-                  key={r!.id}
-                  onClick={() => setSelectedRecipeId(r!.id)}
-                  className="inline-block px-2 py-0.5 rounded-md bg-ocean-50 dark:bg-ocean-900/20 text-ocean-700 dark:text-ocean-300 text-[10px] cursor-pointer active:bg-ocean-100 dark:active:bg-ocean-800/30"
-                >
-                  {r!.name}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Delete button — only visible when expanded */}
-          {isShopping && (
+      {expanded && usedRecipes.length > 0 && (
+        <div className="mt-2 ml-[4.5rem] flex flex-wrap gap-1">
+          {usedRecipes.map((r) => (
             <button
-              onClick={() => deleteShoppingItem(item.id)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-coral-400/10 text-coral-500 text-xs font-medium active:bg-coral-400/20"
+              key={r!.id}
+              onClick={() => setSelectedRecipeId(r!.id)}
+              className="inline-block px-2 py-0.5 rounded-md bg-ocean-50 dark:bg-ocean-900/20 text-ocean-700 dark:text-ocean-300 text-[10px] cursor-pointer active:bg-ocean-100 dark:active:bg-ocean-800/30"
             >
-              ✕ Удалить
+              {r!.name}
             </button>
-          )}
+          ))}
         </div>
       )}
 
@@ -167,4 +148,14 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
       )}
     </div>
   )
+
+  if (isShopping) {
+    return (
+      <SwipeToDelete onDelete={() => deleteShoppingItem(item.id)}>
+        {content}
+      </SwipeToDelete>
+    )
+  }
+
+  return content
 }

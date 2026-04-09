@@ -4,6 +4,7 @@ import { gastronomy } from '../../data/gastronomy'
 import type { MealSlot, Recipe } from '../../types'
 import { RecipeModal } from '../recipes/RecipeModal'
 import { RecipePicker } from './RecipePicker'
+import { SwipeToDelete } from '../ui/SwipeToDelete'
 
 const mealIcons: Record<string, string> = {
   breakfast: '🌅',
@@ -205,7 +206,6 @@ function MealCard({
   const [editingNote, setEditingNote] = useState(false)
   const [noteValue, setNoteValue] = useState(note)
   const [expandedRecipeId, setExpandedRecipeId] = useState<string | null>(null)
-  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null)
   const noteInputRef = useRef<HTMLInputElement>(null)
   const { shoppingItems } = useAppStore()
 
@@ -288,76 +288,44 @@ function MealCard({
           recipes.map((recipe) => {
             const readiness = getReadiness(recipe)
             const isExpanded = expandedRecipeId === recipe.id
-            const isConfirming = confirmDeleteId === recipe.id
 
             return (
-              <div
-                key={recipe.id}
-                className={`rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/50 border-l-[3px] ${readinessColors[readiness]} px-3 py-2.5`}
-                onClick={() => {
-                  if (isExpanded) {
-                    setExpandedRecipeId(null)
-                    setConfirmDeleteId(null)
-                  } else {
-                    setExpandedRecipeId(recipe.id)
-                    setConfirmDeleteId(null)
-                  }
-                }}
-              >
-                {/* Row 1: name */}
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); onRecipeClick(recipe.id) }}
-                    className="flex-1 text-left text-sm font-medium text-slate-800 dark:text-slate-100 active:text-ocean-600 dark:active:text-ocean-400 truncate min-h-[44px] flex items-center"
-                  >
-                    {recipe.name}
-                  </button>
-                </div>
-                {/* Row 2: meta */}
-                <div className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400 -mt-1">
-                  <span>⏱ {recipe.prep_time_minutes} мин · {recipe.ingredients.length} ингр.</span>
-                  {recipe.is_fish_dish && <span>🐟</span>}
-                </div>
-
-                {/* Action buttons - shown on tap */}
-                {isExpanded && !isConfirming && (
-                  <div className="flex gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700/50">
+              <SwipeToDelete key={recipe.id} onDelete={() => onDelete(recipe.id)}>
+                <div
+                  className={`rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/50 border-l-[3px] ${readinessColors[readiness]} px-3 py-2.5`}
+                  onClick={() => setExpandedRecipeId(isExpanded ? null : recipe.id)}
+                >
+                  <div className="flex items-center gap-2">
                     <button
-                      onClick={(e) => { e.stopPropagation(); onReplace(recipe.id) }}
-                      className="flex-1 py-2 min-h-[44px] rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 active:bg-slate-200 dark:active:bg-slate-600 transition-colors"
+                      onClick={(e) => { e.stopPropagation(); onRecipeClick(recipe.id) }}
+                      className="flex-1 text-left text-sm font-medium text-slate-800 dark:text-slate-100 active:text-ocean-600 dark:active:text-ocean-400 truncate min-h-[44px] flex items-center"
                     >
-                      🔄 Заменить
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setConfirmDeleteId(recipe.id) }}
-                      className="flex-1 py-2 min-h-[44px] rounded-lg text-xs font-medium text-coral-500 dark:text-coral-400 bg-coral-400/10 dark:bg-coral-400/10 active:bg-coral-400/20 transition-colors"
-                    >
-                      Удалить
+                      {recipe.name}
                     </button>
                   </div>
-                )}
+                  <div className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400 -mt-1">
+                    <span>⏱ {recipe.prep_time_minutes} мин · {recipe.ingredients.length} ингр.</span>
+                    {recipe.is_fish_dish && <span>🐟</span>}
+                  </div>
 
-                {/* Delete confirmation */}
-                {isConfirming && (
-                  <div className="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700/50">
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">Удалить блюдо?</p>
-                    <div className="flex gap-2">
+                  {isExpanded && (
+                    <div className="flex gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700/50">
                       <button
-                        onClick={(e) => { e.stopPropagation(); setConfirmDeleteId(null) }}
+                        onClick={(e) => { e.stopPropagation(); onReplace(recipe.id) }}
                         className="flex-1 py-2 min-h-[44px] rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 active:bg-slate-200 dark:active:bg-slate-600 transition-colors"
                       >
-                        Отмена
+                        🔄 Заменить
                       </button>
                       <button
-                        onClick={(e) => { e.stopPropagation(); onDelete(recipe.id); setExpandedRecipeId(null); setConfirmDeleteId(null) }}
-                        className="flex-1 py-2 min-h-[44px] rounded-lg text-xs font-medium text-white bg-coral-500 active:bg-coral-400 transition-colors"
+                        onClick={(e) => { e.stopPropagation(); onRecipeClick(recipe.id) }}
+                        className="flex-1 py-2 min-h-[44px] rounded-lg text-xs font-medium text-ocean-600 dark:text-ocean-400 bg-ocean-50 dark:bg-ocean-900/30 active:bg-ocean-100 transition-colors"
                       >
-                        Да, удалить
+                        📖 Рецепт
                       </button>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              </SwipeToDelete>
             )
           })
         )}
