@@ -26,14 +26,19 @@ export interface ShoppingItem {
   used_in_recipes: string[];
 }
 
+export interface MealSlot {
+  recipe_ids: string[];
+  note: string;
+}
+
 export interface MealPlanDay {
   day: number;
-  date_label: string;
+  title: string;
   meals: {
-    breakfast: string[];
-    lunch: string[];
-    snack: string[];
-    dinner: string[];
+    breakfast: MealSlot;
+    lunch: MealSlot;
+    snack: MealSlot;
+    dinner: MealSlot;
   };
 }
 

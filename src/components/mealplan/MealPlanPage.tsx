@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { gastronomy } from '../../data/gastronomy'
+import type { MealSlot } from '../../types'
 
 const mealIcons: Record<string, string> = {
   breakfast: '🌅',
@@ -20,7 +21,6 @@ export function MealPlanPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4">
-      {/* Day selector */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {gastronomy.meal_plan.map((day, i) => (
           <button
@@ -33,17 +33,18 @@ export function MealPlanPage() {
             }`}
           >
             <span className="text-xs font-medium">День {day.day}</span>
-            <span className="text-[10px] mt-0.5 opacity-75">{day.date_label}</span>
           </button>
         ))}
       </div>
 
-      {/* Meals for selected day */}
       {gastronomy.meal_plan[selectedDay] && (
         <div className="space-y-3">
+          <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-400">
+            {gastronomy.meal_plan[selectedDay].title}
+          </h2>
           {(['breakfast', 'lunch', 'snack', 'dinner'] as const).map((mealType) => {
-            const recipeIds = gastronomy.meal_plan[selectedDay].meals[mealType]
-            const recipes = recipeIds
+            const slot = gastronomy.meal_plan[selectedDay].meals[mealType] as MealSlot
+            const recipes = (slot?.recipe_ids || [])
               .map((id) => gastronomy.recipes.find((r) => r.id === id))
               .filter(Boolean)
 
@@ -51,6 +52,7 @@ export function MealPlanPage() {
               <MealCard
                 key={mealType}
                 mealType={mealType}
+                note={slot?.note}
                 recipes={recipes as typeof gastronomy.recipes}
               />
             )
@@ -63,9 +65,11 @@ export function MealPlanPage() {
 
 function MealCard({
   mealType,
+  note,
   recipes,
 }: {
   mealType: string
+  note?: string
   recipes: typeof gastronomy.recipes
 }) {
   return (
@@ -77,6 +81,9 @@ function MealCard({
         </span>
       </div>
       <div className="px-4 py-2 space-y-2">
+        {note && (
+          <p className="text-xs text-slate-500 dark:text-slate-400 italic">{note}</p>
+        )}
         {recipes.length === 0 ? (
           <p className="text-sm text-slate-400 py-2">Нет рецептов</p>
         ) : (
