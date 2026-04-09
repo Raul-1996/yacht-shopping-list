@@ -1,4 +1,5 @@
 import { useAppStore } from '../../store/appStore'
+import { OfflineBanner } from './OfflineBanner'
 
 export function Header() {
   const { darkMode, toggleDarkMode, currentPage, onlineUsers } = useAppStore()
@@ -40,6 +41,7 @@ export function Header() {
           </button>
         </div>
       </div>
+      <OfflineBanner />
     </header>
   )
 }

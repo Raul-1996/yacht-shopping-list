@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useAppStore } from './store/appStore'
 import { createWebSocket } from './lib/api'
 import { Header } from './components/layout/Header'
-import { OfflineBanner } from './components/layout/OfflineBanner'
 import { BottomNav } from './components/layout/BottomNav'
 import { InstallPrompt } from './components/layout/InstallPrompt'
 import { VersionFooter } from './components/layout/VersionFooter'
@@ -40,7 +39,6 @@ function App() {
   return (
     <div className="min-h-dvh flex flex-col bg-white dark:bg-slate-950">
       <Header />
-      <OfflineBanner />
       <main className="flex-1 pb-20 overflow-y-auto">
         {loading ? (
           <div className="flex items-center justify-center h-64">
