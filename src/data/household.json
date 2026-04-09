@@ -1,86 +1,814 @@
 {
   "household_supplies": [
-    {"id": "h01", "name": "Мешки для мусора (60л)", "category": "Кухня", "quantity": 2, "unit": "упак", "per_cabin": false},
-    {"id": "h02", "name": "Губки для посуды", "category": "Кухня", "quantity": 6, "unit": "шт", "per_cabin": false},
-    {"id": "h03", "name": "Средство для мытья посуды", "category": "Кухня", "quantity": 1, "unit": "л", "per_cabin": false},
-    {"id": "h04", "name": "Бумажные полотенца", "category": "Кухня", "quantity": 4, "unit": "рул", "per_cabin": false},
-    {"id": "h05", "name": "Салфетки бумажные", "category": "Кухня", "quantity": 3, "unit": "упак", "per_cabin": false},
-    {"id": "h06", "name": "Пищевая плёнка", "category": "Кухня", "quantity": 1, "unit": "рул", "per_cabin": false},
-    {"id": "h07", "name": "Фольга алюминиевая", "category": "Кухня", "quantity": 1, "unit": "рул", "per_cabin": false},
-    {"id": "h08", "name": "Пакеты зип-лок", "category": "Кухня", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h09", "name": "Разделочные доски", "category": "Кухня", "quantity": 2, "unit": "шт", "per_cabin": false},
-    {"id": "h10", "name": "Тряпки из микрофибры", "category": "Уборка", "quantity": 6, "unit": "шт", "per_cabin": false},
-    {"id": "h11", "name": "Универсальное чистящее средство", "category": "Уборка", "quantity": 1, "unit": "шт", "per_cabin": false},
-    {"id": "h12", "name": "Мешки для мусора (30л)", "category": "Уборка", "quantity": 2, "unit": "упак", "per_cabin": false},
-    {"id": "h13", "name": "Туалетная бумага", "category": "Ванная", "quantity": 8, "unit": "рул", "per_cabin": true},
-    {"id": "h14", "name": "Шампунь", "category": "Ванная", "quantity": 1, "unit": "шт", "per_cabin": true},
-    {"id": "h15", "name": "Гель для душа", "category": "Ванная", "quantity": 1, "unit": "шт", "per_cabin": true},
-    {"id": "h16", "name": "Жидкое мыло для рук", "category": "Ванная", "quantity": 1, "unit": "шт", "per_cabin": true},
-    {"id": "h17", "name": "Полотенца пляжные", "category": "Ванная", "quantity": 8, "unit": "шт", "per_cabin": false},
-    {"id": "h18", "name": "Ёршик для унитаза", "category": "Ванная", "quantity": 1, "unit": "шт", "per_cabin": true},
-    {"id": "h19", "name": "Стиральный порошок", "category": "Стирка", "quantity": 1, "unit": "шт", "per_cabin": false},
-    {"id": "h20", "name": "Верёвка для сушки белья", "category": "Стирка", "quantity": 2, "unit": "шт", "per_cabin": false},
-    {"id": "h21", "name": "Прищепки", "category": "Стирка", "quantity": 20, "unit": "шт", "per_cabin": false},
-    {"id": "h22", "name": "Солнцезащитный крем SPF50+", "category": "Здоровье и защита", "quantity": 4, "unit": "шт", "per_cabin": false},
-    {"id": "h23", "name": "Крем после загара (алоэ)", "category": "Здоровье и защита", "quantity": 2, "unit": "шт", "per_cabin": false},
-    {"id": "h24", "name": "Репеллент от насекомых", "category": "Здоровье и защита", "quantity": 3, "unit": "шт", "per_cabin": false},
-    {"id": "h25", "name": "Бинты и пластыри (набор)", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h26", "name": "Антисептик для ран", "category": "Здоровье и защита", "quantity": 1, "unit": "шт", "per_cabin": false},
-    {"id": "h27", "name": "Обезболивающее (ибупрофен)", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h28", "name": "Средство от укачивания", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h29", "name": "Антигистаминное", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h30", "name": "Термометр электронный", "category": "Здоровье и защита", "quantity": 1, "unit": "шт", "per_cabin": false},
-    {"id": "h31", "name": "Антисептик для рук", "category": "Здоровье и защита", "quantity": 1, "unit": "шт", "per_cabin": true},
-    {"id": "h32", "name": "Активированный уголь", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h33", "name": "Средство от диареи", "category": "Здоровье и защита", "quantity": 1, "unit": "упак", "per_cabin": false},
-    {"id": "h34", "name": "Спрей от медуз", "category": "Здоровье и защита", "quantity": 1, "unit": "шт", "per_cabin": false},
-    {"id": "h35", "name": "Салфетки влажные антибактериальные", "category": "Здоровье и защита", "quantity": 3, "unit": "упак", "per_cabin": false}
+    {
+      "id": "h01",
+      "name": "Мешки для мусора (60л)",
+      "category": "Кухня",
+      "quantity": 2,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h02",
+      "name": "Губки для посуды",
+      "category": "Кухня",
+      "quantity": 6,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h03",
+      "name": "Средство для мытья посуды",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "л",
+      "per_cabin": false
+    },
+    {
+      "id": "h04",
+      "name": "Бумажные полотенца",
+      "category": "Кухня",
+      "quantity": 4,
+      "unit": "рул",
+      "per_cabin": false
+    },
+    {
+      "id": "h05",
+      "name": "Салфетки бумажные",
+      "category": "Кухня",
+      "quantity": 3,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h06",
+      "name": "Пищевая плёнка",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "рул",
+      "per_cabin": false
+    },
+    {
+      "id": "h07",
+      "name": "Фольга алюминиевая",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "рул",
+      "per_cabin": false
+    },
+    {
+      "id": "h08",
+      "name": "Пакеты зип-лок",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h09",
+      "name": "Разделочные доски",
+      "category": "Кухня",
+      "quantity": 2,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h10",
+      "name": "Тряпки из микрофибры",
+      "category": "Уборка",
+      "quantity": 6,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h11",
+      "name": "Универсальное чистящее средство",
+      "category": "Уборка",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h12",
+      "name": "Мешки для мусора (30л)",
+      "category": "Уборка",
+      "quantity": 2,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h13",
+      "name": "Туалетная бумага",
+      "category": "Ванная",
+      "quantity": 8,
+      "unit": "рул",
+      "per_cabin": true
+    },
+    {
+      "id": "h14",
+      "name": "Шампунь",
+      "category": "Ванная",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": true
+    },
+    {
+      "id": "h15",
+      "name": "Гель для душа",
+      "category": "Ванная",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": true
+    },
+    {
+      "id": "h16",
+      "name": "Жидкое мыло для рук",
+      "category": "Ванная",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": true
+    },
+    {
+      "id": "h17",
+      "name": "Полотенца пляжные",
+      "category": "Ванная",
+      "quantity": 8,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h18",
+      "name": "Ёршик для унитаза",
+      "category": "Ванная",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": true
+    },
+    {
+      "id": "h19",
+      "name": "Стиральный порошок",
+      "category": "Стирка",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h20",
+      "name": "Верёвка для сушки белья",
+      "category": "Стирка",
+      "quantity": 2,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h21",
+      "name": "Прищепки",
+      "category": "Стирка",
+      "quantity": 50,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h22",
+      "name": "Солнцезащитный крем SPF50+",
+      "category": "Здоровье и защита",
+      "quantity": 4,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h23",
+      "name": "Крем после загара (алоэ)",
+      "category": "Здоровье и защита",
+      "quantity": 2,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h24",
+      "name": "Репеллент от насекомых",
+      "category": "Здоровье и защита",
+      "quantity": 3,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h25",
+      "name": "Бинты и пластыри (набор)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h26",
+      "name": "Антисептик для ран",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h27",
+      "name": "Обезболивающее (ибупрофен)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h28",
+      "name": "Средство от укачивания",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h29",
+      "name": "Антигистаминное",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h30",
+      "name": "Термометр электронный",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h31",
+      "name": "Антисептик для рук",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": true
+    },
+    {
+      "id": "h32",
+      "name": "Активированный уголь",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h33",
+      "name": "Средство от диареи",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h34",
+      "name": "Спрей от медуз",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h35",
+      "name": "Салфетки влажные антибактериальные",
+      "category": "Здоровье и защита",
+      "quantity": 3,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h36",
+      "name": "Тканные одноразовые полотенца",
+      "category": "Кухня",
+      "quantity": 2,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h37",
+      "name": "Набор для BBQ (щипцы, лопатка)",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "набор",
+      "per_cabin": false
+    },
+    {
+      "id": "h38",
+      "name": "Решётка для гриля",
+      "category": "Кухня",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h39",
+      "name": "Зелёнка",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h40",
+      "name": "Йод",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h41",
+      "name": "Средство от простуды (Терафлю/Колдрекс)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h42",
+      "name": "Средство от кашля",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    },
+    {
+      "id": "h43",
+      "name": "Мазь от ушибов (Троксевазин)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h44",
+      "name": "Капли для ушей (Кандибиотик)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h45",
+      "name": "Борный спирт",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h46",
+      "name": "Мазь Спасатель",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h47",
+      "name": "Банеоцин (мазь для ран)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h48",
+      "name": "Пантенол (спрей)",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h49",
+      "name": "Перекись водорода",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h50",
+      "name": "Мирамистин",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "шт",
+      "per_cabin": false
+    },
+    {
+      "id": "h51",
+      "name": "Хлорные таблетки для воды",
+      "category": "Здоровье и защита",
+      "quantity": 1,
+      "unit": "упак",
+      "per_cabin": false
+    }
   ],
   "packing_checklist": [
-    {"id": "p01", "name": "Плавки/купальник", "category": "Одежда", "quantity": 3, "essential": true},
-    {"id": "p02", "name": "Шорты лёгкие", "category": "Одежда", "quantity": 3, "essential": true},
-    {"id": "p03", "name": "Футболки быстросохнущие", "category": "Одежда", "quantity": 5, "essential": true},
-    {"id": "p04", "name": "Рубашка с длинным рукавом (UV-защита)", "category": "Одежда", "quantity": 1, "essential": true},
-    {"id": "p05", "name": "Лёгкие брюки", "category": "Одежда", "quantity": 1, "essential": false},
-    {"id": "p06", "name": "Лёгкая ветровка/дождевик", "category": "Одежда", "quantity": 1, "essential": true},
-    {"id": "p07", "name": "Нижнее бельё", "category": "Одежда", "quantity": 7, "essential": true},
-    {"id": "p08", "name": "Носки лёгкие", "category": "Одежда", "quantity": 3, "essential": false},
-    {"id": "p09", "name": "Парео/саронг", "category": "Одежда", "quantity": 1, "essential": false},
-    {"id": "p10", "name": "Одежда для ужина на берегу", "category": "Одежда", "quantity": 1, "essential": false},
-    {"id": "p11", "name": "Кепка/панама", "category": "Одежда", "quantity": 1, "essential": true},
-    {"id": "p12", "name": "Бафф/повязка на голову", "category": "Одежда", "quantity": 1, "essential": false},
-    {"id": "p13", "name": "Перчатки парусные", "category": "Одежда", "quantity": 1, "essential": false},
-    {"id": "p14", "name": "Сандалии/шлёпанцы", "category": "Обувь", "quantity": 1, "essential": true},
-    {"id": "p15", "name": "Аквашузы/коралловые тапки", "category": "Обувь", "quantity": 1, "essential": true},
-    {"id": "p16", "name": "Кроссовки лёгкие", "category": "Обувь", "quantity": 1, "essential": false},
-    {"id": "p17", "name": "Водонепроницаемый чехол для телефона", "category": "Техника", "quantity": 1, "essential": true},
-    {"id": "p18", "name": "Повербанк (20000+ мАч)", "category": "Техника", "quantity": 1, "essential": true},
-    {"id": "p19", "name": "Зарядный кабель USB-C", "category": "Техника", "quantity": 2, "essential": true},
-    {"id": "p20", "name": "Сетевой адаптер (тип G — Сейшелы)", "category": "Техника", "quantity": 1, "essential": true},
-    {"id": "p21", "name": "Наушники беспроводные", "category": "Техника", "quantity": 1, "essential": false},
-    {"id": "p22", "name": "Экшн-камера/GoPro", "category": "Техника", "quantity": 1, "essential": false},
-    {"id": "p23", "name": "Фонарик налобный", "category": "Техника", "quantity": 1, "essential": false},
-    {"id": "p24", "name": "Гермомешок (dry bag)", "category": "Техника", "quantity": 1, "essential": true},
-    {"id": "p25", "name": "Загранпаспорт", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p26", "name": "Копии документов (электронные)", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p27", "name": "Страховой полис", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p28", "name": "Авиабилеты (электронные)", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p29", "name": "Бронирование яхты", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p30", "name": "Кредитные/дебетовые карты", "category": "Документы", "quantity": 2, "essential": true},
-    {"id": "p31", "name": "Наличные (евро/SCR)", "category": "Документы", "quantity": 1, "essential": true},
-    {"id": "p32", "name": "Зубная щётка и паста", "category": "Личная гигиена", "quantity": 1, "essential": true},
-    {"id": "p33", "name": "Дезодорант", "category": "Личная гигиена", "quantity": 1, "essential": true},
-    {"id": "p34", "name": "Бритва", "category": "Личная гигиена", "quantity": 1, "essential": false},
-    {"id": "p35", "name": "Расчёска", "category": "Личная гигиена", "quantity": 1, "essential": false},
-    {"id": "p36", "name": "Резинки для волос", "category": "Личная гигиена", "quantity": 5, "essential": false},
-    {"id": "p37", "name": "Маска для сна", "category": "Личная гигиена", "quantity": 1, "essential": false},
-    {"id": "p38", "name": "Беруши", "category": "Личная гигиена", "quantity": 1, "essential": false},
-    {"id": "p39", "name": "Личные лекарства", "category": "Аптечка", "quantity": 1, "essential": true},
-    {"id": "p40", "name": "Маска для снорклинга", "category": "Прочее", "quantity": 1, "essential": false},
-    {"id": "p41", "name": "Ласты", "category": "Прочее", "quantity": 1, "essential": false},
-    {"id": "p42", "name": "Книга/электронная книга", "category": "Прочее", "quantity": 1, "essential": false},
-    {"id": "p43", "name": "Солнцезащитные очки (поляризованные)", "category": "Прочее", "quantity": 1, "essential": true},
-    {"id": "p44", "name": "Рюкзак лёгкий складной", "category": "Прочее", "quantity": 1, "essential": false}
+    {
+      "id": "p01",
+      "name": "Плавки/купальник",
+      "category": "Одежда",
+      "quantity": 3,
+      "essential": true
+    },
+    {
+      "id": "p02",
+      "name": "Шорты лёгкие",
+      "category": "Одежда",
+      "quantity": 3,
+      "essential": true
+    },
+    {
+      "id": "p03",
+      "name": "Футболки быстросохнущие",
+      "category": "Одежда",
+      "quantity": 5,
+      "essential": true
+    },
+    {
+      "id": "p04",
+      "name": "Рубашка с длинным рукавом (UV-защита)",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p05",
+      "name": "Лёгкие брюки",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p06",
+      "name": "Лёгкая ветровка/дождевик",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p07",
+      "name": "Нижнее бельё",
+      "category": "Одежда",
+      "quantity": 7,
+      "essential": true
+    },
+    {
+      "id": "p08",
+      "name": "Носки лёгкие",
+      "category": "Одежда",
+      "quantity": 3,
+      "essential": false
+    },
+    {
+      "id": "p09",
+      "name": "Парео/саронг",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p10",
+      "name": "Одежда для ужина на берегу",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p11",
+      "name": "Кепка/панама",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p12",
+      "name": "Бафф/повязка на голову",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p13",
+      "name": "Перчатки парусные",
+      "category": "Одежда",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p14",
+      "name": "Сандалии/шлёпанцы",
+      "category": "Обувь",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p15",
+      "name": "Аквашузы/коралловые тапки",
+      "category": "Обувь",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p16",
+      "name": "Кроссовки лёгкие",
+      "category": "Обувь",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p17",
+      "name": "Водонепроницаемый чехол для телефона",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p18",
+      "name": "Повербанк (20000+ мАч)",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p19",
+      "name": "Зарядный кабель USB-C",
+      "category": "Техника",
+      "quantity": 2,
+      "essential": true
+    },
+    {
+      "id": "p20",
+      "name": "Сетевой адаптер (тип G — Сейшелы)",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p21",
+      "name": "Наушники беспроводные",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p22",
+      "name": "Экшн-камера/GoPro",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p23",
+      "name": "Фонарик налобный",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p24",
+      "name": "Гермомешок (dry bag)",
+      "category": "Техника",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p25",
+      "name": "Загранпаспорт",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p26",
+      "name": "Копии документов (электронные)",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p27",
+      "name": "Страховой полис",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p28",
+      "name": "Авиабилеты (электронные)",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p29",
+      "name": "Бронирование яхты",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p30",
+      "name": "Кредитные/дебетовые карты",
+      "category": "Документы",
+      "quantity": 2,
+      "essential": true
+    },
+    {
+      "id": "p31",
+      "name": "Наличные (евро/SCR)",
+      "category": "Документы",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p32",
+      "name": "Зубная щётка и паста",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p33",
+      "name": "Дезодорант",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p34",
+      "name": "Бритва",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p35",
+      "name": "Расчёска",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p36",
+      "name": "Резинки для волос",
+      "category": "Личная гигиена",
+      "quantity": 5,
+      "essential": false
+    },
+    {
+      "id": "p37",
+      "name": "Маска для сна",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p38",
+      "name": "Беруши",
+      "category": "Личная гигиена",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p39",
+      "name": "Личные лекарства",
+      "category": "Аптечка",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p40",
+      "name": "Маска для снорклинга",
+      "category": "Прочее",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p41",
+      "name": "Ласты",
+      "category": "Прочее",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p42",
+      "name": "Книга/электронная книга",
+      "category": "Прочее",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p43",
+      "name": "Солнцезащитные очки (поляризованные)",
+      "category": "Прочее",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p44",
+      "name": "Рюкзак лёгкий складной",
+      "category": "Прочее",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p45",
+      "name": "Мультитул",
+      "category": "Инструменты",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p46",
+      "name": "Фонарь подводный",
+      "category": "Инструменты",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p47",
+      "name": "Штуцер для шланга",
+      "category": "Инструменты",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p48",
+      "name": "Насадка для шланга",
+      "category": "Инструменты",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p49",
+      "name": "Перчатки рабочие",
+      "category": "Инструменты",
+      "quantity": 2,
+      "essential": false
+    },
+    {
+      "id": "p50",
+      "name": "Маркер",
+      "category": "Инструменты",
+      "quantity": 2,
+      "essential": false
+    },
+    {
+      "id": "p51",
+      "name": "Белая изолента",
+      "category": "Инструменты",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p52",
+      "name": "Буй",
+      "category": "Рыбалка и водные",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p53",
+      "name": "Перчатки для рыбалки/швартовки",
+      "category": "Рыбалка и водные",
+      "quantity": 2,
+      "essential": true
+    },
+    {
+      "id": "p54",
+      "name": "Пассатижи для рыбалки",
+      "category": "Рыбалка и водные",
+      "quantity": 1,
+      "essential": true
+    },
+    {
+      "id": "p55",
+      "name": "Снасти/воблеры",
+      "category": "Рыбалка и водные",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p56",
+      "name": "Маленький спиннинг",
+      "category": "Рыбалка и водные",
+      "quantity": 1,
+      "essential": false
+    },
+    {
+      "id": "p57",
+      "name": "Гермопакеты для телефонов",
+      "category": "Техника",
+      "quantity": 8,
+      "essential": true
+    }
   ],
   "esim_recommendations": [
     {
@@ -91,8 +819,15 @@
       "price_eur": 24,
       "coverage": "Сейшелы",
       "setup_instructions": "Скачайте приложение Airalo, купите план 'Seychelles 10GB', установите eSIM через QR-код в настройках телефона. Активируйте по прибытии.",
-      "pros": ["Широкий выбор планов", "Удобное приложение", "Техподдержка 24/7"],
-      "cons": ["Только данные, без звонков", "Скорость может падать в пиковые часы"],
+      "pros": [
+        "Широкий выбор планов",
+        "Удобное приложение",
+        "Техподдержка 24/7"
+      ],
+      "cons": [
+        "Только данные, без звонков",
+        "Скорость может падать в пиковые часы"
+      ],
       "url": "https://www.airalo.com"
     },
     {
@@ -103,8 +838,15 @@
       "price_eur": 27,
       "coverage": "Сейшелы",
       "setup_instructions": "Купите план на holafly.com, получите QR-код на email. Отсканируйте в Настройках → Сотовая связь → Добавить eSIM. Активируется автоматически.",
-      "pros": ["Безлимитный трафик", "Простая активация", "Без ограничений скорости"],
-      "cons": ["Дороже аналогов", "Нет раздачи через точку доступа"],
+      "pros": [
+        "Безлимитный трафик",
+        "Простая активация",
+        "Без ограничений скорости"
+      ],
+      "cons": [
+        "Дороже аналогов",
+        "Нет раздачи через точку доступа"
+      ],
       "url": "https://www.holafly.com"
     },
     {
@@ -115,8 +857,15 @@
       "price_eur": 21,
       "coverage": "Сейшелы",
       "setup_instructions": "Установите приложение Nomad eSIM, выберите план для Сейшел, оплатите и установите eSIM. Можно установить заранее, активация при подключении к сети.",
-      "pros": ["Самая низкая цена", "Установка заранее", "30 дней действия"],
-      "cons": ["Менее известный провайдер", "Только данные"],
+      "pros": [
+        "Самая низкая цена",
+        "Установка заранее",
+        "30 дней действия"
+      ],
+      "cons": [
+        "Менее известный провайдер",
+        "Только данные"
+      ],
       "url": "https://www.getnomad.app"
     },
     {
@@ -127,8 +876,15 @@
       "price_eur": 23,
       "coverage": "Сейшелы",
       "setup_instructions": "Скачайте приложение aloSIM, зарегистрируйтесь, купите план для Сейшел. Установите eSIM через QR-код или напрямую из приложения.",
-      "pros": ["Хорошее соотношение цена/объём", "Долгий срок действия", "Раздача WiFi"],
-      "cons": ["Ограниченная скорость после лимита", "Нет физической SIM"],
+      "pros": [
+        "Хорошее соотношение цена/объём",
+        "Долгий срок действия",
+        "Раздача WiFi"
+      ],
+      "cons": [
+        "Ограниченная скорость после лимита",
+        "Нет физической SIM"
+      ],
       "url": "https://www.alosim.com"
     },
     {
@@ -139,8 +895,15 @@
       "price_eur": 26,
       "coverage": "Сейшелы + Восточная Африка",
       "setup_instructions": "Зарегистрируйтесь на maya.net, выберите план Africa, установите eSIM. QR-код придёт на email. Активация автоматическая при первом подключении.",
-      "pros": ["Больше данных — 15 ГБ", "Покрытие нескольких стран", "Хорошая скорость"],
-      "cons": ["Дороже за ГБ", "Менее известный бренд"],
+      "pros": [
+        "Больше данных — 15 ГБ",
+        "Покрытие нескольких стран",
+        "Хорошая скорость"
+      ],
+      "cons": [
+        "Дороже за ГБ",
+        "Менее известный бренд"
+      ],
       "url": "https://maya.net"
     }
   ]

@@ -18,11 +18,31 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Овсяные хлопья", "quantity": 0.6, "unit": "кг"},
-        {"name": "Молоко", "quantity": 1.5, "unit": "л"},
-        {"name": "Бананы", "quantity": 4, "unit": "шт"},
-        {"name": "Мёд", "quantity": 0.1, "unit": "кг"},
-        {"name": "Корица молотая", "quantity": 5, "unit": "г"}
+        {
+          "name": "Овсяные хлопья",
+          "quantity": 0.6,
+          "unit": "кг"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 1.5,
+          "unit": "л"
+        },
+        {
+          "name": "Бананы",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 0.1,
+          "unit": "кг"
+        },
+        {
+          "name": "Корица молотая",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Довести молоко до кипения в большой кастрюле.",
@@ -41,12 +61,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Яйца", "quantity": 16, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 4, "unit": "шт"},
-        {"name": "Масло сливочное", "quantity": 50, "unit": "г"},
-        {"name": "Укроп", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 2, "unit": "г"}
+        {
+          "name": "Яйца",
+          "quantity": 16,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 50,
+          "unit": "г"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 2,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Помидоры нарезать кубиками.",
@@ -65,13 +109,41 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Мука пшеничная", "quantity": 0.4, "unit": "кг"},
-        {"name": "Яйца", "quantity": 4, "unit": "шт"},
-        {"name": "Молоко", "quantity": 0.5, "unit": "л"},
-        {"name": "Сахар", "quantity": 60, "unit": "г"},
-        {"name": "Разрыхлитель", "quantity": 10, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Мёд", "quantity": 0.05, "unit": "кг"}
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.5,
+          "unit": "л"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 60,
+          "unit": "г"
+        },
+        {
+          "name": "Разрыхлитель",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 0.05,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Смешать муку, сахар и разрыхлитель.",
@@ -91,12 +163,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Хлеб белый (батон)", "quantity": 1, "unit": "шт"},
-        {"name": "Яйца", "quantity": 6, "unit": "шт"},
-        {"name": "Молоко", "quantity": 0.2, "unit": "л"},
-        {"name": "Сахар", "quantity": 30, "unit": "г"},
-        {"name": "Масло сливочное", "quantity": 50, "unit": "г"},
-        {"name": "Корица молотая", "quantity": 3, "unit": "г"}
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.2,
+          "unit": "л"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 50,
+          "unit": "г"
+        },
+        {
+          "name": "Корица молотая",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Нарезать батон ломтиками толщиной 2 см.",
@@ -115,10 +211,26 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Гранола", "quantity": 0.5, "unit": "кг"},
-        {"name": "Йогурт натуральный", "quantity": 1, "unit": "кг"},
-        {"name": "Манго", "quantity": 3, "unit": "шт"},
-        {"name": "Мёд", "quantity": 0.05, "unit": "кг"}
+        {
+          "name": "Гранола",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Йогурт натуральный",
+          "quantity": 1,
+          "unit": "кг"
+        },
+        {
+          "name": "Манго",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 0.05,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Манго очистить и нарезать кубиками.",
@@ -136,13 +248,41 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Хлеб для тостов", "quantity": 1, "unit": "упак"},
-        {"name": "Авокадо", "quantity": 4, "unit": "шт"},
-        {"name": "Яйца", "quantity": 8, "unit": "шт"},
-        {"name": "Лимон", "quantity": 1, "unit": "шт"},
-        {"name": "Соль", "quantity": 3, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 2, "unit": "г"},
-        {"name": "Уксус столовый", "quantity": 20, "unit": "мл"}
+        {
+          "name": "Хлеб для тостов",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Авокадо",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 8,
+          "unit": "шт"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 2,
+          "unit": "г"
+        },
+        {
+          "name": "Уксус столовый",
+          "quantity": 20,
+          "unit": "мл"
+        }
       ],
       "steps": [
         "Вскипятить воду с уксусом для яиц пашот.",
@@ -161,11 +301,31 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Рис круглозёрный", "quantity": 0.4, "unit": "кг"},
-        {"name": "Кокосовое молоко", "quantity": 0.8, "unit": "л"},
-        {"name": "Вода", "quantity": 0.4, "unit": "л"},
-        {"name": "Сахар", "quantity": 60, "unit": "г"},
-        {"name": "Манго", "quantity": 2, "unit": "шт"}
+        {
+          "name": "Рис круглозёрный",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Кокосовое молоко",
+          "quantity": 0.8,
+          "unit": "л"
+        },
+        {
+          "name": "Вода",
+          "quantity": 0.4,
+          "unit": "л"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 60,
+          "unit": "г"
+        },
+        {
+          "name": "Манго",
+          "quantity": 2,
+          "unit": "шт"
+        }
       ],
       "steps": [
         "Рис промыть, залить водой и кокосовым молоком.",
@@ -184,15 +344,51 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Помидоры", "quantity": 6, "unit": "шт"},
-        {"name": "Огурцы", "quantity": 4, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 3, "unit": "шт"},
-        {"name": "Лук красный", "quantity": 2, "unit": "шт"},
-        {"name": "Маслины", "quantity": 1, "unit": "упак"},
-        {"name": "Сыр фета", "quantity": 0.3, "unit": "кг"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Орегано сушёный", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Помидоры",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Огурцы",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук красный",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Маслины",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Сыр фета",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Орегано сушёный",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Помидоры и огурцы нарезать крупными кусками.",
@@ -211,13 +407,41 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лимон", "quantity": 3, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 6, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"},
-        {"name": "Тимьян сушёный", "quantity": 5, "unit": "г"}
+        {
+          "name": "Лимон",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Тимьян сушёный",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рыбу почистить, выпотрошить, промыть.",
@@ -236,13 +460,41 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лайм", "quantity": 8, "unit": "шт"},
-        {"name": "Лук красный", "quantity": 2, "unit": "шт"},
-        {"name": "Перец чили свежий", "quantity": 2, "unit": "шт"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Авокадо", "quantity": 2, "unit": "шт"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Масло оливковое", "quantity": 30, "unit": "мл"}
+        {
+          "name": "Лайм",
+          "quantity": 8,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук красный",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец чили свежий",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Авокадо",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 30,
+          "unit": "мл"
+        }
       ],
       "steps": [
         "Рыбу нарезать кубиками 1.5 см.",
@@ -262,13 +514,41 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Спагетти", "quantity": 0.8, "unit": "кг"},
-        {"name": "Чеснок", "quantity": 10, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 100, "unit": "мл"},
-        {"name": "Перец чили сушёный (хлопья)", "quantity": 5, "unit": "г"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 10, "unit": "г"},
-        {"name": "Пармезан", "quantity": 0.1, "unit": "кг"}
+        {
+          "name": "Спагетти",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 10,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 100,
+          "unit": "мл"
+        },
+        {
+          "name": "Перец чили сушёный (хлопья)",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Пармезан",
+          "quantity": 0.1,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Варить спагетти в подсоленной воде до аль денте.",
@@ -288,16 +568,56 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Картофель", "quantity": 0.8, "unit": "кг"},
-        {"name": "Морковь", "quantity": 3, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 4, "unit": "шт"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Лавровый лист", "quantity": 3, "unit": "шт"},
-        {"name": "Соль", "quantity": 10, "unit": "г"},
-        {"name": "Перец чёрный горошком", "quantity": 5, "unit": "г"},
-        {"name": "Укроп", "quantity": 1, "unit": "упак"}
+        {
+          "name": "Картофель",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Лавровый лист",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный горошком",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        }
       ],
       "steps": [
         "Картофель нарезать кубиками, морковь — кружочками, лук — полукольцами.",
@@ -318,14 +638,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Рис длиннозёрный", "quantity": 0.6, "unit": "кг"},
-        {"name": "Яйца", "quantity": 4, "unit": "шт"},
-        {"name": "Морковь", "quantity": 2, "unit": "шт"},
-        {"name": "Горошек замороженный", "quantity": 0.2, "unit": "кг"},
-        {"name": "Соевый соус", "quantity": 60, "unit": "мл"},
-        {"name": "Масло растительное", "quantity": 40, "unit": "мл"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Лук зелёный", "quantity": 1, "unit": "упак"}
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.6,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Горошек замороженный",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук зелёный",
+          "quantity": 1,
+          "unit": "упак"
+        }
       ],
       "steps": [
         "Рис отварить, остудить (лучше сварить заранее).",
@@ -345,14 +697,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Куриное филе", "quantity": 1.2, "unit": "кг"},
-        {"name": "Соевый соус", "quantity": 80, "unit": "мл"},
-        {"name": "Мёд", "quantity": 40, "unit": "г"},
-        {"name": "Имбирь свежий", "quantity": 30, "unit": "г"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Кунжут", "quantity": 20, "unit": "г"},
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"}
+        {
+          "name": "Куриное филе",
+          "quantity": 1.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 80,
+          "unit": "мл"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Кунжут",
+          "quantity": 20,
+          "unit": "г"
+        },
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Филе нарезать кусочками. Имбирь и чеснок мелко натереть.",
@@ -372,14 +756,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Мука пшеничная", "quantity": 0.15, "unit": "кг"},
-        {"name": "Яйца", "quantity": 3, "unit": "шт"},
-        {"name": "Панировочные сухари", "quantity": 0.15, "unit": "кг"},
-        {"name": "Картофель", "quantity": 1.2, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 100, "unit": "мл"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Соль", "quantity": 8, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Панировочные сухари",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Картофель",
+          "quantity": 1.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 100,
+          "unit": "мл"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Картофель очистить, нарезать дольками, отварить до готовности.",
@@ -398,15 +814,51 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Тортильи пшеничные", "quantity": 1, "unit": "упак"},
-        {"name": "Капуста белокочанная", "quantity": 0.3, "unit": "кг"},
-        {"name": "Лайм", "quantity": 4, "unit": "шт"},
-        {"name": "Сметана", "quantity": 0.2, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Кумин (зира)", "quantity": 5, "unit": "г"},
-        {"name": "Перец чили свежий", "quantity": 1, "unit": "шт"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"}
+        {
+          "name": "Тортильи пшеничные",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Капуста белокочанная",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Сметана",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Кумин (зира)",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чили свежий",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        }
       ],
       "steps": [
         "Рыбу нарезать полосками, приправить солью и кумином.",
@@ -426,12 +878,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Спагетти", "quantity": 0.8, "unit": "кг"},
-        {"name": "Бекон (панчетта)", "quantity": 0.4, "unit": "кг"},
-        {"name": "Яйца", "quantity": 6, "unit": "шт"},
-        {"name": "Пармезан", "quantity": 0.15, "unit": "кг"},
-        {"name": "Перец чёрный молотый", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 10, "unit": "г"}
+        {
+          "name": "Спагетти",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Бекон (панчетта)",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Пармезан",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 10,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Варить спагетти в подсоленной воде до аль денте.",
@@ -451,13 +927,41 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Авокадо", "quantity": 4, "unit": "шт"},
-        {"name": "Лайм", "quantity": 2, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 2, "unit": "шт"},
-        {"name": "Лук красный", "quantity": 1, "unit": "шт"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Начос (чипсы кукурузные)", "quantity": 2, "unit": "упак"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Авокадо",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук красный",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Начос (чипсы кукурузные)",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Авокадо разрезать, вынуть мякоть, размять вилкой.",
@@ -476,12 +980,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Ананас", "quantity": 1, "unit": "шт"},
-        {"name": "Манго", "quantity": 2, "unit": "шт"},
-        {"name": "Бананы", "quantity": 3, "unit": "шт"},
-        {"name": "Лайм", "quantity": 2, "unit": "шт"},
-        {"name": "Мята свежая", "quantity": 1, "unit": "упак"},
-        {"name": "Мёд", "quantity": 30, "unit": "г"}
+        {
+          "name": "Ананас",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Манго",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Бананы",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Мята свежая",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 30,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Все фрукты очистить и нарезать кубиками.",
@@ -499,13 +1027,41 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Креветки замороженные (крупные)", "quantity": 1, "unit": "кг"},
-        {"name": "Чеснок", "quantity": 8, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 80, "unit": "мл"},
-        {"name": "Перец чили сушёный (хлопья)", "quantity": 3, "unit": "г"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Хлеб белый (батон)", "quantity": 1, "unit": "шт"}
+        {
+          "name": "Креветки замороженные (крупные)",
+          "quantity": 1,
+          "unit": "кг"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 8,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 80,
+          "unit": "мл"
+        },
+        {
+          "name": "Перец чили сушёный (хлопья)",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 1,
+          "unit": "шт"
+        }
       ],
       "steps": [
         "Креветки разморозить, очистить.",
@@ -524,15 +1080,51 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Кускус", "quantity": 0.5, "unit": "кг"},
-        {"name": "Помидоры черри", "quantity": 0.3, "unit": "кг"},
-        {"name": "Огурцы", "quantity": 3, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Мята свежая", "quantity": 1, "unit": "упак"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Кускус",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Помидоры черри",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Огурцы",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Мята свежая",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Кускус залить кипятком 1:1, накрыть, оставить на 5 минут.",
@@ -551,16 +1143,56 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Кокосовое молоко", "quantity": 0.8, "unit": "л"},
-        {"name": "Паста карри (красная или жёлтая)", "quantity": 60, "unit": "г"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Имбирь свежий", "quantity": 30, "unit": "г"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Лайм", "quantity": 2, "unit": "шт"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Кокосовое молоко",
+          "quantity": 0.8,
+          "unit": "л"
+        },
+        {
+          "name": "Паста карри (красная или жёлтая)",
+          "quantity": 60,
+          "unit": "г"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Лук, чеснок и имбирь мелко нарезать, обжарить на масле.",
@@ -581,14 +1213,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Булгур", "quantity": 0.4, "unit": "кг"},
-        {"name": "Помидоры", "quantity": 6, "unit": "шт"},
-        {"name": "Огурцы", "quantity": 3, "unit": "шт"},
-        {"name": "Петрушка", "quantity": 2, "unit": "упак"},
-        {"name": "Мята свежая", "quantity": 1, "unit": "упак"},
-        {"name": "Лимон", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Булгур",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Огурцы",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Мята свежая",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Булгур залить кипятком 1:1.5, накрыть, оставить на 15 минут.",
@@ -607,12 +1271,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Хлеб белый (батон)", "quantity": 1, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 4, "unit": "шт"},
-        {"name": "Базилик свежий", "quantity": 1, "unit": "упак"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Базилик свежий",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Хлеб нарезать ломтиками, подсушить на сковороде.",
@@ -631,16 +1319,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Куриные ножки", "quantity": 1.6, "unit": "кг"},
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Морковь", "quantity": 2, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Паприка", "quantity": 10, "unit": "г"},
-        {"name": "Куркума", "quantity": 5, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 40, "unit": "мл"},
-        {"name": "Соль", "quantity": 8, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Куриные ножки",
+          "quantity": 1.6,
+          "unit": "кг"
+        },
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Куркума",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Ножки натереть паприкой, солью и перцем.",
@@ -660,16 +1388,56 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Помидоры", "quantity": 6, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Тимьян сушёный", "quantity": 5, "unit": "г"},
-        {"name": "Паприка", "quantity": 5, "unit": "г"},
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"},
-        {"name": "Соль", "quantity": 8, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Помидоры",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Тимьян сушёный",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Лук и чеснок нарезать, обжарить на оливковом масле.",
@@ -689,14 +1457,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Яйца", "quantity": 16, "unit": "шт"},
-        {"name": "Молоко", "quantity": 0.2, "unit": "л"},
-        {"name": "Сыр твёрдый", "quantity": 0.2, "unit": "кг"},
-        {"name": "Помидоры", "quantity": 3, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Масло сливочное", "quantity": 40, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 2, "unit": "г"}
+        {
+          "name": "Яйца",
+          "quantity": 16,
+          "unit": "шт"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.2,
+          "unit": "л"
+        },
+        {
+          "name": "Сыр твёрдый",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 2,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Помидоры и перец нарезать кубиками, обжарить на масле 3 минуты.",
@@ -715,16 +1515,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Чечевица красная", "quantity": 0.4, "unit": "кг"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Морковь", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Томатная паста", "quantity": 40, "unit": "г"},
-        {"name": "Кумин (зира)", "quantity": 5, "unit": "г"},
-        {"name": "Куркума", "quantity": 3, "unit": "г"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Лимон", "quantity": 1, "unit": "шт"},
-        {"name": "Соль", "quantity": 8, "unit": "г"}
+        {
+          "name": "Чечевица красная",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Томатная паста",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Кумин (зира)",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Куркума",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Лук, морковь и чеснок нарезать, обжарить на оливковом масле.",
@@ -744,16 +1584,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Куриное филе", "quantity": 0.8, "unit": "кг"},
-        {"name": "Салат айсберг", "quantity": 2, "unit": "шт"},
-        {"name": "Хлеб белый (батон)", "quantity": 0.5, "unit": "шт"},
-        {"name": "Пармезан", "quantity": 0.1, "unit": "кг"},
-        {"name": "Яйца", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Лимон", "quantity": 1, "unit": "шт"},
-        {"name": "Горчица дижонская", "quantity": 15, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Куриное филе",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Салат айсберг",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 0.5,
+          "unit": "шт"
+        },
+        {
+          "name": "Пармезан",
+          "quantity": 0.1,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Горчица дижонская",
+          "quantity": 15,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Филе посолить, обжарить целиком на сковороде по 5 минут с каждой стороны. Нарезать.",
@@ -772,16 +1652,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Нут консервированный", "quantity": 2, "unit": "упак"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Тахини (паста кунжутная)", "quantity": 60, "unit": "г"},
-        {"name": "Морковь", "quantity": 4, "unit": "шт"},
-        {"name": "Огурцы", "quantity": 3, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Паприка", "quantity": 3, "unit": "г"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Нут консервированный",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Тахини (паста кунжутная)",
+          "quantity": 60,
+          "unit": "г"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Огурцы",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Нут слить, размять вилкой или блендером (если есть).",
@@ -800,15 +1720,51 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Пенне (макароны)", "quantity": 0.8, "unit": "кг"},
-        {"name": "Тунец консервированный", "quantity": 3, "unit": "упак"},
-        {"name": "Помидоры", "quantity": 4, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Маслины", "quantity": 1, "unit": "упак"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Базилик свежий", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 10, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Пенне (макароны)",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Тунец консервированный",
+          "quantity": 3,
+          "unit": "упак"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Маслины",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Базилик свежий",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Варить пенне в подсоленной воде.",
@@ -827,15 +1783,51 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Яйца", "quantity": 2, "unit": "шт"},
-        {"name": "Хлеб белый (батон)", "quantity": 0.3, "unit": "шт"},
-        {"name": "Молоко", "quantity": 0.1, "unit": "л"},
-        {"name": "Панировочные сухари", "quantity": 0.1, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 60, "unit": "мл"},
-        {"name": "Укроп", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 0.3,
+          "unit": "шт"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.1,
+          "unit": "л"
+        },
+        {
+          "name": "Панировочные сухари",
+          "quantity": 0.1,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рыбу мелко порубить ножом (фарш).",
@@ -855,16 +1847,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Кабачки (цуккини)", "quantity": 2, "unit": "шт"},
-        {"name": "Баклажаны", "quantity": 2, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 4, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 3, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 60, "unit": "мл"},
-        {"name": "Тимьян сушёный", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 8, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Кабачки (цуккини)",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Баклажаны",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Тимьян сушёный",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Все овощи нарезать крупными кубиками.",
@@ -884,12 +1916,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Сыр твёрдый", "quantity": 0.2, "unit": "кг"},
-        {"name": "Сыр фета", "quantity": 0.15, "unit": "кг"},
-        {"name": "Крекеры", "quantity": 2, "unit": "упак"},
-        {"name": "Виноград", "quantity": 0.3, "unit": "кг"},
-        {"name": "Мёд", "quantity": 30, "unit": "г"},
-        {"name": "Орехи грецкие", "quantity": 0.1, "unit": "кг"}
+        {
+          "name": "Сыр твёрдый",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Сыр фета",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Крекеры",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Виноград",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Орехи грецкие",
+          "quantity": 0.1,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Сыры нарезать ломтиками или кубиками.",
@@ -908,14 +1964,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лапша (удон или яичная)", "quantity": 0.6, "unit": "кг"},
-        {"name": "Соевый соус", "quantity": 80, "unit": "мл"},
-        {"name": "Мёд", "quantity": 40, "unit": "г"},
-        {"name": "Имбирь свежий", "quantity": 20, "unit": "г"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Кунжут", "quantity": 15, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Лук зелёный", "quantity": 1, "unit": "упак"}
+        {
+          "name": "Лапша (удон или яичная)",
+          "quantity": 0.6,
+          "unit": "кг"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 80,
+          "unit": "мл"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 20,
+          "unit": "г"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Кунжут",
+          "quantity": 15,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Лук зелёный",
+          "quantity": 1,
+          "unit": "упак"
+        }
       ],
       "steps": [
         "Смешать соевый соус, мёд, тёртый имбирь и чеснок.",
@@ -935,11 +2023,31 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Моцарелла", "quantity": 0.4, "unit": "кг"},
-        {"name": "Помидоры", "quantity": 6, "unit": "шт"},
-        {"name": "Базилик свежий", "quantity": 1, "unit": "упак"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Моцарелла",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Базилик свежий",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Помидоры и моцареллу нарезать кружочками.",
@@ -957,16 +2065,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Яйца", "quantity": 10, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 6, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Кумин (зира)", "quantity": 5, "unit": "г"},
-        {"name": "Паприка", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Хлеб белый (батон)", "quantity": 1, "unit": "шт"}
+        {
+          "name": "Яйца",
+          "quantity": 10,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Кумин (зира)",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 1,
+          "unit": "шт"
+        }
       ],
       "steps": [
         "Лук, перец и чеснок нарезать, обжарить на масле.",
@@ -986,11 +2134,31 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Картофель", "quantity": 1.5, "unit": "кг"},
-        {"name": "Масло сливочное", "quantity": 80, "unit": "г"},
-        {"name": "Молоко", "quantity": 0.3, "unit": "л"},
-        {"name": "Соль", "quantity": 8, "unit": "г"},
-        {"name": "Мускатный орех", "quantity": 2, "unit": "г"}
+        {
+          "name": "Картофель",
+          "quantity": 1.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 80,
+          "unit": "г"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.3,
+          "unit": "л"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        },
+        {
+          "name": "Мускатный орех",
+          "quantity": 2,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Картофель очистить, нарезать крупно, залить водой.",
@@ -1009,16 +2177,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Креветки замороженные (крупные)", "quantity": 0.5, "unit": "кг"},
-        {"name": "Кокосовое молоко", "quantity": 0.4, "unit": "л"},
-        {"name": "Грибы шампиньоны", "quantity": 0.3, "unit": "кг"},
-        {"name": "Имбирь свежий", "quantity": 30, "unit": "г"},
-        {"name": "Лайм", "quantity": 3, "unit": "шт"},
-        {"name": "Перец чили свежий", "quantity": 2, "unit": "шт"},
-        {"name": "Соевый соус", "quantity": 30, "unit": "мл"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Помидоры черри", "quantity": 0.2, "unit": "кг"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Креветки замороженные (крупные)",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Кокосовое молоко",
+          "quantity": 0.4,
+          "unit": "л"
+        },
+        {
+          "name": "Грибы шампиньоны",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец чили свежий",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Помидоры черри",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "В кастрюле вскипятить 2 литра воды с нарезанным имбирём и чили.",
@@ -1038,14 +2246,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Манго", "quantity": 2, "unit": "шт"},
-        {"name": "Лук красный", "quantity": 1, "unit": "шт"},
-        {"name": "Перец чили свежий", "quantity": 1, "unit": "шт"},
-        {"name": "Лайм", "quantity": 2, "unit": "шт"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"}
+        {
+          "name": "Манго",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук красный",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец чили свежий",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Сальса: манго, лук, чили нарезать мелко, смешать с кинзой, лаймом, солью.",
@@ -1063,16 +2303,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Спагетти", "quantity": 0.8, "unit": "кг"},
-        {"name": "Помидоры", "quantity": 8, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 5, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 1, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 50, "unit": "мл"},
-        {"name": "Базилик свежий", "quantity": 1, "unit": "упак"},
-        {"name": "Сахар", "quantity": 10, "unit": "г"},
-        {"name": "Соль", "quantity": 10, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"},
-        {"name": "Пармезан", "quantity": 0.05, "unit": "кг"}
+        {
+          "name": "Спагетти",
+          "quantity": 0.8,
+          "unit": "кг"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 8,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 5,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 50,
+          "unit": "мл"
+        },
+        {
+          "name": "Базилик свежий",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Пармезан",
+          "quantity": 0.05,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Помидоры обдать кипятком, снять кожицу, нарезать.",
@@ -1091,12 +2371,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Салями", "quantity": 0.2, "unit": "кг"},
-        {"name": "Прошутто", "quantity": 0.15, "unit": "кг"},
-        {"name": "Маслины", "quantity": 1, "unit": "упак"},
-        {"name": "Помидоры вяленые", "quantity": 1, "unit": "упак"},
-        {"name": "Хлеб белый (батон)", "quantity": 0.5, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 20, "unit": "мл"}
+        {
+          "name": "Салями",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Прошутто",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Маслины",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Помидоры вяленые",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Хлеб белый (батон)",
+          "quantity": 0.5,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 20,
+          "unit": "мл"
+        }
       ],
       "steps": [
         "Мясо нарезать тонкими ломтиками.",
@@ -1114,10 +2418,26 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Кукурузная крупа (полента)", "quantity": 0.4, "unit": "кг"},
-        {"name": "Пармезан", "quantity": 0.1, "unit": "кг"},
-        {"name": "Масло сливочное", "quantity": 60, "unit": "г"},
-        {"name": "Соль", "quantity": 8, "unit": "г"}
+        {
+          "name": "Кукурузная крупа (полента)",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Пармезан",
+          "quantity": 0.1,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 60,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Вскипятить 1.5 литра подсоленной воды.",
@@ -1136,12 +2456,36 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Имбирь свежий", "quantity": 40, "unit": "г"},
-        {"name": "Лук зелёный", "quantity": 1, "unit": "упак"},
-        {"name": "Соевый соус", "quantity": 60, "unit": "мл"},
-        {"name": "Масло кунжутное", "quantity": 30, "unit": "мл"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Кунжут", "quantity": 10, "unit": "г"}
+        {
+          "name": "Имбирь свежий",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Лук зелёный",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Масло кунжутное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Кунжут",
+          "quantity": 10,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рыбу посолить, уложить на тарелку.",
@@ -1161,14 +2505,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Мука пшеничная", "quantity": 0.3, "unit": "кг"},
-        {"name": "Яйца", "quantity": 4, "unit": "шт"},
-        {"name": "Молоко", "quantity": 0.6, "unit": "л"},
-        {"name": "Сахар", "quantity": 30, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Соль", "quantity": 3, "unit": "г"},
-        {"name": "Сметана", "quantity": 0.15, "unit": "кг"},
-        {"name": "Мёд", "quantity": 0.05, "unit": "кг"}
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Молоко",
+          "quantity": 0.6,
+          "unit": "л"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Сметана",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 0.05,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Смешать яйца, молоко, сахар и соль.",
@@ -1187,15 +2563,51 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Тунец консервированный", "quantity": 2, "unit": "упак"},
-        {"name": "Фасоль белая консервированная", "quantity": 2, "unit": "упак"},
-        {"name": "Лук красный", "quantity": 1, "unit": "шт"},
-        {"name": "Помидоры черри", "quantity": 0.2, "unit": "кг"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Лимон", "quantity": 1, "unit": "шт"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 3, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 2, "unit": "г"}
+        {
+          "name": "Тунец консервированный",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Фасоль белая консервированная",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Лук красный",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры черри",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 2,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Фасоль слить и промыть.",
@@ -1214,12 +2626,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Бананы", "quantity": 5, "unit": "шт"},
-        {"name": "Яйца", "quantity": 3, "unit": "шт"},
-        {"name": "Мука пшеничная", "quantity": 0.1, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Корица молотая", "quantity": 3, "unit": "г"},
-        {"name": "Мёд", "quantity": 30, "unit": "г"}
+        {
+          "name": "Бананы",
+          "quantity": 5,
+          "unit": "шт"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.1,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Корица молотая",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 30,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Бананы размять вилкой в пюре.",
@@ -1237,16 +2673,56 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Свинина (шея или вырезка)", "quantity": 1.2, "unit": "кг"},
-        {"name": "Ананас", "quantity": 1, "unit": "шт"},
-        {"name": "Соевый соус", "quantity": 60, "unit": "мл"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Имбирь свежий", "quantity": 20, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 40, "unit": "мл"},
-        {"name": "Кунжут", "quantity": 15, "unit": "г"},
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"}
+        {
+          "name": "Свинина (шея или вырезка)",
+          "quantity": 1.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Ананас",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 20,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Кунжут",
+          "quantity": 15,
+          "unit": "г"
+        },
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "Свинину нарезать кусочками, обжарить на сильном огне.",
@@ -1266,14 +2742,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Лук репчатый", "quantity": 2, "unit": "шт"},
-        {"name": "Помидоры", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Тимьян сушёный", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"},
-        {"name": "Фольга алюминиевая", "quantity": 1, "unit": "упак"}
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Лук репчатый",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Помидоры",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Тимьян сушёный",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Фольга алюминиевая",
+          "quantity": 1,
+          "unit": "упак"
+        }
       ],
       "steps": [
         "Рыбу натереть солью, перцем, тимьяном.",
@@ -1293,14 +2801,46 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Йогурт натуральный", "quantity": 0.3, "unit": "кг"},
-        {"name": "Огурцы", "quantity": 4, "unit": "шт"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 20, "unit": "мл"},
-        {"name": "Укроп", "quantity": 1, "unit": "упак"},
-        {"name": "Морковь", "quantity": 3, "unit": "шт"},
-        {"name": "Перец болгарский", "quantity": 2, "unit": "шт"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Йогурт натуральный",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Огурцы",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 20,
+          "unit": "мл"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Морковь",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Перец болгарский",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Для дзадзики: 1 огурец натереть, отжать, смешать с йогуртом, чесноком, укропом, маслом.",
@@ -1317,9 +2857,21 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Рис длиннозёрный", "quantity": 0.5, "unit": "кг"},
-        {"name": "Кокосовое молоко", "quantity": 0.4, "unit": "л"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Рис длиннозёрный",
+          "quantity": 0.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Кокосовое молоко",
+          "quantity": 0.4,
+          "unit": "л"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рис промыть.",
@@ -1338,10 +2890,26 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Шоколад тёмный", "quantity": 0.3, "unit": "кг"},
-        {"name": "Яйца", "quantity": 6, "unit": "шт"},
-        {"name": "Сахар", "quantity": 50, "unit": "г"},
-        {"name": "Масло сливочное", "quantity": 30, "unit": "г"}
+        {
+          "name": "Шоколад тёмный",
+          "quantity": 0.3,
+          "unit": "кг"
+        },
+        {
+          "name": "Яйца",
+          "quantity": 6,
+          "unit": "шт"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 50,
+          "unit": "г"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 30,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Шоколад поломать, растопить на водяной бане с маслом.",
@@ -1361,12 +2929,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Мука пшеничная", "quantity": 0.4, "unit": "кг"},
-        {"name": "Йогурт натуральный", "quantity": 0.2, "unit": "кг"},
-        {"name": "Разрыхлитель", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Масло сливочное", "quantity": 40, "unit": "г"},
-        {"name": "Чеснок", "quantity": 3, "unit": "шт"}
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.4,
+          "unit": "кг"
+        },
+        {
+          "name": "Йогурт натуральный",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Разрыхлитель",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Масло сливочное",
+          "quantity": 40,
+          "unit": "г"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 3,
+          "unit": "шт"
+        }
       ],
       "steps": [
         "Смешать муку, разрыхлитель, соль.",
@@ -1385,14 +2977,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Масло сливочное", "quantity": 80, "unit": "г"},
-        {"name": "Лимон", "quantity": 3, "unit": "шт"},
-        {"name": "Каперсы", "quantity": 30, "unit": "г"},
-        {"name": "Петрушка", "quantity": 1, "unit": "упак"},
-        {"name": "Мука пшеничная", "quantity": 0.05, "unit": "кг"},
-        {"name": "Соль", "quantity": 5, "unit": "г"},
-        {"name": "Перец чёрный молотый", "quantity": 3, "unit": "г"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"}
+        {
+          "name": "Масло сливочное",
+          "quantity": 80,
+          "unit": "г"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Каперсы",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Петрушка",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Мука пшеничная",
+          "quantity": 0.05,
+          "unit": "кг"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Перец чёрный молотый",
+          "quantity": 3,
+          "unit": "г"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        }
       ],
       "steps": [
         "Рыбу посолить, поперчить, обвалять в муке.",
@@ -1411,9 +3035,21 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Апельсины", "quantity": 10, "unit": "шт"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Мёд", "quantity": 30, "unit": "г"}
+        {
+          "name": "Апельсины",
+          "quantity": 10,
+          "unit": "шт"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 30,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Апельсины и лимоны разрезать пополам.",
@@ -1431,8 +3067,16 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Кофе молотый", "quantity": 0.25, "unit": "кг"},
-        {"name": "Сахар", "quantity": 0.1, "unit": "кг"}
+        {
+          "name": "Кофе молотый",
+          "quantity": 0.25,
+          "unit": "кг"
+        },
+        {
+          "name": "Сахар",
+          "quantity": 0.1,
+          "unit": "кг"
+        }
       ],
       "steps": [
         "На каждую порцию: 2 чайные ложки кофе на 200 мл воды.",
@@ -1450,10 +3094,26 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Чай чёрный/зелёный (пакетики)", "quantity": 2, "unit": "упак"},
-        {"name": "Имбирь свежий", "quantity": 30, "unit": "г"},
-        {"name": "Лимон", "quantity": 2, "unit": "шт"},
-        {"name": "Мёд", "quantity": 50, "unit": "г"}
+        {
+          "name": "Чай чёрный/зелёный (пакетики)",
+          "quantity": 2,
+          "unit": "упак"
+        },
+        {
+          "name": "Имбирь свежий",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Лимон",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Мёд",
+          "quantity": 50,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Имбирь нарезать тонкими ломтиками.",
@@ -1471,14 +3131,46 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Лук красный", "quantity": 1, "unit": "шт"},
-        {"name": "Каперсы", "quantity": 30, "unit": "г"},
-        {"name": "Лайм", "quantity": 3, "unit": "шт"},
-        {"name": "Масло оливковое", "quantity": 40, "unit": "мл"},
-        {"name": "Соевый соус", "quantity": 20, "unit": "мл"},
-        {"name": "Кунжут", "quantity": 10, "unit": "г"},
-        {"name": "Авокадо", "quantity": 2, "unit": "шт"},
-        {"name": "Соль", "quantity": 3, "unit": "г"}
+        {
+          "name": "Лук красный",
+          "quantity": 1,
+          "unit": "шт"
+        },
+        {
+          "name": "Каперсы",
+          "quantity": 30,
+          "unit": "г"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Масло оливковое",
+          "quantity": 40,
+          "unit": "мл"
+        },
+        {
+          "name": "Соевый соус",
+          "quantity": 20,
+          "unit": "мл"
+        },
+        {
+          "name": "Кунжут",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Авокадо",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Соль",
+          "quantity": 3,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рыбу (свежайшую!) нарезать мелкими кубиками.",
@@ -1497,12 +3189,36 @@
       "is_fish_dish": false,
       "fresh_catch": false,
       "ingredients": [
-        {"name": "Картофель", "quantity": 1.5, "unit": "кг"},
-        {"name": "Масло растительное", "quantity": 60, "unit": "мл"},
-        {"name": "Паприка", "quantity": 10, "unit": "г"},
-        {"name": "Чеснок", "quantity": 4, "unit": "шт"},
-        {"name": "Укроп", "quantity": 1, "unit": "упак"},
-        {"name": "Соль", "quantity": 8, "unit": "г"}
+        {
+          "name": "Картофель",
+          "quantity": 1.5,
+          "unit": "кг"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 60,
+          "unit": "мл"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 10,
+          "unit": "г"
+        },
+        {
+          "name": "Чеснок",
+          "quantity": 4,
+          "unit": "шт"
+        },
+        {
+          "name": "Укроп",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Соль",
+          "quantity": 8,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Картофель вымыть, нарезать дольками (можно с кожурой).",
@@ -1521,15 +3237,51 @@
       "is_fish_dish": true,
       "fresh_catch": true,
       "ingredients": [
-        {"name": "Тортильи пшеничные", "quantity": 1, "unit": "упак"},
-        {"name": "Авокадо", "quantity": 2, "unit": "шт"},
-        {"name": "Капуста белокочанная", "quantity": 0.2, "unit": "кг"},
-        {"name": "Лайм", "quantity": 3, "unit": "шт"},
-        {"name": "Сметана", "quantity": 0.15, "unit": "кг"},
-        {"name": "Кинза", "quantity": 1, "unit": "упак"},
-        {"name": "Масло растительное", "quantity": 30, "unit": "мл"},
-        {"name": "Паприка", "quantity": 5, "unit": "г"},
-        {"name": "Соль", "quantity": 5, "unit": "г"}
+        {
+          "name": "Тортильи пшеничные",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Авокадо",
+          "quantity": 2,
+          "unit": "шт"
+        },
+        {
+          "name": "Капуста белокочанная",
+          "quantity": 0.2,
+          "unit": "кг"
+        },
+        {
+          "name": "Лайм",
+          "quantity": 3,
+          "unit": "шт"
+        },
+        {
+          "name": "Сметана",
+          "quantity": 0.15,
+          "unit": "кг"
+        },
+        {
+          "name": "Кинза",
+          "quantity": 1,
+          "unit": "упак"
+        },
+        {
+          "name": "Масло растительное",
+          "quantity": 30,
+          "unit": "мл"
+        },
+        {
+          "name": "Паприка",
+          "quantity": 5,
+          "unit": "г"
+        },
+        {
+          "name": "Соль",
+          "quantity": 5,
+          "unit": "г"
+        }
       ],
       "steps": [
         "Рыбу приправить паприкой и солью, обжарить до готовности.",
@@ -1546,70 +3298,243 @@
       "day": 1,
       "title": "День 1 — Отплытие",
       "meals": {
-        "breakfast": {"recipe_ids": ["r01", "r55", "r56"], "note": "Овсянка с фруктами, свежий сок, кофе"},
-        "lunch": {"recipe_ids": ["r08", "r11"], "note": "Греческий салат и паста аглио-олио"},
-        "snack": {"recipe_ids": ["r18"], "note": "Гуакамоле с начос"},
-        "dinner": {"recipe_ids": ["r09", "r38"], "note": "Рыба-гриль с лимоном + пюре"}
+        "breakfast": {
+          "recipe_ids": [
+            "r01",
+            "r55",
+            "r56"
+          ],
+          "note": "Овсянка с фруктами, свежий сок, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r08",
+            "r11"
+          ],
+          "note": "Греческий салат и паста аглио-олио"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r18"
+          ],
+          "note": "Гуакамоле с начос"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r09",
+            "r38"
+          ],
+          "note": "Рыба-гриль с лимоном + пюре"
+        }
       }
     },
     {
       "day": 2,
       "title": "День 2 — Первый улов",
       "meals": {
-        "breakfast": {"recipe_ids": ["r02", "r56"], "note": "Яичница-болтунья с помидорами, кофе"},
-        "lunch": {"recipe_ids": ["r10", "r21"], "note": "Севиче из свежей рыбы + кускус с овощами"},
-        "snack": {"recipe_ids": ["r19", "r57"], "note": "Фруктовый салат, чай"},
-        "dinner": {"recipe_ids": ["r14", "r33"], "note": "Курица терияки и овощное рагу"}
+        "breakfast": {
+          "recipe_ids": [
+            "r02",
+            "r56"
+          ],
+          "note": "Яичница-болтунья с помидорами, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r10",
+            "r21"
+          ],
+          "note": "Севиче из свежей рыбы + кускус с овощами"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r19",
+            "r57"
+          ],
+          "note": "Фруктовый салат, чай"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r14",
+            "r33"
+          ],
+          "note": "Курица терияки и овощное рагу"
+        }
       }
     },
     {
       "day": 3,
       "title": "День 3 — Тропический день",
       "meals": {
-        "breakfast": {"recipe_ids": ["r37", "r56"], "note": "Шакшука с хлебом, кофе"},
-        "lunch": {"recipe_ids": ["r16", "r28"], "note": "Тако с рыбой + чечевичный суп"},
-        "snack": {"recipe_ids": ["r36", "r57"], "note": "Капрезе, чай"},
-        "dinner": {"recipe_ids": ["r22", "r51"], "note": "Рыба в кокосовом карри с рисом"}
+        "breakfast": {
+          "recipe_ids": [
+            "r37",
+            "r56"
+          ],
+          "note": "Шакшука с хлебом, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r16",
+            "r28"
+          ],
+          "note": "Тако с рыбой + чечевичный суп"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r36",
+            "r57"
+          ],
+          "note": "Капрезе, чай"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r22",
+            "r51"
+          ],
+          "note": "Рыба в кокосовом карри с рисом"
+        }
       }
     },
     {
       "day": 4,
       "title": "День 4 — Итальянский день",
       "meals": {
-        "breakfast": {"recipe_ids": ["r03", "r55", "r56"], "note": "Панкейки, сок, кофе"},
-        "lunch": {"recipe_ids": ["r17", "r46"], "note": "Паста карбонара + салат с тунцом"},
-        "snack": {"recipe_ids": ["r24", "r42"], "note": "Брускетта + антипасти"},
-        "dinner": {"recipe_ids": ["r12", "r53"], "note": "Рыбный суп + лепёшки наан"}
+        "breakfast": {
+          "recipe_ids": [
+            "r03",
+            "r55",
+            "r56"
+          ],
+          "note": "Панкейки, сок, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r17",
+            "r46"
+          ],
+          "note": "Паста карбонара + салат с тунцом"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r24",
+            "r42"
+          ],
+          "note": "Брускетта + антипасти"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r12",
+            "r53"
+          ],
+          "note": "Рыбный суп + лепёшки наан"
+        }
       }
     },
     {
       "day": 5,
       "title": "День 5 — Азиатский день",
       "meals": {
-        "breakfast": {"recipe_ids": ["r05", "r56"], "note": "Гранола с йогуртом и манго, кофе"},
-        "lunch": {"recipe_ids": ["r39", "r13"], "note": "Том Ям с креветками + жареный рис"},
-        "snack": {"recipe_ids": ["r30", "r53"], "note": "Хумус с овощами + лепёшки"},
-        "dinner": {"recipe_ids": ["r35", "r44"], "note": "Рыба терияки с лапшой + рыба на пару"}
+        "breakfast": {
+          "recipe_ids": [
+            "r05",
+            "r56"
+          ],
+          "note": "Гранола с йогуртом и манго, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r39",
+            "r13"
+          ],
+          "note": "Том Ям с креветками + жареный рис"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r30",
+            "r53"
+          ],
+          "note": "Хумус с овощами + лепёшки"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r35",
+            "r44"
+          ],
+          "note": "Рыба терияки с лапшой + рыба на пару"
+        }
       }
     },
     {
       "day": 6,
       "title": "День 6 — Карибский день",
       "meals": {
-        "breakfast": {"recipe_ids": ["r04", "r07", "r56"], "note": "Тосты + рисовая каша на кокосовом молоке, кофе"},
-        "lunch": {"recipe_ids": ["r58", "r23"], "note": "Тартар из рыбы + табуле"},
-        "snack": {"recipe_ids": ["r34", "r47"], "note": "Сырная тарелка + банановые оладьи"},
-        "dinner": {"recipe_ids": ["r40", "r48"], "note": "Рыба с сальсой манго + свинина с ананасом"}
+        "breakfast": {
+          "recipe_ids": [
+            "r04",
+            "r07",
+            "r56"
+          ],
+          "note": "Тосты + рисовая каша на кокосовом молоке, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r58",
+            "r23"
+          ],
+          "note": "Тартар из рыбы + табуле"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r34",
+            "r47"
+          ],
+          "note": "Сырная тарелка + банановые оладьи"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r40",
+            "r48"
+          ],
+          "note": "Рыба с сальсой манго + свинина с ананасом"
+        }
       }
     },
     {
       "day": 7,
       "title": "День 7 — Прощальный ужин",
       "meals": {
-        "breakfast": {"recipe_ids": ["r45", "r27", "r56"], "note": "Блинчики + омлет, кофе"},
-        "lunch": {"recipe_ids": ["r60", "r29"], "note": "Рыбные тако + салат Цезарь"},
-        "snack": {"recipe_ids": ["r50", "r52"], "note": "Овощи с дзадзики + шоколадный мусс"},
-        "dinner": {"recipe_ids": ["r54", "r20", "r43", "r59"], "note": "Рыба в лимонном соусе + креветки гамбас + полента + картофель"}
+        "breakfast": {
+          "recipe_ids": [
+            "r45",
+            "r27",
+            "r56"
+          ],
+          "note": "Блинчики + омлет, кофе"
+        },
+        "lunch": {
+          "recipe_ids": [
+            "r60",
+            "r29"
+          ],
+          "note": "Рыбные тако + салат Цезарь"
+        },
+        "snack": {
+          "recipe_ids": [
+            "r50",
+            "r52"
+          ],
+          "note": "Овощи с дзадзики + шоколадный мусс"
+        },
+        "dinner": {
+          "recipe_ids": [
+            "r54",
+            "r20",
+            "r43",
+            "r59"
+          ],
+          "note": "Рыба в лимонном соусе + креветки гамбас + полента + картофель"
+        }
       }
     }
   ],
@@ -1620,7 +3545,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.7,
       "unit": "кг",
-      "used_in_recipes": ["r01"]
+      "used_in_recipes": [
+        "r01"
+      ]
     },
     {
       "id": "s02",
@@ -1628,7 +3555,15 @@
       "category": "Молочные продукты",
       "quantity": 4,
       "unit": "л",
-      "used_in_recipes": ["r01", "r03", "r04", "r27", "r32", "r38", "r45"]
+      "used_in_recipes": [
+        "r01",
+        "r03",
+        "r04",
+        "r27",
+        "r32",
+        "r38",
+        "r45"
+      ]
     },
     {
       "id": "s03",
@@ -1636,7 +3571,11 @@
       "category": "Овощи и фрукты",
       "quantity": 14,
       "unit": "шт",
-      "used_in_recipes": ["r01", "r19", "r47"]
+      "used_in_recipes": [
+        "r01",
+        "r19",
+        "r47"
+      ]
     },
     {
       "id": "s04",
@@ -1644,7 +3583,19 @@
       "category": "Соусы и приправы",
       "quantity": 0.55,
       "unit": "кг",
-      "used_in_recipes": ["r01", "r03", "r05", "r14", "r19", "r34", "r35", "r45", "r47", "r55", "r57"]
+      "used_in_recipes": [
+        "r01",
+        "r03",
+        "r05",
+        "r14",
+        "r19",
+        "r34",
+        "r35",
+        "r45",
+        "r47",
+        "r55",
+        "r57"
+      ]
     },
     {
       "id": "s05",
@@ -1652,7 +3603,11 @@
       "category": "Соусы и приправы",
       "quantity": 15,
       "unit": "г",
-      "used_in_recipes": ["r01", "r04", "r47"]
+      "used_in_recipes": [
+        "r01",
+        "r04",
+        "r47"
+      ]
     },
     {
       "id": "s06",
@@ -1660,7 +3615,22 @@
       "category": "Яйца",
       "quantity": 100,
       "unit": "шт",
-      "used_in_recipes": ["r02", "r03", "r04", "r06", "r13", "r15", "r17", "r27", "r29", "r32", "r37", "r45", "r47", "r52"]
+      "used_in_recipes": [
+        "r02",
+        "r03",
+        "r04",
+        "r06",
+        "r13",
+        "r15",
+        "r17",
+        "r27",
+        "r29",
+        "r32",
+        "r37",
+        "r45",
+        "r47",
+        "r52"
+      ]
     },
     {
       "id": "s07",
@@ -1668,7 +3638,22 @@
       "category": "Овощи и фрукты",
       "quantity": 70,
       "unit": "шт",
-      "used_in_recipes": ["r02", "r08", "r12", "r18", "r23", "r24", "r26", "r27", "r31", "r33", "r36", "r37", "r41", "r49"]
+      "used_in_recipes": [
+        "r02",
+        "r08",
+        "r12",
+        "r18",
+        "r23",
+        "r24",
+        "r26",
+        "r27",
+        "r31",
+        "r33",
+        "r36",
+        "r37",
+        "r41",
+        "r49"
+      ]
     },
     {
       "id": "s08",
@@ -1676,7 +3661,16 @@
       "category": "Молочные продукты",
       "quantity": 0.45,
       "unit": "кг",
-      "used_in_recipes": ["r02", "r04", "r27", "r38", "r43", "r52", "r53", "r54"]
+      "used_in_recipes": [
+        "r02",
+        "r04",
+        "r27",
+        "r38",
+        "r43",
+        "r52",
+        "r53",
+        "r54"
+      ]
     },
     {
       "id": "s09",
@@ -1684,7 +3678,13 @@
       "category": "Овощи и фрукты",
       "quantity": 6,
       "unit": "упак",
-      "used_in_recipes": ["r02", "r12", "r32", "r50", "r59"]
+      "used_in_recipes": [
+        "r02",
+        "r12",
+        "r32",
+        "r50",
+        "r59"
+      ]
     },
     {
       "id": "s10",
@@ -1692,7 +3692,50 @@
       "category": "Соусы и приправы",
       "quantity": 0.35,
       "unit": "кг",
-      "used_in_recipes": ["r02", "r06", "r08", "r09", "r10", "r12", "r15", "r16", "r17", "r18", "r20", "r21", "r22", "r23", "r24", "r25", "r26", "r27", "r28", "r29", "r30", "r31", "r32", "r33", "r36", "r37", "r38", "r39", "r40", "r41", "r43", "r44", "r45", "r46", "r49", "r50", "r51", "r53", "r54", "r58", "r59", "r60"]
+      "used_in_recipes": [
+        "r02",
+        "r06",
+        "r08",
+        "r09",
+        "r10",
+        "r12",
+        "r15",
+        "r16",
+        "r17",
+        "r18",
+        "r20",
+        "r21",
+        "r22",
+        "r23",
+        "r24",
+        "r25",
+        "r26",
+        "r27",
+        "r28",
+        "r29",
+        "r30",
+        "r31",
+        "r32",
+        "r33",
+        "r36",
+        "r37",
+        "r38",
+        "r39",
+        "r40",
+        "r41",
+        "r43",
+        "r44",
+        "r45",
+        "r46",
+        "r49",
+        "r50",
+        "r51",
+        "r53",
+        "r54",
+        "r58",
+        "r59",
+        "r60"
+      ]
     },
     {
       "id": "s11",
@@ -1700,7 +3743,23 @@
       "category": "Соусы и приправы",
       "quantity": 60,
       "unit": "г",
-      "used_in_recipes": ["r02", "r09", "r15", "r17", "r25", "r26", "r27", "r31", "r32", "r33", "r40", "r41", "r46", "r49", "r54"]
+      "used_in_recipes": [
+        "r02",
+        "r09",
+        "r15",
+        "r17",
+        "r25",
+        "r26",
+        "r27",
+        "r31",
+        "r32",
+        "r33",
+        "r40",
+        "r41",
+        "r46",
+        "r49",
+        "r54"
+      ]
     },
     {
       "id": "s12",
@@ -1708,7 +3767,14 @@
       "category": "Крупы и макароны",
       "quantity": 1.6,
       "unit": "кг",
-      "used_in_recipes": ["r03", "r15", "r45", "r47", "r53", "r54"]
+      "used_in_recipes": [
+        "r03",
+        "r15",
+        "r45",
+        "r47",
+        "r53",
+        "r54"
+      ]
     },
     {
       "id": "s13",
@@ -1716,7 +3782,15 @@
       "category": "Прочее",
       "quantity": 0.4,
       "unit": "кг",
-      "used_in_recipes": ["r03", "r04", "r07", "r41", "r45", "r52", "r56"]
+      "used_in_recipes": [
+        "r03",
+        "r04",
+        "r07",
+        "r41",
+        "r45",
+        "r52",
+        "r56"
+      ]
     },
     {
       "id": "s14",
@@ -1724,7 +3798,10 @@
       "category": "Прочее",
       "quantity": 20,
       "unit": "г",
-      "used_in_recipes": ["r03", "r53"]
+      "used_in_recipes": [
+        "r03",
+        "r53"
+      ]
     },
     {
       "id": "s15",
@@ -1732,7 +3809,24 @@
       "category": "Масла",
       "quantity": 0.7,
       "unit": "л",
-      "used_in_recipes": ["r03", "r13", "r14", "r15", "r16", "r22", "r25", "r26", "r32", "r35", "r45", "r47", "r48", "r54", "r59", "r60"]
+      "used_in_recipes": [
+        "r03",
+        "r13",
+        "r14",
+        "r15",
+        "r16",
+        "r22",
+        "r25",
+        "r26",
+        "r32",
+        "r35",
+        "r45",
+        "r47",
+        "r48",
+        "r54",
+        "r59",
+        "r60"
+      ]
     },
     {
       "id": "s16",
@@ -1740,7 +3834,15 @@
       "category": "Хлеб и выпечка",
       "quantity": 6,
       "unit": "шт",
-      "used_in_recipes": ["r04", "r20", "r24", "r29", "r32", "r37", "r42"]
+      "used_in_recipes": [
+        "r04",
+        "r20",
+        "r24",
+        "r29",
+        "r32",
+        "r37",
+        "r42"
+      ]
     },
     {
       "id": "s17",
@@ -1748,7 +3850,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.6,
       "unit": "кг",
-      "used_in_recipes": ["r05"]
+      "used_in_recipes": [
+        "r05"
+      ]
     },
     {
       "id": "s18",
@@ -1756,7 +3860,11 @@
       "category": "Молочные продукты",
       "quantity": 1.8,
       "unit": "кг",
-      "used_in_recipes": ["r05", "r50", "r53"]
+      "used_in_recipes": [
+        "r05",
+        "r50",
+        "r53"
+      ]
     },
     {
       "id": "s19",
@@ -1764,7 +3872,12 @@
       "category": "Овощи и фрукты",
       "quantity": 11,
       "unit": "шт",
-      "used_in_recipes": ["r05", "r07", "r19", "r40"]
+      "used_in_recipes": [
+        "r05",
+        "r07",
+        "r19",
+        "r40"
+      ]
     },
     {
       "id": "s20",
@@ -1772,7 +3885,9 @@
       "category": "Хлеб и выпечка",
       "quantity": 1,
       "unit": "упак",
-      "used_in_recipes": ["r06"]
+      "used_in_recipes": [
+        "r06"
+      ]
     },
     {
       "id": "s21",
@@ -1780,7 +3895,13 @@
       "category": "Овощи и фрукты",
       "quantity": 16,
       "unit": "шт",
-      "used_in_recipes": ["r06", "r10", "r18", "r58", "r60"]
+      "used_in_recipes": [
+        "r06",
+        "r10",
+        "r18",
+        "r58",
+        "r60"
+      ]
     },
     {
       "id": "s22",
@@ -1788,7 +3909,22 @@
       "category": "Овощи и фрукты",
       "quantity": 26,
       "unit": "шт",
-      "used_in_recipes": ["r06", "r09", "r12", "r15", "r21", "r23", "r28", "r29", "r30", "r46", "r49", "r54", "r55", "r57"]
+      "used_in_recipes": [
+        "r06",
+        "r09",
+        "r12",
+        "r15",
+        "r21",
+        "r23",
+        "r28",
+        "r29",
+        "r30",
+        "r46",
+        "r49",
+        "r54",
+        "r55",
+        "r57"
+      ]
     },
     {
       "id": "s23",
@@ -1796,7 +3932,9 @@
       "category": "Соусы и приправы",
       "quantity": 25,
       "unit": "мл",
-      "used_in_recipes": ["r06"]
+      "used_in_recipes": [
+        "r06"
+      ]
     },
     {
       "id": "s24",
@@ -1804,7 +3942,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r07"]
+      "used_in_recipes": [
+        "r07"
+      ]
     },
     {
       "id": "s25",
@@ -1812,7 +3952,12 @@
       "category": "Консервы",
       "quantity": 2.8,
       "unit": "л",
-      "used_in_recipes": ["r07", "r22", "r39", "r51"]
+      "used_in_recipes": [
+        "r07",
+        "r22",
+        "r39",
+        "r51"
+      ]
     },
     {
       "id": "s26",
@@ -1820,7 +3965,13 @@
       "category": "Овощи и фрукты",
       "quantity": 20,
       "unit": "шт",
-      "used_in_recipes": ["r08", "r21", "r23", "r30", "r50"]
+      "used_in_recipes": [
+        "r08",
+        "r21",
+        "r23",
+        "r30",
+        "r50"
+      ]
     },
     {
       "id": "s27",
@@ -1828,7 +3979,18 @@
       "category": "Овощи и фрукты",
       "quantity": 23,
       "unit": "шт",
-      "used_in_recipes": ["r08", "r21", "r25", "r26", "r27", "r30", "r33", "r37", "r48", "r50"]
+      "used_in_recipes": [
+        "r08",
+        "r21",
+        "r25",
+        "r26",
+        "r27",
+        "r30",
+        "r33",
+        "r37",
+        "r48",
+        "r50"
+      ]
     },
     {
       "id": "s28",
@@ -1836,7 +3998,14 @@
       "category": "Овощи и фрукты",
       "quantity": 10,
       "unit": "шт",
-      "used_in_recipes": ["r08", "r10", "r18", "r40", "r46", "r58"]
+      "used_in_recipes": [
+        "r08",
+        "r10",
+        "r18",
+        "r40",
+        "r46",
+        "r58"
+      ]
     },
     {
       "id": "s29",
@@ -1844,7 +4013,11 @@
       "category": "Консервы",
       "quantity": 4,
       "unit": "упак",
-      "used_in_recipes": ["r08", "r31", "r42"]
+      "used_in_recipes": [
+        "r08",
+        "r31",
+        "r42"
+      ]
     },
     {
       "id": "s30",
@@ -1852,7 +4025,10 @@
       "category": "Молочные продукты",
       "quantity": 0.55,
       "unit": "кг",
-      "used_in_recipes": ["r08", "r34"]
+      "used_in_recipes": [
+        "r08",
+        "r34"
+      ]
     },
     {
       "id": "s31",
@@ -1860,7 +4036,34 @@
       "category": "Масла",
       "quantity": 1.1,
       "unit": "л",
-      "used_in_recipes": ["r08", "r09", "r10", "r11", "r12", "r18", "r20", "r21", "r22", "r23", "r24", "r26", "r28", "r29", "r30", "r31", "r33", "r36", "r40", "r41", "r42", "r46", "r49", "r50", "r54", "r58"]
+      "used_in_recipes": [
+        "r08",
+        "r09",
+        "r10",
+        "r11",
+        "r12",
+        "r18",
+        "r20",
+        "r21",
+        "r22",
+        "r23",
+        "r24",
+        "r26",
+        "r28",
+        "r29",
+        "r30",
+        "r31",
+        "r33",
+        "r36",
+        "r40",
+        "r41",
+        "r42",
+        "r46",
+        "r49",
+        "r50",
+        "r54",
+        "r58"
+      ]
     },
     {
       "id": "s32",
@@ -1868,7 +4071,9 @@
       "category": "Соусы и приправы",
       "quantity": 6,
       "unit": "г",
-      "used_in_recipes": ["r08"]
+      "used_in_recipes": [
+        "r08"
+      ]
     },
     {
       "id": "s33",
@@ -1876,7 +4081,29 @@
       "category": "Овощи и фрукты",
       "quantity": 90,
       "unit": "шт",
-      "used_in_recipes": ["r09", "r11", "r12", "r13", "r14", "r20", "r22", "r24", "r25", "r26", "r28", "r29", "r30", "r31", "r33", "r37", "r41", "r48", "r50", "r53", "r59"]
+      "used_in_recipes": [
+        "r09",
+        "r11",
+        "r12",
+        "r13",
+        "r14",
+        "r20",
+        "r22",
+        "r24",
+        "r25",
+        "r26",
+        "r28",
+        "r29",
+        "r30",
+        "r31",
+        "r33",
+        "r37",
+        "r41",
+        "r48",
+        "r50",
+        "r53",
+        "r59"
+      ]
     },
     {
       "id": "s34",
@@ -1884,7 +4111,15 @@
       "category": "Овощи и фрукты",
       "quantity": 10,
       "unit": "упак",
-      "used_in_recipes": ["r09", "r11", "r20", "r21", "r23", "r46", "r54"]
+      "used_in_recipes": [
+        "r09",
+        "r11",
+        "r20",
+        "r21",
+        "r23",
+        "r46",
+        "r54"
+      ]
     },
     {
       "id": "s35",
@@ -1892,7 +4127,12 @@
       "category": "Соусы и приправы",
       "quantity": 23,
       "unit": "г",
-      "used_in_recipes": ["r09", "r26", "r33", "r49"]
+      "used_in_recipes": [
+        "r09",
+        "r26",
+        "r33",
+        "r49"
+      ]
     },
     {
       "id": "s36",
@@ -1900,7 +4140,17 @@
       "category": "Овощи и фрукты",
       "quantity": 35,
       "unit": "шт",
-      "used_in_recipes": ["r10", "r16", "r18", "r19", "r22", "r39", "r40", "r58", "r60"]
+      "used_in_recipes": [
+        "r10",
+        "r16",
+        "r18",
+        "r19",
+        "r22",
+        "r39",
+        "r40",
+        "r58",
+        "r60"
+      ]
     },
     {
       "id": "s37",
@@ -1908,7 +4158,12 @@
       "category": "Овощи и фрукты",
       "quantity": 8,
       "unit": "шт",
-      "used_in_recipes": ["r10", "r16", "r39", "r40"]
+      "used_in_recipes": [
+        "r10",
+        "r16",
+        "r39",
+        "r40"
+      ]
     },
     {
       "id": "s38",
@@ -1916,7 +4171,13 @@
       "category": "Овощи и фрукты",
       "quantity": 8,
       "unit": "упак",
-      "used_in_recipes": ["r10", "r16", "r22", "r39", "r60"]
+      "used_in_recipes": [
+        "r10",
+        "r16",
+        "r22",
+        "r39",
+        "r60"
+      ]
     },
     {
       "id": "s39",
@@ -1924,7 +4185,11 @@
       "category": "Крупы и макароны",
       "quantity": 2.8,
       "unit": "кг",
-      "used_in_recipes": ["r11", "r17", "r41"]
+      "used_in_recipes": [
+        "r11",
+        "r17",
+        "r41"
+      ]
     },
     {
       "id": "s40",
@@ -1932,7 +4197,10 @@
       "category": "Соусы и приправы",
       "quantity": 10,
       "unit": "г",
-      "used_in_recipes": ["r11", "r20"]
+      "used_in_recipes": [
+        "r11",
+        "r20"
+      ]
     },
     {
       "id": "s41",
@@ -1940,7 +4208,13 @@
       "category": "Молочные продукты",
       "quantity": 0.6,
       "unit": "кг",
-      "used_in_recipes": ["r11", "r17", "r29", "r41", "r43"]
+      "used_in_recipes": [
+        "r11",
+        "r17",
+        "r29",
+        "r41",
+        "r43"
+      ]
     },
     {
       "id": "s42",
@@ -1948,7 +4222,12 @@
       "category": "Овощи и фрукты",
       "quantity": 5.8,
       "unit": "кг",
-      "used_in_recipes": ["r12", "r15", "r38", "r59"]
+      "used_in_recipes": [
+        "r12",
+        "r15",
+        "r38",
+        "r59"
+      ]
     },
     {
       "id": "s43",
@@ -1956,7 +4235,14 @@
       "category": "Овощи и фрукты",
       "quantity": 17,
       "unit": "шт",
-      "used_in_recipes": ["r12", "r13", "r25", "r28", "r30", "r50"]
+      "used_in_recipes": [
+        "r12",
+        "r13",
+        "r25",
+        "r28",
+        "r30",
+        "r50"
+      ]
     },
     {
       "id": "s44",
@@ -1964,7 +4250,19 @@
       "category": "Овощи и фрукты",
       "quantity": 23,
       "unit": "шт",
-      "used_in_recipes": ["r12", "r22", "r25", "r26", "r28", "r32", "r33", "r37", "r41", "r48", "r49"]
+      "used_in_recipes": [
+        "r12",
+        "r22",
+        "r25",
+        "r26",
+        "r28",
+        "r32",
+        "r33",
+        "r37",
+        "r41",
+        "r48",
+        "r49"
+      ]
     },
     {
       "id": "s45",
@@ -1972,7 +4270,9 @@
       "category": "Соусы и приправы",
       "quantity": 4,
       "unit": "шт",
-      "used_in_recipes": ["r12"]
+      "used_in_recipes": [
+        "r12"
+      ]
     },
     {
       "id": "s46",
@@ -1980,7 +4280,9 @@
       "category": "Соусы и приправы",
       "quantity": 6,
       "unit": "г",
-      "used_in_recipes": ["r12"]
+      "used_in_recipes": [
+        "r12"
+      ]
     },
     {
       "id": "s47",
@@ -1988,7 +4290,15 @@
       "category": "Крупы и макароны",
       "quantity": 3.6,
       "unit": "кг",
-      "used_in_recipes": ["r13", "r14", "r22", "r25", "r26", "r48", "r51"]
+      "used_in_recipes": [
+        "r13",
+        "r14",
+        "r22",
+        "r25",
+        "r26",
+        "r48",
+        "r51"
+      ]
     },
     {
       "id": "s48",
@@ -1996,7 +4306,9 @@
       "category": "Замороженные продукты",
       "quantity": 0.25,
       "unit": "кг",
-      "used_in_recipes": ["r13"]
+      "used_in_recipes": [
+        "r13"
+      ]
     },
     {
       "id": "s49",
@@ -2004,7 +4316,15 @@
       "category": "Соусы и приправы",
       "quantity": 0.5,
       "unit": "л",
-      "used_in_recipes": ["r13", "r14", "r35", "r39", "r44", "r48", "r58"]
+      "used_in_recipes": [
+        "r13",
+        "r14",
+        "r35",
+        "r39",
+        "r44",
+        "r48",
+        "r58"
+      ]
     },
     {
       "id": "s50",
@@ -2012,7 +4332,11 @@
       "category": "Овощи и фрукты",
       "quantity": 3,
       "unit": "упак",
-      "used_in_recipes": ["r13", "r35", "r44"]
+      "used_in_recipes": [
+        "r13",
+        "r35",
+        "r44"
+      ]
     },
     {
       "id": "s51",
@@ -2020,7 +4344,10 @@
       "category": "Мясо и птица",
       "quantity": 2.3,
       "unit": "кг",
-      "used_in_recipes": ["r14", "r29"]
+      "used_in_recipes": [
+        "r14",
+        "r29"
+      ]
     },
     {
       "id": "s52",
@@ -2028,7 +4355,15 @@
       "category": "Овощи и фрукты",
       "quantity": 0.2,
       "unit": "кг",
-      "used_in_recipes": ["r14", "r22", "r35", "r39", "r44", "r48", "r57"]
+      "used_in_recipes": [
+        "r14",
+        "r22",
+        "r35",
+        "r39",
+        "r44",
+        "r48",
+        "r57"
+      ]
     },
     {
       "id": "s53",
@@ -2036,7 +4371,13 @@
       "category": "Соусы и приправы",
       "quantity": 80,
       "unit": "г",
-      "used_in_recipes": ["r14", "r35", "r44", "r48", "r58"]
+      "used_in_recipes": [
+        "r14",
+        "r35",
+        "r44",
+        "r48",
+        "r58"
+      ]
     },
     {
       "id": "s54",
@@ -2044,7 +4385,10 @@
       "category": "Крупы и макароны",
       "quantity": 0.3,
       "unit": "кг",
-      "used_in_recipes": ["r15", "r32"]
+      "used_in_recipes": [
+        "r15",
+        "r32"
+      ]
     },
     {
       "id": "s55",
@@ -2052,7 +4396,10 @@
       "category": "Хлеб и выпечка",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r16", "r60"]
+      "used_in_recipes": [
+        "r16",
+        "r60"
+      ]
     },
     {
       "id": "s56",
@@ -2060,7 +4407,10 @@
       "category": "Овощи и фрукты",
       "quantity": 0.6,
       "unit": "кг",
-      "used_in_recipes": ["r16", "r60"]
+      "used_in_recipes": [
+        "r16",
+        "r60"
+      ]
     },
     {
       "id": "s57",
@@ -2068,7 +4418,11 @@
       "category": "Молочные продукты",
       "quantity": 0.6,
       "unit": "кг",
-      "used_in_recipes": ["r16", "r45", "r60"]
+      "used_in_recipes": [
+        "r16",
+        "r45",
+        "r60"
+      ]
     },
     {
       "id": "s58",
@@ -2076,7 +4430,11 @@
       "category": "Соусы и приправы",
       "quantity": 18,
       "unit": "г",
-      "used_in_recipes": ["r16", "r28", "r37"]
+      "used_in_recipes": [
+        "r16",
+        "r28",
+        "r37"
+      ]
     },
     {
       "id": "s59",
@@ -2084,7 +4442,9 @@
       "category": "Мясо и птица",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r17"]
+      "used_in_recipes": [
+        "r17"
+      ]
     },
     {
       "id": "s60",
@@ -2092,7 +4452,9 @@
       "category": "Сладости и снеки",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r18"]
+      "used_in_recipes": [
+        "r18"
+      ]
     },
     {
       "id": "s61",
@@ -2100,7 +4462,10 @@
       "category": "Овощи и фрукты",
       "quantity": 3,
       "unit": "шт",
-      "used_in_recipes": ["r19", "r48"]
+      "used_in_recipes": [
+        "r19",
+        "r48"
+      ]
     },
     {
       "id": "s62",
@@ -2108,7 +4473,11 @@
       "category": "Овощи и фрукты",
       "quantity": 4,
       "unit": "упак",
-      "used_in_recipes": ["r19", "r21", "r23"]
+      "used_in_recipes": [
+        "r19",
+        "r21",
+        "r23"
+      ]
     },
     {
       "id": "s63",
@@ -2116,7 +4485,10 @@
       "category": "Замороженные продукты",
       "quantity": 1.7,
       "unit": "кг",
-      "used_in_recipes": ["r20", "r39"]
+      "used_in_recipes": [
+        "r20",
+        "r39"
+      ]
     },
     {
       "id": "s64",
@@ -2124,7 +4496,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.6,
       "unit": "кг",
-      "used_in_recipes": ["r21"]
+      "used_in_recipes": [
+        "r21"
+      ]
     },
     {
       "id": "s65",
@@ -2132,7 +4506,11 @@
       "category": "Овощи и фрукты",
       "quantity": 0.85,
       "unit": "кг",
-      "used_in_recipes": ["r21", "r39", "r46"]
+      "used_in_recipes": [
+        "r21",
+        "r39",
+        "r46"
+      ]
     },
     {
       "id": "s66",
@@ -2140,7 +4518,9 @@
       "category": "Соусы и приправы",
       "quantity": 70,
       "unit": "г",
-      "used_in_recipes": ["r22"]
+      "used_in_recipes": [
+        "r22"
+      ]
     },
     {
       "id": "s67",
@@ -2148,7 +4528,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r23"]
+      "used_in_recipes": [
+        "r23"
+      ]
     },
     {
       "id": "s68",
@@ -2156,7 +4538,12 @@
       "category": "Овощи и фрукты",
       "quantity": 4,
       "unit": "упак",
-      "used_in_recipes": ["r24", "r31", "r36", "r41"]
+      "used_in_recipes": [
+        "r24",
+        "r31",
+        "r36",
+        "r41"
+      ]
     },
     {
       "id": "s69",
@@ -2164,7 +4551,9 @@
       "category": "Мясо и птица",
       "quantity": 1.8,
       "unit": "кг",
-      "used_in_recipes": ["r25"]
+      "used_in_recipes": [
+        "r25"
+      ]
     },
     {
       "id": "s70",
@@ -2172,7 +4561,14 @@
       "category": "Соусы и приправы",
       "quantity": 50,
       "unit": "г",
-      "used_in_recipes": ["r25", "r26", "r30", "r37", "r59", "r60"]
+      "used_in_recipes": [
+        "r25",
+        "r26",
+        "r30",
+        "r37",
+        "r59",
+        "r60"
+      ]
     },
     {
       "id": "s71",
@@ -2180,7 +4576,10 @@
       "category": "Соусы и приправы",
       "quantity": 10,
       "unit": "г",
-      "used_in_recipes": ["r25", "r28"]
+      "used_in_recipes": [
+        "r25",
+        "r28"
+      ]
     },
     {
       "id": "s72",
@@ -2188,7 +4587,10 @@
       "category": "Молочные продукты",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r27", "r34"]
+      "used_in_recipes": [
+        "r27",
+        "r34"
+      ]
     },
     {
       "id": "s73",
@@ -2196,7 +4598,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r28"]
+      "used_in_recipes": [
+        "r28"
+      ]
     },
     {
       "id": "s74",
@@ -2204,7 +4608,9 @@
       "category": "Консервы",
       "quantity": 50,
       "unit": "г",
-      "used_in_recipes": ["r28"]
+      "used_in_recipes": [
+        "r28"
+      ]
     },
     {
       "id": "s75",
@@ -2212,7 +4618,9 @@
       "category": "Овощи и фрукты",
       "quantity": 2,
       "unit": "шт",
-      "used_in_recipes": ["r29"]
+      "used_in_recipes": [
+        "r29"
+      ]
     },
     {
       "id": "s76",
@@ -2220,7 +4628,9 @@
       "category": "Соусы и приправы",
       "quantity": 20,
       "unit": "г",
-      "used_in_recipes": ["r29"]
+      "used_in_recipes": [
+        "r29"
+      ]
     },
     {
       "id": "s77",
@@ -2228,7 +4638,9 @@
       "category": "Консервы",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r30"]
+      "used_in_recipes": [
+        "r30"
+      ]
     },
     {
       "id": "s78",
@@ -2236,7 +4648,9 @@
       "category": "Соусы и приправы",
       "quantity": 70,
       "unit": "г",
-      "used_in_recipes": ["r30"]
+      "used_in_recipes": [
+        "r30"
+      ]
     },
     {
       "id": "s79",
@@ -2244,7 +4658,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.9,
       "unit": "кг",
-      "used_in_recipes": ["r31"]
+      "used_in_recipes": [
+        "r31"
+      ]
     },
     {
       "id": "s80",
@@ -2252,7 +4668,10 @@
       "category": "Консервы",
       "quantity": 6,
       "unit": "упак",
-      "used_in_recipes": ["r31", "r46"]
+      "used_in_recipes": [
+        "r31",
+        "r46"
+      ]
     },
     {
       "id": "s81",
@@ -2260,7 +4679,9 @@
       "category": "Овощи и фрукты",
       "quantity": 2,
       "unit": "шт",
-      "used_in_recipes": ["r33"]
+      "used_in_recipes": [
+        "r33"
+      ]
     },
     {
       "id": "s82",
@@ -2268,7 +4689,9 @@
       "category": "Овощи и фрукты",
       "quantity": 2,
       "unit": "шт",
-      "used_in_recipes": ["r33"]
+      "used_in_recipes": [
+        "r33"
+      ]
     },
     {
       "id": "s83",
@@ -2276,7 +4699,9 @@
       "category": "Сладости и снеки",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r34"]
+      "used_in_recipes": [
+        "r34"
+      ]
     },
     {
       "id": "s84",
@@ -2284,7 +4709,9 @@
       "category": "Овощи и фрукты",
       "quantity": 0.35,
       "unit": "кг",
-      "used_in_recipes": ["r34"]
+      "used_in_recipes": [
+        "r34"
+      ]
     },
     {
       "id": "s85",
@@ -2292,7 +4719,9 @@
       "category": "Сладости и снеки",
       "quantity": 0.12,
       "unit": "кг",
-      "used_in_recipes": ["r34"]
+      "used_in_recipes": [
+        "r34"
+      ]
     },
     {
       "id": "s86",
@@ -2300,7 +4729,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.7,
       "unit": "кг",
-      "used_in_recipes": ["r35"]
+      "used_in_recipes": [
+        "r35"
+      ]
     },
     {
       "id": "s87",
@@ -2308,7 +4739,9 @@
       "category": "Молочные продукты",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r36"]
+      "used_in_recipes": [
+        "r36"
+      ]
     },
     {
       "id": "s88",
@@ -2316,7 +4749,9 @@
       "category": "Овощи и фрукты",
       "quantity": 0.35,
       "unit": "кг",
-      "used_in_recipes": ["r39"]
+      "used_in_recipes": [
+        "r39"
+      ]
     },
     {
       "id": "s89",
@@ -2324,7 +4759,9 @@
       "category": "Соусы и приправы",
       "quantity": 3,
       "unit": "г",
-      "used_in_recipes": ["r38"]
+      "used_in_recipes": [
+        "r38"
+      ]
     },
     {
       "id": "s90",
@@ -2332,7 +4769,9 @@
       "category": "Мясо и птица",
       "quantity": 0.25,
       "unit": "кг",
-      "used_in_recipes": ["r42"]
+      "used_in_recipes": [
+        "r42"
+      ]
     },
     {
       "id": "s91",
@@ -2340,7 +4779,9 @@
       "category": "Мясо и птица",
       "quantity": 0.2,
       "unit": "кг",
-      "used_in_recipes": ["r42"]
+      "used_in_recipes": [
+        "r42"
+      ]
     },
     {
       "id": "s92",
@@ -2348,7 +4789,9 @@
       "category": "Консервы",
       "quantity": 1,
       "unit": "упак",
-      "used_in_recipes": ["r42"]
+      "used_in_recipes": [
+        "r42"
+      ]
     },
     {
       "id": "s93",
@@ -2356,7 +4799,9 @@
       "category": "Крупы и макароны",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r43"]
+      "used_in_recipes": [
+        "r43"
+      ]
     },
     {
       "id": "s94",
@@ -2364,7 +4809,9 @@
       "category": "Масла",
       "quantity": 35,
       "unit": "мл",
-      "used_in_recipes": ["r44"]
+      "used_in_recipes": [
+        "r44"
+      ]
     },
     {
       "id": "s95",
@@ -2372,7 +4819,9 @@
       "category": "Консервы",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r46"]
+      "used_in_recipes": [
+        "r46"
+      ]
     },
     {
       "id": "s96",
@@ -2380,7 +4829,9 @@
       "category": "Мясо и птица",
       "quantity": 1.4,
       "unit": "кг",
-      "used_in_recipes": ["r48"]
+      "used_in_recipes": [
+        "r48"
+      ]
     },
     {
       "id": "s97",
@@ -2388,7 +4839,9 @@
       "category": "Прочее",
       "quantity": 1,
       "unit": "упак",
-      "used_in_recipes": ["r49"]
+      "used_in_recipes": [
+        "r49"
+      ]
     },
     {
       "id": "s98",
@@ -2396,7 +4849,10 @@
       "category": "Консервы",
       "quantity": 70,
       "unit": "г",
-      "used_in_recipes": ["r54", "r58"]
+      "used_in_recipes": [
+        "r54",
+        "r58"
+      ]
     },
     {
       "id": "s99",
@@ -2404,7 +4860,9 @@
       "category": "Сладости и снеки",
       "quantity": 0.35,
       "unit": "кг",
-      "used_in_recipes": ["r52"]
+      "used_in_recipes": [
+        "r52"
+      ]
     },
     {
       "id": "s100",
@@ -2412,7 +4870,9 @@
       "category": "Овощи и фрукты",
       "quantity": 23,
       "unit": "шт",
-      "used_in_recipes": ["r55"]
+      "used_in_recipes": [
+        "r55"
+      ]
     },
     {
       "id": "s101",
@@ -2420,7 +4880,9 @@
       "category": "Напитки",
       "quantity": 0.5,
       "unit": "кг",
-      "used_in_recipes": ["r56"]
+      "used_in_recipes": [
+        "r56"
+      ]
     },
     {
       "id": "s102",
@@ -2428,7 +4890,9 @@
       "category": "Напитки",
       "quantity": 2,
       "unit": "упак",
-      "used_in_recipes": ["r57"]
+      "used_in_recipes": [
+        "r57"
+      ]
     },
     {
       "id": "s103",
@@ -2445,6 +4909,70 @@
       "category": "Напитки",
       "quantity": 5,
       "unit": "кг",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s105",
+      "name": "Гречка",
+      "category": "Еда из России",
+      "quantity": 1,
+      "unit": "кг",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s106",
+      "name": "Сало",
+      "category": "Еда из России",
+      "quantity": 0.5,
+      "unit": "кг",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s107",
+      "name": "Чёрный хлеб",
+      "category": "Еда из России",
+      "quantity": 2,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s108",
+      "name": "Васаби",
+      "category": "Еда из России",
+      "quantity": 1,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s109",
+      "name": "Кетчуп",
+      "category": "Соусы и приправы",
+      "quantity": 2,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s110",
+      "name": "Газированные напитки (ассорти)",
+      "category": "Напитки",
+      "quantity": 24,
+      "unit": "шт",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s111",
+      "name": "Угли для BBQ",
+      "category": "Прочее",
+      "quantity": 2,
+      "unit": "упак",
+      "used_in_recipes": []
+    },
+    {
+      "id": "s112",
+      "name": "Фольга алюминиевая",
+      "category": "Прочее",
+      "quantity": 2,
+      "unit": "рул",
       "used_in_recipes": []
     }
   ]
