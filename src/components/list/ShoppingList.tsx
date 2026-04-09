@@ -67,13 +67,11 @@ export function ShoppingList() {
 
   const hasResults = categories.food.length > 0 || categories.household.length > 0
 
-  const downloadList = useCallback(() => {
+  const buildListText = useCallback(() => {
     const lines: string[] = []
     lines.push('Список покупок — Яхта Сейшелы')
-    lines.push('================================')
     lines.push('')
 
-    // Group all shopping items by category
     const foodMap = new Map<string, typeof shoppingItems>()
     for (const item of shoppingItems) {
       if (!foodMap.has(item.category)) foodMap.set(item.category, [])
@@ -82,15 +80,15 @@ export function ShoppingList() {
     const foodCats = Array.from(foodMap.entries()).sort(([a], [b]) => a.localeCompare(b, 'ru'))
 
     for (const [cat, items] of foodCats) {
-      lines.push(`[ ${cat} ]`)
+      lines.push(`${cat}:`)
       for (const item of items) {
-        const check = item.checked ? 'x' : ' '
-        lines.push(`[${check}] ${item.name} — ${item.quantity} ${item.unit}`)
+        // Format as "- item — qty unit" so Notes can convert to checklist
+        const prefix = item.checked ? '- ✅ ' : '- '
+        lines.push(`${prefix}${item.name} — ${Math.round(item.quantity * 100) / 100} ${item.unit}`)
       }
       lines.push('')
     }
 
-    // Household items
     if (householdItems.length > 0) {
       lines.push('🧹 Хозяйственные товары')
       lines.push('')
@@ -102,10 +100,10 @@ export function ShoppingList() {
       const hhCats = Array.from(hhMap.entries()).sort(([a], [b]) => a.localeCompare(b, 'ru'))
 
       for (const [cat, items] of hhCats) {
-        lines.push(`[ ${cat} ]`)
+        lines.push(`${cat}:`)
         for (const item of items) {
-          const check = item.checked ? 'x' : ' '
-          lines.push(`[${check}] ${item.name} — ${item.quantity} ${item.unit}`)
+          const prefix = item.checked ? '- ✅ ' : '- '
+          lines.push(`${prefix}${item.name} — ${item.quantity} ${item.unit}`)
         }
         lines.push('')
       }
@@ -114,22 +112,28 @@ export function ShoppingList() {
     const allTotal = shoppingItems.length + householdItems.length
     const allChecked = shoppingItems.filter((i) => i.checked).length + householdItems.filter((i) => i.checked).length
     const pct = allTotal > 0 ? Math.round((allChecked / allTotal) * 100) : 0
-    const now = new Date()
-    const dateStr = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' })
-    const timeStr = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })
-
-    lines.push('================================')
     lines.push(`Куплено: ${allChecked} из ${allTotal} (${pct}%)`)
-    lines.push(`Скачано: ${dateStr}, ${timeStr}`)
 
-    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'yacht-shopping-list.txt'
-    a.click()
-    URL.revokeObjectURL(url)
+    return lines.join('\n')
   }, [shoppingItems, householdItems])
+
+  const shareList = useCallback(async () => {
+    const text = buildListText()
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Список покупок — Яхта', text })
+      } catch { /* user cancelled */ }
+    } else {
+      // Fallback: download as .txt
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'yacht-shopping-list.txt'
+      a.click()
+      URL.revokeObjectURL(url)
+    }
+  }, [buildListText])
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 space-y-3">
@@ -138,15 +142,15 @@ export function ShoppingList() {
           <ProgressBar checked={checkedItems} total={totalItems} />
         </div>
         <button
-          onClick={downloadList}
-          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors"
-          aria-label="Скачать список"
-          title="Скачать список"
+          onClick={shareList}
+          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 active:bg-slate-200 dark:active:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors"
+          aria-label="Поделиться списком"
+          title="Поделиться списком"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+            <polyline points="16 6 12 2 8 6" />
+            <line x1="12" y1="2" x2="12" y2="15" />
           </svg>
         </button>
       </div>
