@@ -32,6 +32,19 @@ server {
     root /var/www/yacht;
     index index.html;
 
+    # HTML and SW must never be cached by browser
+    location = /index.html {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Pragma "no-cache";
+    }
+    location = /sw.js {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Pragma "no-cache";
+    }
+    location = /manifest.webmanifest {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+    }
+
     location / {
         try_files $uri $uri/ /index.html;
     }
