@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
+# ⛵ Yacht Shopping List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для подготовки к 7-дневному яхтенному путешествию на Сейшелы (8 человек, 4 каюты).
 
-Currently, two official plugins are available:
+**Live:** http://153.80.244.132/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+- **Список покупок** — 104 позиции по 13 категориям с прогрессом, поиском, фильтрами и кнопками ±
+- **Рецепты** — 60 рецептов для готовки на плите (без духовки), индикатор готовности по купленным ингредиентам
+- **План питания** — 7 дней × 4 приёма пищи, ежедневные рыбные блюда из свежего улова
+- **Сборы** — личный пакинг-лист (44 позиции), хозтовары (35 позиций), сравнение eSIM провайдеров
+- **PWA** — работает офлайн, устанавливается на телефон
+- **Тёмная тема** — переключатель в шапке
+- **Mobile-first** — оптимизировано для использования с телефоном в магазине
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Стек
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+React 18 + TypeScript + Vite + Tailwind CSS 4
+Zustand (state management)
+vite-plugin-pwa (offline support)
+Nginx (deploy)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Архитектура
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```mermaid
+graph TD
+    A[React SPA] --> B[Zustand Store]
+    B --> C[localStorage persistence]
+    A --> D[Static JSON Data]
+    D --> E[60 рецептов]
+    D --> F[104 продукта]
+    D --> G[7-дневный план]
+    D --> H[Пакинг + eSIM]
+    A --> I[PWA Service Worker]
+    I --> J[Offline Cache]
 ```
+
+Данные встроены в бандл как JSON — не требуется бэкенд для базовой работы.
+Состояние чекбоксов хранится в localStorage через Zustand persist.
+
+## Локальная разработка
+
+```bash
+npm install
+npm run dev     # http://localhost:5173
+npm run build   # production build → dist/
+```
+
+## Деплой
+
+Текущий деплой: статические файлы на VPS с Nginx.
+
+```bash
+npm run build
+scp -r dist/* user@server:/var/www/yacht/
+```
+
+Nginx конфиг:
+```nginx
+server {
+    listen 80;
+    root /var/www/yacht;
+    index index.html;
+    location / { try_files $uri $uri/ /index.html; }
+}
+```
+
+## Структура проекта
+
+```
+src/
+├── components/
+│   ├── layout/          # Header, BottomNav
+│   ├── list/            # ShoppingList, ListItem, SearchBar, ProgressBar, FilterBar
+│   ├── recipes/         # RecipesPage
+│   ├── mealplan/        # MealPlanPage
+│   └── packing/         # PackingPage (пакинг, хозтовары, eSIM)
+├── data/                # JSON data (gastronomy, household)
+├── store/               # Zustand store
+├── types/               # TypeScript interfaces
+└── styles/              # Tailwind globals
+```
+
+## Данные
+
+| Категория | Количество |
+|---|---|
+| Рецепты | 60 (только плита/сковорода/кастрюля) |
+| Рыбные блюда | 15 (свежий улов каждый день) |
+| Продукты в списке | 104 |
+| Категории продуктов | 13 |
+| Дней в плане | 7 × 4 приёма пищи |
+| Вода | 112 л (2л/чел/день) |
+| Хозтовары | 35 позиций |
+| Личные вещи | 44 позиции |
+| eSIM провайдеры | 5 |
