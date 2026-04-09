@@ -19,9 +19,22 @@ const mealLabels: Record<string, string> = {
   dinner: 'Ужин',
 }
 
+// Trip dates: Day 1 = April 11, Day 7 = April 17
+const TRIP_START = new Date(2026, 3, 11) // April 11, 2026
+const DAY_DATES = [11, 12, 13, 14, 15, 16, 17] // April dates
+
+function getAutoDay(): number {
+  const now = new Date()
+  const diffMs = now.getTime() - TRIP_START.getTime()
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+  if (diffDays < 0) return 0      // Before trip → Day 1
+  if (diffDays >= 7) return 6     // After trip → Day 7
+  return diffDays                  // During trip → current day
+}
+
 export function MealPlanPage() {
   const { mealPlan, replaceRecipeInMealPlan, addRecipeToMealSlot, removeRecipeFromMealSlot, updateMealSlotNote } = useAppStore()
-  const [selectedDay, setSelectedDay] = useState(0)
+  const [selectedDay, setSelectedDay] = useState(getAutoDay)
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null)
   const [pickerState, setPickerState] = useState<{
     mealType: string
@@ -50,19 +63,25 @@ export function MealPlanPage() {
     <div className="max-w-2xl mx-auto px-4 pt-4 space-y-4 pb-6">
       {/* Day selector */}
       <div className="flex gap-2 overflow-x-auto pb-1">
-        {mealPlan.map((day, i) => (
-          <button
-            key={i}
-            onClick={() => setSelectedDay(i)}
-            className={`shrink-0 flex flex-col items-center px-4 py-2 rounded-xl transition-colors min-h-[44px] ${
-              selectedDay === i
-                ? 'bg-ocean-500 text-white'
-                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-            }`}
-          >
-            <span className="text-xs font-medium">День {day.day}</span>
-          </button>
-        ))}
+        {mealPlan.map((day, i) => {
+          const isToday = i === getAutoDay() && getAutoDay() >= 0 && getAutoDay() < 7
+          return (
+            <button
+              key={i}
+              onClick={() => setSelectedDay(i)}
+              className={`shrink-0 flex flex-col items-center px-4 py-2 rounded-xl transition-colors min-h-[44px] ${
+                selectedDay === i
+                  ? 'bg-ocean-500 text-white'
+                  : isToday
+                    ? 'bg-ocean-100 dark:bg-ocean-900/30 text-ocean-700 dark:text-ocean-300 ring-1 ring-ocean-300 dark:ring-ocean-700'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+              }`}
+            >
+              <span className="text-xs font-medium">День {day.day}</span>
+              <span className="text-[10px] opacity-75">{DAY_DATES[i]} апр</span>
+            </button>
+          )
+        })}
       </div>
 
       {currentDay && (
