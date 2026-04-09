@@ -21,7 +21,7 @@ export const productIcons: Record<string, string> = {
   // Молочные продукты
   "s02": "noto:glass-of-milk",          // Молоко
   "s08": "noto:butter",                 // Масло сливочное
-  "s18": "noto:cup-with-straw",         // Йогурт натуральный
+  "s18": "noto:glass-of-milk",          // Йогурт натуральный
   "s30": "noto:cheese-wedge",           // Сыр фета
   "s41": "noto:cheese-wedge",           // Пармезан
   "s57": "noto:glass-of-milk",          // Сметана
@@ -31,7 +31,7 @@ export const productIcons: Record<string, string> = {
   // Овощи и фрукты
   "s03": "noto:banana",                 // Бананы
   "s07": "noto:tomato",                 // Помидоры
-  "s09": "noto:leafy-green",            // Укроп
+  "s09": "noto:herb",                   // Укроп
   "s19": "noto:mango",                  // Манго
   "s21": "noto:avocado",                // Авокадо
   "s22": "noto:lemon",                  // Лимон
@@ -39,20 +39,20 @@ export const productIcons: Record<string, string> = {
   "s27": "noto:bell-pepper",            // Перец болгарский
   "s28": "noto:onion",                  // Лук красный
   "s33": "noto:garlic",                 // Чеснок
-  "s34": "noto:leafy-green",            // Петрушка
+  "s34": "noto:herb",                   // Петрушка
   "s36": "noto:lemon",                  // Лайм
   "s37": "noto:hot-pepper",             // Перец чили свежий
-  "s38": "noto:leafy-green",            // Кинза
+  "s38": "noto:herb",                   // Кинза
   "s42": "noto:potato",                 // Картофель
   "s43": "noto:carrot",                 // Морковь
   "s44": "noto:onion",                  // Лук репчатый
-  "s50": "noto:leafy-green",            // Лук зелёный
-  "s52": "noto:garlic",                 // Имбирь свежий
+  "s50": "noto:onion",                  // Лук зелёный
+  "s52": "noto:herb",                   // Имбирь свежий
   "s56": "noto:leafy-green",            // Капуста белокочанная
   "s61": "noto:pineapple",              // Ананас
-  "s62": "noto:leafy-green",            // Мята свежая
+  "s62": "noto:herb",                   // Мята свежая
   "s65": "noto:tomato",                 // Помидоры черри
-  "s68": "noto:leafy-green",            // Базилик свежий
+  "s68": "noto:herb",                   // Базилик свежий
   "s75": "noto:leafy-green",            // Салат айсберг
   "s81": "noto:cucumber",               // Кабачки (цуккини)
   "s82": "noto:eggplant",               // Баклажаны
@@ -65,30 +65,30 @@ export const productIcons: Record<string, string> = {
 
   // Соусы и приправы
   "s04": "noto:honey-pot",              // Мёд
-  "s05": "noto:salt",                   // Корица молотая
+  "s05": "noto:herb",                   // Корица молотая
   "s10": "noto:salt",                   // Соль
   "s11": "noto:salt",                   // Перец чёрный молотый
-  "s23": "noto:amphora",                // Уксус столовый
-  "s32": "noto:leafy-green",            // Орегано сушёный
-  "s35": "noto:salt",                   // Тимьян сушёный
+  "s23": "noto:bottle-with-popping-cork", // Уксус столовый
+  "s32": "noto:herb",                   // Орегано сушёный
+  "s35": "noto:herb",                   // Тимьян сушёный
   "s40": "noto:hot-pepper",             // Перец чили сушёный (хлопья)
-  "s45": "noto:leafy-green",            // Лавровый лист
+  "s45": "noto:herb",                   // Лавровый лист
   "s46": "noto:salt",                   // Перец чёрный горошком
-  "s49": "noto:amphora",                // Соевый соус
-  "s53": "noto:salt",                   // Кунжут
-  "s58": "noto:salt",                   // Кумин (зира)
+  "s49": "noto:bottle-with-popping-cork", // Соевый соус
+  "s53": "noto:herb",                   // Кунжут
+  "s58": "noto:herb",                   // Кумин (зира)
   "s66": "noto:hot-pepper",             // Паста карри
-  "s70": "noto:salt",                   // Паприка
-  "s71": "noto:salt",                   // Куркума
+  "s70": "noto:herb",                   // Паприка
+  "s71": "noto:herb",                   // Куркума
   "s76": "noto:honey-pot",              // Горчица дижонская
-  "s78": "noto:salt",                   // Тахини (паста кунжутная)
-  "s89": "noto:salt",                   // Мускатный орех
-  "s109": "noto:amphora",               // Кетчуп
+  "s78": "noto:bowl-with-spoon",        // Тахини (паста кунжутная)
+  "s89": "noto:herb",                   // Мускатный орех
+  "s109": "noto:tomato",                // Кетчуп
 
   // Масла
-  "s15": "noto:amphora",                // Масло растительное
+  "s15": "noto:droplet",               // Масло растительное
   "s31": "noto:olive",                  // Масло оливковое
-  "s94": "noto:amphora",                // Масло кунжутное
+  "s94": "noto:droplet",               // Масло кунжутное
 
   // Хлеб и выпечка
   "s16": "noto:bread",                  // Хлеб белый (батон)
@@ -117,7 +117,7 @@ export const productIcons: Record<string, string> = {
   "s63": "noto:shrimp",                 // Креветки замороженные (крупные)
 
   // Сладости и снеки
-  "s60": "noto:ear-of-corn",            // Начос (чипсы кукурузные)
+  "s60": "noto:french-fries",            // Начос (чипсы кукурузные)
   "s83": "noto:cookie",                 // Крекеры
   "s85": "noto:chestnut",               // Орехи грецкие
   "s99": "noto:chocolate-bar",          // Шоколад тёмный
@@ -126,23 +126,23 @@ export const productIcons: Record<string, string> = {
   "s101": "noto:hot-beverage",          // Кофе молотый
   "s102": "noto:teacup-without-handle", // Чай чёрный/зелёный (пакетики)
   "s104": "noto:ice",                   // Лёд (для напитков)
-  "s113": "noto:water-wave",            // Вода в канистрах 5л
-  "s114": "noto:water-wave",            // Вода в бутылках 0.5л
+  "s113": "noto:droplet",               // Вода в канистрах 5л
+  "s114": "noto:droplet",               // Вода в бутылках 0.5л
   "s115": "noto:wine-glass",            // Вино
   "s116": "noto:beer-mug",              // Пиво
   "s117": "noto:cup-with-straw",        // Газировки (Кола/Спрайт)
-  "s118": "noto:bubble-tea",            // Перье (газ. вода)
-  "s119": "noto:tropical-drink",        // Ром (от укачивания)
-  "s120": "noto:coconut",               // Кокосовая стружка
+  "s118": "noto:beverage-box",           // Перье (газ. вода)
+  "s119": "noto:tumbler-glass",         // Ром (от укачивания)
+  "s120": "noto:coconut",               // Кокосовая стружка (snack/baking)
 
   // Еда из России
   "s105": "noto:cooked-rice",           // Гречка
-  "s106": "noto:cut-of-meat",           // Сало
+  "s106": "noto:bacon",                 // Сало
   "s107": "noto:bread",                 // Чёрный хлеб
-  "s108": "noto:hot-pepper",            // Васаби
+  "s108": "noto:herb",                  // Васаби
 
   // Прочее
-  "s13": "noto:candy",                  // Сахар
+  "s13": "noto:bowl-with-spoon",        // Сахар
   "s14": "noto:salt",                   // Разрыхлитель
   "s97": "noto:roll-of-paper",          // Фольга алюминиевая
   "s111": "noto:fire",                  // Угли для BBQ
