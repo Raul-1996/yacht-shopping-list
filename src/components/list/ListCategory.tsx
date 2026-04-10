@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Icon } from '@iconify/react'
 import type { UnifiedShoppingItem } from '../../types'
 import { ListItem } from './ListItem'
+import { InlinAddItem } from './InlineAddItem'
 import { categoryIcons } from '../../data/productIcons'
 
 export function ListCategory({ category, items }: { category: string; items: UnifiedShoppingItem[] }) {
@@ -10,6 +11,8 @@ export function ListCategory({ category, items }: { category: string; items: Uni
   const unchecked = items.filter((i) => !i.checked)
   const checked = items.filter((i) => i.checked)
   const sorted = [...unchecked, ...checked]
+
+  const source = items[0]?._source || 'shopping'
 
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
@@ -31,6 +34,7 @@ export function ListCategory({ category, items }: { category: string; items: Uni
           {sorted.map((item) => (
             <ListItem key={item.id} item={item} />
           ))}
+          <InlinAddItem category={category} source={source} />
         </div>
       )}
     </div>
