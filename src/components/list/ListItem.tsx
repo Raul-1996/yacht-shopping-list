@@ -8,7 +8,7 @@ import { RecipeModal } from '../recipes/RecipeModal'
 import { SwipeToDelete } from '../ui/SwipeToDelete'
 
 export function ListItem({ item }: { item: UnifiedShoppingItem }) {
-  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem, adjustHouseholdQuantity } = useAppStore()
+  const { toggleShoppingItem, adjustShoppingQuantity, deleteShoppingItem, toggleHouseholdItem, adjustHouseholdQuantity, deleteHouseholdItem } = useAppStore()
   const [expanded, setExpanded] = useState(false)
   const [editingQty, setEditingQty] = useState(false)
   const [qtyInput, setQtyInput] = useState('')
@@ -146,9 +146,12 @@ export function ListItem({ item }: { item: UnifiedShoppingItem }) {
     </div>
   )
 
-  if (isShopping) {
+  if (isShopping || isHousehold) {
+    const onDelete = isShopping
+      ? () => deleteShoppingItem(item.id)
+      : () => deleteHouseholdItem(item.id)
     return (
-      <SwipeToDelete onDelete={() => deleteShoppingItem(item.id)}>
+      <SwipeToDelete onDelete={onDelete}>
         {content}
       </SwipeToDelete>
     )

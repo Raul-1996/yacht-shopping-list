@@ -213,6 +213,26 @@ app.patch('/api/household/:id', (req, res) => {
   res.json(result);
 });
 
+app.post('/api/household', (req, res) => {
+  const { name, category, quantity, unit } = req.body;
+  if (!name || !category) return res.status(400).json({ error: 'name and category required' });
+  const id = 'custom_h_' + Date.now();
+  db.prepare(
+    'INSERT INTO household_items (id, name, category, quantity, unit, per_cabin) VALUES (?, ?, ?, ?, ?, ?)'
+  ).run(id, name, category, quantity || 1, unit || 'шт', 0);
+  const item = db.prepare('SELECT * FROM household_items WHERE id = ?').get(id);
+  const result = { ...item, checked: !!item.checked, per_cabin: !!item.per_cabin };
+  broadcast({ type: 'household:add', item: result });
+  res.status(201).json(result);
+});
+
+app.delete('/api/household/:id', (req, res) => {
+  const { id } = req.params;
+  db.prepare('DELETE FROM household_items WHERE id = ?').run(id);
+  broadcast({ type: 'household:delete', id });
+  res.json({ ok: true });
+});
+
 // --- Packing Items ---
 app.get('/api/packing', (req, res) => {
   const items = db.prepare('SELECT * FROM packing_items ORDER BY category, name').all();

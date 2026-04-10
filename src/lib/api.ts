@@ -44,6 +44,11 @@ export async function deleteShoppingItem(id: string) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
 }
 
+export async function deleteHouseholdItem(id: string) {
+  const res = await fetch(`${API_BASE}/api/household/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+}
+
 export async function fetchHouseholdItems() {
   const res = await fetch(`${API_BASE}/api/household`);
   return jsonOrThrow(res);

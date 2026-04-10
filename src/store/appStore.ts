@@ -34,6 +34,7 @@ interface AppState {
   deleteShoppingItem: (id: string) => void;
   toggleHouseholdItem: (id: string) => void;
   adjustHouseholdQuantity: (id: string, delta: number) => void;
+  deleteHouseholdItem: (id: string) => void;
   togglePackingItem: (id: string) => void;
 
   replaceRecipeInMealPlan: (day: number, mealType: string, oldRecipeId: string, newRecipeId: string) => void;
@@ -123,6 +124,15 @@ export const useAppStore = create<AppState>()((set, get) => ({
     }));
     api.deleteShoppingItem(id).catch(() => {
       // Reload on error
+      get().loadAllData();
+    });
+  },
+
+  deleteHouseholdItem: (id) => {
+    set((s) => ({
+      householdItems: s.householdItems.filter((i) => i.id !== id),
+    }));
+    api.deleteHouseholdItem(id).catch(() => {
       get().loadAllData();
     });
   },
@@ -334,6 +344,17 @@ export const useAppStore = create<AppState>()((set, get) => ({
       case 'household:update':
         set((s) => ({
           householdItems: s.householdItems.map((i) => i.id === (msg.item as HouseholdItem)?.id ? msg.item as HouseholdItem : i),
+        }));
+        break;
+      case 'household:add':
+        set((s) => {
+          if (s.householdItems.find((i) => i.id === (msg.item as HouseholdItem)?.id)) return {};
+          return { householdItems: [...s.householdItems, msg.item as HouseholdItem] };
+        });
+        break;
+      case 'household:delete':
+        set((s) => ({
+          householdItems: s.householdItems.filter((i) => i.id !== msg.id),
         }));
         break;
       case 'packing:update':
