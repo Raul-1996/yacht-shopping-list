@@ -290,7 +290,8 @@ export const useAppStore = create<AppState>()((set, get) => ({
   },
 
   loadAllData: async () => {
-    set({ loading: true });
+    const isInitial = get().loading || get().shoppingItems.length === 0;
+    if (isInitial) set({ loading: true });
     try {
       const [shopping, householdData, packing, mealPlanData] = await Promise.all([
         api.fetchShoppingItems(),
