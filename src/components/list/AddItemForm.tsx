@@ -3,9 +3,12 @@ import { useAppStore } from '../../store/appStore'
 
 const UNITS = ['шт', 'кг', 'г', 'л', 'мл', 'упак', 'рул', 'бут'];
 
+type ItemType = 'shopping' | 'household'
+
 export function AddItemForm() {
-  const { shoppingItems, addShoppingItem } = useAppStore()
+  const { shoppingItems, householdItems, addShoppingItem, addHouseholdItem } = useAppStore()
   const [open, setOpen] = useState(false)
+  const [itemType, setItemType] = useState<ItemType>('shopping')
   const [name, setName] = useState('')
   const [category, setCategory] = useState('')
   const [customCategory, setCustomCategory] = useState('')
@@ -14,16 +17,27 @@ export function AddItemForm() {
 
   const categories = useMemo(() => {
     const cats = new Set<string>()
-    shoppingItems.forEach((i) => cats.add(i.category))
+    const items = itemType === 'shopping' ? shoppingItems : householdItems
+    items.forEach((i) => cats.add(i.category))
     return Array.from(cats).sort((a, b) => a.localeCompare(b, 'ru'))
-  }, [shoppingItems])
+  }, [shoppingItems, householdItems, itemType])
+
+  const handleTypeChange = (type: ItemType) => {
+    setItemType(type)
+    setCategory('')
+    setCustomCategory('')
+  }
 
   const handleSubmit = () => {
     const itemName = name.trim()
     const itemCategory = category === '__custom__' ? customCategory.trim() : category
     if (!itemName || !itemCategory) return
 
-    addShoppingItem(itemName, itemCategory, Number(quantity) || 1, unit)
+    if (itemType === 'shopping') {
+      addShoppingItem(itemName, itemCategory, Number(quantity) || 1, unit)
+    } else {
+      addHouseholdItem(itemName, itemCategory, Number(quantity) || 1, unit)
+    }
     setName('')
     setQuantity('1')
     setOpen(false)
@@ -35,7 +49,7 @@ export function AddItemForm() {
         onClick={() => setOpen(true)}
         className="w-full py-3 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500 text-sm font-medium hover:border-ocean-400 hover:text-ocean-500 transition-colors"
       >
-        + Добавить продукт
+        + Добавить позицию
       </button>
     )
   }
@@ -43,8 +57,33 @@ export function AddItemForm() {
   return (
     <div className="rounded-2xl bg-slate-50 dark:bg-slate-900/50 p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <span className="font-semibold text-sm text-slate-700 dark:text-slate-200">Новый продукт</span>
+        <span className="font-semibold text-sm text-slate-700 dark:text-slate-200">
+          {itemType === 'shopping' ? 'Новый продукт' : 'Новый хозтовар'}
+        </span>
         <button onClick={() => setOpen(false)} className="text-slate-400 hover:text-slate-600 text-sm">✕</button>
+      </div>
+
+      <div className="flex rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+        <button
+          onClick={() => handleTypeChange('shopping')}
+          className={`flex-1 py-2 text-sm font-medium transition-colors ${
+            itemType === 'shopping'
+              ? 'bg-ocean-500 text-white'
+              : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          Продукт
+        </button>
+        <button
+          onClick={() => handleTypeChange('household')}
+          className={`flex-1 py-2 text-sm font-medium transition-colors ${
+            itemType === 'household'
+              ? 'bg-ocean-500 text-white'
+              : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          Хозтовар
+        </button>
       </div>
 
       <input

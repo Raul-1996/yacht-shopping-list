@@ -44,6 +44,15 @@ export async function deleteShoppingItem(id: string) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
 }
 
+export async function addHouseholdItem(name: string, category: string, quantity: number, unit: string) {
+  const res = await fetch(`${API_BASE}/api/household`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, category, quantity, unit }),
+  });
+  return jsonOrThrow(res);
+}
+
 export async function deleteHouseholdItem(id: string) {
   const res = await fetch(`${API_BASE}/api/household/${id}`, { method: 'DELETE' });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);

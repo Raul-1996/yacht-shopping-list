@@ -34,6 +34,7 @@ interface AppState {
   deleteShoppingItem: (id: string) => void;
   toggleHouseholdItem: (id: string) => void;
   adjustHouseholdQuantity: (id: string, delta: number) => void;
+  addHouseholdItem: (name: string, category: string, quantity: number, unit: string) => void;
   deleteHouseholdItem: (id: string) => void;
   togglePackingItem: (id: string) => void;
 
@@ -126,6 +127,18 @@ export const useAppStore = create<AppState>()((set, get) => ({
       // Reload on error
       get().loadAllData();
     });
+  },
+
+  addHouseholdItem: async (name, category, quantity, unit) => {
+    try {
+      const item = await api.addHouseholdItem(name, category, quantity, unit);
+      set((s) => {
+        if (s.householdItems.find((i) => i.id === item.id)) return {};
+        return { householdItems: [...s.householdItems, item] };
+      });
+    } catch (e) {
+      console.error('Failed to add household item:', e);
+    }
   },
 
   deleteHouseholdItem: (id) => {
